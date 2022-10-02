@@ -1,0 +1,21 @@
+.request {
+    &__form {
+        margin-top: 100px;
+
+        max-width: 50%;
+
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .input {
+            width: 48%;
+        }
+
+        button.button.hollow.white {
+            margin-top: 110px !important;
+            
+            margin: 0 auto;
+        }
+    }
+}

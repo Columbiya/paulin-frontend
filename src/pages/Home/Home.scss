@@ -1,0 +1,265 @@
+@import '../../variables.scss';
+
+.main-screen {
+    height: 120vh;
+    width: 100%;
+
+    background: url('../../assets/home/main-screen.svg') center no-repeat;
+    background-size: cover;
+    
+    .container {
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+    }
+
+    &__title {
+        font-size: 17.6rem;
+        text-transform: uppercase;
+        color: #fff;
+    }
+
+    &__subtitle {
+        font-weight: 600;
+        font-size: 4.8rem;
+        color: #fff;
+
+        margin: 50px 0 30px;
+    }
+
+    &__subsubtitle {
+        font-weight: 600;
+        font-size: 3.1rem;
+        color: #fff;
+
+        margin-bottom: 45px;
+        max-width: 440px;
+    }
+}
+
+.about-us {
+    &__title {
+        font-weight: 600;
+        font-size: 3.1rem;
+        color: #000;
+
+        margin-top: 150px;
+    }
+
+    &__info {
+        max-width: 70%;
+        margin-left: auto;
+        display: flex;
+        justify-content: space-between;
+
+        margin-top: 110px;
+    }
+
+    &__text {
+        font-weight: 600;
+        font-size: 3.1rem;
+
+        margin-top: 30px;
+    }
+
+    .text-gradient {
+        font-size: 13rem;
+        font-weight: 600;
+    }
+
+    &__item {
+        max-width: 480px;
+    }
+}
+
+.business-consulting {
+    margin-top: 500px;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__title {
+        font-weight: 600;
+        color: #fff;
+        font-size: 4.8rem;
+    }
+
+    &__subtitle {
+        font-weight: 600;
+        color: #fff;
+        font-size: 3.6rem;
+    }
+
+    &__text {
+        font-size: 3.1rem;
+        font-weight: 600;
+        color: #fff;
+        
+        margin-top: 60px;
+        max-width: 700px;
+    }
+
+    button {
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+}
+
+.features {
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+
+        position: relative;
+    }
+
+    &__left {
+        width: 65%;
+    }
+
+    &__right {
+        width: 35%;
+        display: flex;
+
+        position: absolute;
+        top: 150px;
+        right: 0;
+
+        .features__item {
+            width: 100%;
+            height: 60%;
+            align-self: center;
+
+            padding-top: 300px;
+
+            animation-delay: 1.5s;
+        }
+    }
+
+    &__item {
+        display: inline-block;
+        font-size: 2.7rem;
+        padding: 70px;
+        background: #fff;
+        width: 50%;
+        border-radius: 90px;
+        margin-top: 50px;
+        border-bottom-left-radius: 0;
+        box-shadow: 2px 2px 60px #9e9e9e;
+        position: relative;
+
+        padding-top: 280px;
+
+        animation: verticalMovement 4s ease-in-out infinite;
+
+        p {
+            max-width: 78%;
+        }
+
+        img {
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &.small {
+            padding: 50px;
+            padding-top: 250px;
+            width: 45%;
+            align-self: flex-end;
+            margin-right: 25px;
+
+            &:last-child {
+                align-self: flex-start;
+                margin-right: 0;
+                margin-left: 25px;
+            }
+        }
+
+        &:nth-child(1) {
+            animation-delay: 0;
+        }
+        &:nth-child(2) {
+            animation-delay: 1s;
+        }
+        &:nth-child(3) {
+            animation-delay: 2s;
+        }
+        &:nth-child(4) {
+            animation-delay: 3s;
+        }
+    }
+}
+
+.education {
+    padding-top: 300px;
+    position: relative;
+
+    img {
+        position: absolute;
+        right: 0;
+        top: -370px;
+        z-index: -1;
+    }
+
+    &__inner {
+        max-width: 60%;
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 4.8rem;
+    }
+
+    &__text {
+        font-size: 4.1rem;
+        margin: 65px 0 80px;
+    }
+
+    &__buttons {
+        button {
+            &:not(:last-child) {
+                margin-right: 25px;
+            }
+        }
+    }
+}
+
+.partners {
+    margin-top: 300px;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 4.8rem;
+    }
+
+    &__list {
+        margin-top: 70px;
+    }
+}
+
+.request {
+    position: relative;
+
+    margin-top: 300px;
+
+    &__image {
+        position: absolute;
+        top: -10px;
+        right: 0;
+        width: 100%;
+        z-index: -1;
+    }
+}

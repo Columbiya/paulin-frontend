@@ -1,0 +1,33 @@
+.partners-list {
+    .swiper {
+        padding: 20px;
+    }
+}
+
+.partner-item {
+    display: grid;
+    place-items: center;
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    height: 370px;        
+    box-shadow: 1px 1px 30px #c5c4c4;
+
+    transition: transform .3s ease;
+
+    img {
+        width: 100%;
+    }
+
+    &:hover {
+        transform: scale(.9);
+    }
+
+    &.partners-page {
+        width: 30%;
+        border-radius: 90px;
+        height: 505px;
+        border-bottom-left-radius: 0;
+    }
+}

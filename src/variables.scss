@@ -1,0 +1,24 @@
+$gradientColorYellow: #f8d540;
+$gradientColorPink: #e3808a;
+
+@keyframes verticalMovement {
+    0% {
+        transform: translateY(0)
+    }
+
+    25% {
+        transform: translateY(5%)
+    }
+
+    50% {
+        transform: translateY(10%)
+    }
+
+    75% {
+        transform: translateY(5%)
+    }
+
+    100% {
+        transform: translateY(0)
+    }
+}

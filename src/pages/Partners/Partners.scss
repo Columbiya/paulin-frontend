@@ -1,0 +1,9 @@
+.partners-page {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    & > div {
+        margin-top: 65px;
+    }
+}
