@@ -19,6 +19,10 @@ export const RequestForm: React.FC = (props) => {
     const onSubmit: SubmitHandler<FormValues> = (data) => {
         console.log(data)
     }
+
+    const validateEmail = (s: string) => {
+        return /\S+@\S+\.\S+/.test(s);
+    }
     
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="request__form">
@@ -48,7 +52,6 @@ export const RequestForm: React.FC = (props) => {
                 register={register}
                 fieldName="serviceType"
                 name="Тип услуги"
-                isDropdown
                 isRequired  
                 error={errors.serviceType}
             />
@@ -64,6 +67,7 @@ export const RequestForm: React.FC = (props) => {
                 fieldName="email"
                 name="Email"
                 isRequired
+                validate={validateEmail}
                 error={errors.email}
             />
 

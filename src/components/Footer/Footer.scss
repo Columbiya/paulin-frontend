@@ -1,0 +1,105 @@
+@import '../../variables.scss';
+
+.footer {
+    margin-top: 180px;
+
+    position: relative;
+    z-index: 500;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__left {
+        width: 50%;
+
+        display: flex;
+        justify-content: space-between;
+
+        height: 220px;
+    }
+
+    &__col {
+        display: flex;
+        flex-direction: column;
+
+        a, p {
+            font-weight: 500;
+            font-size: 2.2rem;
+            color: #fff;
+
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+
+        p {
+            font-size: 2rem;
+        }
+
+        a {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__socials {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        max-width: 600px;
+        width: 100%;
+        
+        a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 2rem;
+            color: #000;
+
+            &:hover img {
+                transform: scale(1.1);
+            }
+        }
+
+        img {
+            width: 74px;
+
+            margin-bottom: 20px;
+
+            transition: transform .5s ease;
+        }
+    }
+
+    &--gradient {
+        padding: 80px 0;
+        background: linear-gradient(to right, $gradientColorYellow, $gradientColorPink);
+
+        .footer__socials {
+            a {
+                color: #fff;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+.col {
+    &:first-child {
+        &__bottom {
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+    &__bottom {
+        margin-top: auto;
+
+        a {
+            font-size: 2rem;
+        }
+    }
+}

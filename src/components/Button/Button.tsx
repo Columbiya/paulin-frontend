@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Button.scss'
 
 interface ButtonProps {
@@ -6,16 +6,31 @@ interface ButtonProps {
     isFilled?: boolean
     isWhite?: boolean
     isGradientBordersWithWhiteBack?: boolean
+    soon?: boolean
 }
 
-export const Button: React.FC<ButtonProps> = ({ children, isFilled, isWhite, isGradientBordersWithWhiteBack }) => {
+export const Button: React.FC<ButtonProps> = ({ children, isFilled, isWhite, isGradientBordersWithWhiteBack, soon }) => {
+    const [isOver, setOver] = useState<boolean>(false)
+
     const filledClass = isFilled ? 'filled': 'hollow'
     const whiteClass = isWhite ? 'white': undefined
     const gradientBordersClass = isGradientBordersWithWhiteBack ? 'gradient-borders': undefined
 
+    const soonEnterHandler = () => {
+        setOver(true)
+    }
+
+    const soonLeaveHandler = () => {
+        setOver(false)
+    }
+
     return (
-        <button className={`button ${filledClass} ${whiteClass} ${gradientBordersClass}`}>
-            {children}
+        <button 
+            className={`button ${filledClass} ${whiteClass} ${gradientBordersClass}`} 
+            onMouseEnter={soonEnterHandler}
+            onMouseLeave={soonLeaveHandler}
+        >
+            {soon && isOver ? "soon": children}
         </button>
     )
 } 

@@ -6,11 +6,9 @@ import './Header.scss'
 
 export const Header: React.FC = (props) => {
     const { pathname } = useLocation()
-    console.log(pathname, 'pathname')
-    
 
     return (
-        <header className={`header ${pathname != '/' ? "header--green": undefined}`}>
+        <header className={`header ${pathname != PagesRoutes.MAIN ? "header--green": undefined}`}>
             <div className="container">
                 <div className="header-inner">
                     <NavLink to={PagesRoutes.MAIN}><Logo width={165} /></NavLink>

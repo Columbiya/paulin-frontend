@@ -3,6 +3,7 @@ import { Partner } from "../schemas/Partner";
 
 class PartnersStore { 
     private _partners: Partner[] = []
+    private _singlePartner: Partner = {} as Partner
 
     constructor() {
         makeAutoObservable(this)
@@ -14,6 +15,14 @@ class PartnersStore {
 
     set items(value: Partner[]) {
         this._partners = value
+    }
+
+    get item() {
+        return this._singlePartner
+    }
+
+    set item(value: Partner) {
+        this._singlePartner = value
     }
 }
 

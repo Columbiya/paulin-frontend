@@ -5,5 +5,23 @@
 
     & > div {
         margin-top: 65px;
+
+        &:nth-child(1) {
+            margin-top: 0;
+        }
+
+        &:nth-child(2) {
+            margin-top: 0;
+        }
+
+        &:nth-child(3) {
+            margin-top: 0;
+        }
+    }
+}
+
+.partners {
+    &__news-list {
+        margin-top: 150px;
     }
 }

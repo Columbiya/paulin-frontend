@@ -10,11 +10,13 @@
     span {
         display: block;
 
-        margin-right: 30px;
-
-        &:last-child {
-            margin-left: 30px;
-            margin-right: 0;
+        a {
+            cursor: pointer;
+            color: #000;
         }
+    }
+
+    &__separator {
+        margin: 0 30px;
     }
 }

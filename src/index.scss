@@ -57,8 +57,33 @@ button {
 
 .main {
   margin-top: 120px;
+
+  animation: 1s 1 forwards fadeIn ease-in-out;
+
+
+}
+
+main {
+  animation: 1s 1 forwards fadeIn ease-in-out;
 }
 
 .text-gradient {
   @include colorTextWithGradient;
 }
+
+.pages-title {
+  margin: 50px 0 70px;
+  font-size: 4.8rem;
+  font-weight: 600;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+

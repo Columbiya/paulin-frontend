@@ -28,7 +28,88 @@
 	.st22{opacity:0.46;fill:url(#SVGID_12_);}
 	.st23{clip-path:url(#SVGID_14_);}
 </style>
-<g>
+
+<style>
+	@keyframes float {
+		from {
+			transform: translateY(0);
+		}
+
+		50% {
+			transform: translateY(25px);
+		}
+
+		to {
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes growUp {
+		from {
+			transform: scale(0)
+		}
+
+		to {
+			transform: scale(1)
+		}
+	}
+
+	#персонаж_2 {
+		animation: float 2s ease infinite;
+	}
+
+
+	#облако_2 {
+		animation: float 4s ease infinite;
+		animation-delay: 2s;
+	}
+
+	#облако_1 {
+		animation: float 4s ease infinite;
+		animation-delay: 1s;
+	}
+
+	#подложка_1 {
+		transform: scale(0);
+		transform-origin: 80% 70%;
+		animation: growUp 1.5s ease forwards;
+	}
+
+	#подложка_2 {
+		transform: scale(0);
+		transform-origin: 80% 70%;
+		animation: growUp 1.5s ease forwards;
+		animation-delay: 1s;
+	}
+
+	#подложка_3 {
+		transform: scale(0);
+		transform-origin: 80% 70%;
+		animation: growUp 1.5s ease forwards;
+		animation-delay: 2s;
+	}
+
+	#экран_часть_1 {
+		animation: float 4s ease infinite;
+		animation-delay: 1.4s;
+	}
+
+	#экран_часть_2 {
+		animation: float 4s ease infinite;
+		animation-delay: .5s;
+	}
+
+	#экран_часть_3 {
+		animation: float 4s ease infinite;
+		animation-delay: 1.1s;
+	}
+
+	#monitor-4 {
+		animation: float 4s ease infinite;
+		animation-delay: 1.8s;
+	}
+</style>
+<g id="podlozka">
 	<linearGradient id="подложка_1_1_" gradientUnits="userSpaceOnUse" x1="960" y1="1043.0155" x2="960" y2="86.0213">
 		<stop  offset="0" style="stop-color:#0F9EA8"/>
 		<stop  offset="0.4412" style="stop-color:#16A7A1"/>
@@ -546,7 +627,7 @@
 				"/>
 		</g>
 		
-			<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="1738.7582" y1="369.1016" x2="1662.2468" y2="369.1016" gradientTransform="matrix(1 0 0 1 -196 0)">
+		<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="1738.7582" y1="369.1016" x2="1662.2468" y2="369.1016" gradientTransform="matrix(1 0 0 1 -196 0)">
 			<stop  offset="0" style="stop-color:#74B5CF"/>
 			<stop  offset="1" style="stop-color:#2185D9"/>
 		</linearGradient>
@@ -611,7 +692,7 @@
 					c-1.01,1.03-1.88,1.8-2.73,2.43C1267.61,306.9,1262.43,308.54,1257.34,308.54z"/>
 			</g>
 		</g>
-		<g>
+		<g id="monitor-circle">
 			<g>
 				<path class="st11" d="M1399.44,321.33c-1.07,0-2.16-0.06-3.25-0.18c-16.32-1.78-28.15-16.5-26.37-32.82s16.49-28.15,32.82-26.37
 					c16.32,1.78,28.15,16.5,26.37,32.82C1427.35,310.01,1414.42,321.33,1399.44,321.33z M1399.4,263.09
@@ -663,7 +744,7 @@
 					<rect x="1463.01" y="289.68" transform="matrix(0.8652 -0.5014 0.5014 0.8652 52.182 774.7597)" class="st11" width="7.96" height="1.3"/>
 			</g>
 		</g>
-		<g>
+		<g id="monitor-4">
 			<g>
 				<path class="st11" d="M1296.4,261.44v-88.12l0.5-0.12c0.66-0.16,1.32-0.32,1.98-0.48l1.13-0.27c0.67-0.15,1.33-0.31,2.01-0.46
 					l1.1-0.25c0.76-0.17,1.52-0.33,2.29-0.49l0.84-0.18c1.05-0.22,2.1-0.43,3.17-0.63l0.35-0.07c1.29-0.25,2.59-0.49,3.89-0.72

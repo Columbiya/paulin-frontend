@@ -18,15 +18,18 @@ import planningImage from '../../assets/home/planning.png'
 import arrowUpImage from '../../assets/home/arrow-up.png'
 import personBars from '../../assets/home/person-bars.svg'
 import requestImage from '../../assets/home/request-image.svg'
+import mainScreenImage from '../../assets/home/main-screen.svg'
 import './Home.scss'
+import { NewsList } from '../../components/NewsList/NewsList'
+import { Preloader } from '../../components/Preloader/Preloader'
 
 
 export const Home: React.FC = (props) => {
-    const [items, loading, error] = useHttp<News>({link: '/news', method: Methods.GET, store: newsStore, useAuth: false})
-    const [itemsPartners, loadingPartners, errorPartners] = useHttp<Partner>({link: '/partners', method: Methods.GET, store: partnersStore, useAuth: false})
+    const [items, loading, error] = useHttp<News[]>({link: '/news', method: Methods.GET, store: newsStore, useAuth: false})
+    const [itemsPartners, loadingPartners, errorPartners] = useHttp<Partner[]>({link: '/partners', method: Methods.GET, store: partnersStore, useAuth: false})
     
     if (loading || loadingPartners) {
-        return <h1>Loading</h1>
+        return <Preloader />
     }
 
     if (error) {
@@ -35,6 +38,7 @@ export const Home: React.FC = (props) => {
 
     return (
         <main>
+            <object data={mainScreenImage} className="main-screen__image" type="image/svg+xml"></object>
             <div className="main-screen">
                 <div className="container">
                     <div className="main-screen__inner">
@@ -48,19 +52,7 @@ export const Home: React.FC = (props) => {
 
             <div className="main__news">
                 <div className="container">
-                    <Swiper 
-                        spaceBetween={10}
-                        slidesPerView={4}
-                    >
-                        {
-                            items?.map(item => (
-                                <SwiperSlide>
-                                    <NewsItem {...item} key={item.id} />
-                                </SwiperSlide>
-                            ))
-                        }
-                    </Swiper>
-
+                    <NewsList />
                 </div>
             </div>
 

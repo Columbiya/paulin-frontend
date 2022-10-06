@@ -1,0 +1,16 @@
+.news-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    & > div {
+        width: 30%;
+
+        margin-top: 75px;
+
+        &:nth-child(1), &:nth-child(2),
+        &:nth-child(3) {
+            margin-top: 0;
+        }
+    }
+}
