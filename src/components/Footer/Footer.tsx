@@ -11,7 +11,7 @@ export const Footer: React.FC = (props) => {
     
 
     return (
-        <footer className={`footer ${pathname != PagesRoutes.MAIN ? 'footer--gradient': undefined}`}>
+        <footer className={`footer ${pathname != PagesRoutes.MAIN && pathname != PagesRoutes.BUSINESS_CONSULTING ? 'footer--gradient': undefined}`}>
             <div className="container">
                 <div className="footer__inner">
                     <nav className="footer__left">

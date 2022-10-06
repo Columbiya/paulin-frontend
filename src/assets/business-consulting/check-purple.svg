@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 109 109" style="enable-background:new 0 0 109 109;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#круг_1_);}
+	.st1{fill:#FFFFFF;}
+</style>
+<linearGradient id="круг_1_" gradientUnits="userSpaceOnUse" x1="-490.8347" y1="-290.3658" x2="-382.1154" y2="-290.3658" gradientTransform="matrix(0.9558 0.294 -0.294 0.9558 386.3337 460.3437)">
+	<stop  offset="0" style="stop-color:#F06C99"/>
+	<stop  offset="0.2233" style="stop-color:#E260AE"/>
+	<stop  offset="0.7376" style="stop-color:#C648D8"/>
+	<stop  offset="1" style="stop-color:#BB3FE9"/>
+</linearGradient>
+<circle id="круг_21_" class="st0" cx="54.5" cy="54.5" r="54.36"/>
+<polygon class="st1" points="49.91,61.81 26.09,38 15.89,48.21 39.7,72.02 48.89,81.21 59.09,71 93.11,36.98 83.93,27.79 "/>
+</svg>

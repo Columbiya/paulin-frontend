@@ -1,0 +1,219 @@
+.consulting {
+
+    &-main-screen__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        width: 100%;
+
+        position: relative;
+        z-index: 500;
+
+        height: 110vh;
+    }
+
+    &__layers {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    &__ball {
+        position: absolute;
+        left: 57%;
+        top: 772px;
+        width: 265px;
+        z-index: 5;
+
+        animation: float 2s ease infinite;
+    }
+
+    &__list-checks {
+        position: absolute;
+        top: 210px;
+        left: 47%;
+        width: 730px;
+    }
+
+    &__person-check {
+        position: absolute;
+        top: 220px;
+        left: 52%;
+        width: 320px;
+        z-index: 5;
+
+        animation: float 2s ease infinite;
+    }
+
+    &__title {
+        font-size: 10rem;
+        color: #fff;
+
+        max-width: 500px;
+    }
+
+    &__subtitle {
+        font-size: 4.8rem;
+        color: #fff;
+
+        max-width: 600px;
+        margin: 45px 0;
+    }
+}
+
+.business {
+    margin-top: 120px;
+
+    position: relative;
+
+    &__text {
+        font-weight: 600;
+        font-size: 3.1rem;
+        max-width: 1400px;
+
+        &.large {
+            margin-top: 90px;
+
+            font-size: 3.6rem;
+        }
+    }
+
+    &__gear {
+        position: absolute;
+        top: 340px;
+        left: -30px;
+        width: 260px;
+
+        transform-origin: center center;
+
+        &.large {
+            width: 400px;
+            top: 590px;
+            left: -30px;
+            z-index: 50;
+
+            animation: rotateBackwards 5s linear infinite;
+        }
+
+        animation: rotate 5s linear infinite;
+    }
+
+    &__tools {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        
+        margin-left: 150px;
+    }
+
+    &__helps-you {
+        position: relative;
+
+        padding: 500px 0;
+    }
+}
+
+.tool {
+    &__item {
+        position: relative;
+        z-index: 10000;
+        background: #fff;
+        width: 30%;
+        box-shadow: 1px 1px 30px #c5c4c4;
+
+        border-radius: 120px;
+        border-bottom-left-radius: 0;
+
+        padding: 120px 60px 120px 50px; 
+        margin-top: 60px;
+    }
+
+    &__check {
+        position: absolute;
+        top: 45px;
+        right: 45px;
+    }
+
+    &__name {
+        font-weight: 600;
+        font-size: 3.1rem;
+        min-height: 120px;
+
+        margin-bottom: 10px;
+    }
+
+    &__text {
+        font-size: 2.7rem;
+    }
+}
+
+.helps-you {
+    &__inner {
+        max-width: 600px;
+    }
+
+    &__title {
+        font-size: 3.1rem;
+        font-weight: 600;
+
+        margin-bottom: 50px;
+    }
+
+    &__text {
+        font-size: 3.1rem;
+    }
+
+    &__man-puzzle {
+        position: absolute;
+        right: 350px;
+        width: 750px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__woman-puzzle {
+        position: absolute;
+        right: 30px;
+        width: 640px;
+        top: 20%;
+
+        animation: float 3s ease infinite;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateBackwards {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0);
+    }
+}
+
+@keyframes float {
+    from {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(25px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}

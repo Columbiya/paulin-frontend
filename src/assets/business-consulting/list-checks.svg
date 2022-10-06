@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 725 618" style="enable-background:new 0 0 725 618;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;}
+	.st2{fill:url(#SVGID_1_);}
+	.st3{fill:url(#SVGID_2_);}
+</style>
+<style>
+	@keyframes float {
+		from {
+			transform: translateY(0);
+		}
+
+		50% {
+			transform: translateY(5px);
+		}
+
+		to {
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes appear {
+		from {
+			stroke-dasharray: 2000;
+			stroke-dashoffset: 2000;
+			opacity: 1;
+		}
+		to {
+ 			stroke-dashoffset: 0;
+			opacity: 1;
+		}
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+		}
+
+		to {
+			opacity: 1;
+		}
+	}
+
+	.st2 {
+		animation: float 2s ease infinite;
+	}
+
+	.st3 {
+		animation: float 2s ease infinite;
+		animation-delay: 1s;
+	}
+
+	.st1 {
+		opacity: 0;
+
+		animation: appear 3s ease-in-out forwards;
+		animation-delay: 3s;
+	}
+
+	.st2 {
+		opacity: 0;
+		
+		animation: fadeIn 1s ease forwards;
+		animation-delay: 5s;
+	}
+
+	.st3 {
+		opacity: 0;
+
+		animation: fadeIn 1s ease forwards;
+		animation-delay: 5s;
+	}
+</style>
+<g class="list-checks.svg">
+	<path class="st0" d="M724,80H1V13C1,6.4,6.4,1,13,1h699c6.6,0,12,5.4,12,12V80z"/>
+	<g>
+		<g>
+			<path class="st1" stroke="#fff" fill="none" stroke-width="2" d="M725,81H0V13C0,5.83,5.83,0,13,0h699c7.17,0,13,5.83,13,13V81z M2,79H723V13c0-6.07-4.94-11-11-11H13
+				C6.93,2,2,6.93,2,13V79z"/>
+		</g>
+		<g>
+			<path class="st1" stroke="#fff" fill="none" stroke-width="2" d="M712,618H13c-7.17,0-13-5.83-13-13V13C0,5.83,5.83,0,13,0h699c7.17,0,13,5.83,13,13v592
+				C725,612.17,719.17,618,712,618z M13,2C6.93,2,2,6.93,2,13v592c0,6.07,4.94,11,11,11h699c6.07,0,11-4.94,11-11V13
+				c0-6.07-4.94-11-11-11H13z"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<path class="st1" stroke="#fff" fill="none" stroke-width="2" d="M643.75,57c-8.82,0-16-7.18-16-16s7.18-16,16-16s16,7.18,16,16S652.57,57,643.75,57z M643.75,27
+				c-7.72,0-14,6.28-14,14s6.28,14,14,14s14-6.28,14-14S651.47,27,643.75,27z"/>
+		</g>
+		<g>
+			<g>
+				<path class="st1" stroke="#fff" fill="none" stroke-width="2" d="M601.25,57c-8.82,0-16-7.18-16-16s7.18-16,16-16s16,7.18,16,16S610.07,57,601.25,57z M601.25,27
+					c-7.72,0-14,6.28-14,14s6.28,14,14,14s14-6.28,14-14S608.97,27,601.25,27z"/>
+			</g>
+			<g>
+				<path class="st1" stroke="#fff" fill="none" stroke-width="2" d="M686.25,57c-8.82,0-16-7.18-16-16s7.18-16,16-16s16,7.18,16,16S695.07,57,686.25,57z M686.25,27
+					c-7.72,0-14,6.28-14,14s6.28,14,14,14s14-6.28,14-14S693.97,27,686.25,27z"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<path class="st1" stroke="#fff" fill="none" stroke-width="2" d="M170,243.5H72V145.5H170V243.5z M74,241.5H168V147.5H74V241.5z"/>
+	</g>
+	<g>
+		<path class="st1" stroke="#fff" fill="none" stroke-width="2" d="M170,384.5H72V286.5H170V384.5z M74,382.5H168V288.5H74V382.5z"/>
+	</g>
+	<g>
+		<path class="st1" stroke="#fff" fill="none" stroke-width="2" d="M170,529H72V431H170V529z M74,527H168V433H74V527z"/>
+	</g>
+	
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-3.9743" y1="2133.1687" x2="97.4262" y2="2133.1687" gradientTransform="matrix(0.7071 -0.7071 0.7071 0.7071 -1395.4183 -1165.8379)">
+		<stop  offset="0" style="stop-color:#5CA7FD"/>
+		<stop  offset="1" style="stop-color:#2185D9"/>
+	</linearGradient>
+	<polygon class="st2" points="138.55,340.66 99.95,302.05 83.4,318.6 122.01,357.21 136.9,372.1 153.45,355.55 208.6,300.4 
+		193.71,285.51 	"/>
+	
+		<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="-103.6764" y1="2232.8708" x2="-2.2759" y2="2232.8708" gradientTransform="matrix(0.7071 -0.7071 0.7071 0.7071 -1395.4183 -1165.8379)">
+		<stop  offset="0" style="stop-color:#5CA7FD"/>
+		<stop  offset="1" style="stop-color:#2185D9"/>
+	</linearGradient>
+	<polygon class="st3" points="138.55,481.66 99.95,443.05 83.4,459.6 122.01,498.21 136.9,513.1 153.45,496.55 208.6,441.4 
+		193.71,426.51 	"/>
+	<g>
+		<g>
+			<path stroke="#fff" fill="none" stroke-width="2" class="st1" d="M625,243.5H249V145.5H625V243.5z M251,241.5H623V147.5H251V241.5z"/>
+		</g>
+		<g>
+			<g>
+				<g>
+					<polygon class="st1" stroke="#fff" fill="none" stroke-width="2" points="285.33,216.94 284.67,215.06 397.99,174.95 490.99,204.95 588.68,172.23 589.32,174.12 
+						491.01,207.05 398.01,177.05 					"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path class="st1" stroke="#fff" fill="none" stroke-width="2" d="M589,190c-9.37,0-17-7.62-17-17s7.62-17,17-17s17,7.62,17,17S598.37,190,589,190z M589,158
+						c-8.27,0-15,6.73-15,15s6.73,15,15,15s15-6.73,15-15S597.27,158,589,158z"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path class="st1" stroke="#fff" fill="none" stroke-width="2" d="M285,233c-9.37,0-17-7.62-17-17s7.62-17,17-17s17,7.62,17,17S294.37,233,285,233z M285,201
+						c-8.27,0-15,6.73-15,15s6.73,15,15,15s15-6.73,15-15S293.27,201,285,201z"/>
+				</g>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<path class="st1" stroke="#fff" fill="none" stroke-width="2" d="M625,384.5H249V286.5H625V384.5z M251,382.5H623V288.5H251V382.5z"/>
+		</g>
+		<g>
+			<g>
+				<path class="st1" stroke="#fff" fill="none" stroke-width="2" d="M285.53,361.68l-1.07-1.46c43.47-31.88,98.4-42.66,150.69-29.59l57.89,14.47
+					c35.07,8.77,73.34-5.56,95.22-35.64l1.46,1.06c-10.94,15.04-25.86,26.46-43.15,33.01c-17.49,6.63-36.15,7.78-53.97,3.32
+					l-57.89-14.47C382.94,319.45,328.57,330.13,285.53,361.68z"/>
+			</g>
+			<g>
+				<path class="st1" stroke="#fff" fill="none" stroke-width="2" d="M285,371c-5.51,0-10-4.48-10-10s4.48-10,10-10s10,4.48,10,10S290.51,371,285,371z M285,353
+					c-4.41,0-8,3.59-8,8s3.59,8,8,8s8-3.59,8-8S289.41,353,285,353z"/>
+			</g>
+			<g>
+				<path class="st1" stroke="#fff" fill="none" stroke-width="2" d="M589,320c-5.51,0-10-4.48-10-10s4.48-10,10-10s10,4.48,10,10S594.51,320,589,320z M589,302
+					c-4.41,0-8,3.59-8,8s3.59,8,8,8s8-3.59,8-8S593.41,302,589,302z"/>
+			</g>
+			<g>
+				<path class="st1" stroke="#fff" fill="none" stroke-width="2" d="M515,359c-5.51,0-10-4.48-10-10s4.48-10,10-10s10,4.48,10,10S520.51,359,515,359z M515,341
+					c-4.41,0-8,3.59-8,8s3.59,8,8,8s8-3.59,8-8S519.41,341,515,341z"/>
+			</g>
+			<g>
+				<path class="st1" stroke="#fff" fill="none" stroke-width="2" d="M392,336c-5.51,0-10-4.48-10-10s4.48-10,10-10s10,4.48,10,10S397.51,336,392,336z M392,318
+					c-4.41,0-8,3.59-8,8s3.59,8,8,8s8-3.59,8-8S396.41,318,392,318z"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<path class="st1" stroke="#fff" fill="none" stroke-width="2" d="M625,529H249V431H625V529z M251,527H623V433H251V527z"/>
+		</g>
+		<g>
+			<g>
+				<g>
+					
+						<rect x="300.28" y="474" stroke="#fff" fill="none" stroke-width="2" transform="matrix(0.9947 -0.1024 0.1024 0.9947 -46.349 47.2527)" class="st1" width="273.44" height="1.99"/>
+				</g>
+			</g>
+			<g>
+				<polygon stroke="#fff" fill="none" stroke-width="2" class="st1" points="604,509 269,509 269,452 271,452 271,507 604,507 				"/>
+			</g>
+			<g>
+				<path stroke="#fff" fill="none" stroke-width="2" class="st1" d="M301,499c-5.51,0-10-4.48-10-10s4.48-10,10-10s10,4.48,10,10S306.51,499,301,499z M301,481
+					c-4.41,0-8,3.59-8,8s3.59,8,8,8s8-3.59,8-8S305.41,481,301,481z"/>
+			</g>
+			<g>
+				<path stroke="#fff" fill="none" stroke-width="2" class="st1" d="M573,471c-5.51,0-10-4.48-10-10s4.48-10,10-10s10,4.48,10,10S578.51,471,573,471z M573,453
+					c-4.41,0-8,3.59-8,8s3.59,8,8,8s8-3.59,8-8S577.41,453,573,453z"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

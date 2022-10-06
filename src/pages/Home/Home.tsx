@@ -33,7 +33,7 @@ export const Home: React.FC = (props) => {
     }
 
     if (error) {
-        return <h1>Error</h1>
+        return <h1>Something happened</h1>
     }
 
     return (

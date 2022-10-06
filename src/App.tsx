@@ -7,6 +7,7 @@ import { Partners } from './pages/Partners/Partners';
 import { Footer } from './components/Footer/Footer';
 import { NewsPage } from './pages/NewsPage/NewsPage';
 import { NewsDetailPage } from './pages/NewsDetailPage/NewsDetailPage';
+import { BusinessConsulting } from './pages/BusinessConsulting/BusinessConsulting';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path={PagesRoutes.PARTNERS_AND_FEEDBACK} element={<Partners />} />
         <Route path={PagesRoutes.BLOG} element={<NewsPage />} />
         <Route path={PagesRoutes.BLOG + "/:id"} element={<NewsDetailPage />} />
+        <Route path={PagesRoutes.BUSINESS_CONSULTING} element={<BusinessConsulting />} />
       </Routes>
 
       <Footer />

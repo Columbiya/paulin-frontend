@@ -8,7 +8,7 @@ export const Header: React.FC = (props) => {
     const { pathname } = useLocation()
 
     return (
-        <header className={`header ${pathname != PagesRoutes.MAIN ? "header--green": undefined}`}>
+        <header className={`header ${pathname != PagesRoutes.MAIN && pathname != PagesRoutes.BUSINESS_CONSULTING ? "header--green": undefined}`}>
             <div className="container">
                 <div className="header-inner">
                     <NavLink to={PagesRoutes.MAIN}><Logo width={165} /></NavLink>
