@@ -12,6 +12,7 @@
     border-radius: 50px;
 
     position: relative;
+    z-index: 50150;
 
     cursor: pointer;
 
@@ -27,6 +28,20 @@
 
     &:hover {
         transform: scale(.9);
+        z-index: 510501501;
+    }
+
+    &__name {
+        font-size: 3.1rem;
+    }
+
+    &__link {
+        font-size: 1.8rem;
+        text-decoration: underline;
+    }
+
+    &__info {
+        align-self: center;
     }
 
     &.partners-page {
@@ -40,7 +55,31 @@
         transition: height .5s ease;
 
         &:hover {
-            z-index: 500;
+            transform: scale(1);
+        }
+
+        &:nth-child(3n) {
+            transition: transform 1.5s ease;
+
+            &.no-feedback {
+                transition: transform .5s ease;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+
+            &:hover {
+                transform: translateX(-100%);
+            }
+        }
+
+        &.no-feedback {
+            transition: transform .5s ease;
+
+            &:hover {
+                transform: scale(1.1);
+            }
         }
     }
 
@@ -60,6 +99,12 @@
     &__header {
         display: flex;
         justify-content: space-between;
+
+        img {
+            &:last-child {
+                max-width: 220px;
+            }
+        }
     }
 }
 
@@ -72,6 +117,42 @@
     display: none;
     animation: fadeIn .5s ease forwards;
     animation-delay: 1s;
+    box-shadow: 1px 1px 30px #c5c4c4;
+    border-radius: 90px;
+    border-bottom-left-radius: 0;
+    padding: 50px;
+    background: #fff;
+    overflow: hidden;
+    
+    &.visible {
+        display: block;
+        opacity: 1;
+
+        animation: grow 1.5s ease forwards;
+    }
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 123983412837128937;
+    width: 100%;
+    height: 100%;
+}
+
+.feedbacks {
+    h4 {
+        font-weight: 600;
+        font-size: 2.7rem;
+        margin-bottom: 40px;
+    }
+
+    p {
+        font-size: 2.7rem;
+
+        &:not(:last-child) {
+            margin-bottom: 100px;
+        }
+    }
 }
 
 @keyframes fadeIn {
@@ -91,5 +172,17 @@
 
     to {
         opacity: 0;
+    }
+}
+
+@keyframes grow {
+    from {
+        width: 100%;
+        height: 100%;
+    }
+
+    to {
+        width: 200%;
+        height: 200%;
     }
 }

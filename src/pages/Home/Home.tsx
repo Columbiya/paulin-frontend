@@ -17,11 +17,11 @@ import peopleImage from '../../assets/home/people.png'
 import planningImage from '../../assets/home/planning.png'
 import arrowUpImage from '../../assets/home/arrow-up.png'
 import personBars from '../../assets/home/person-bars.svg'
-import requestImage from '../../assets/home/request-image.svg'
 import mainScreenImage from '../../assets/home/main-screen.svg'
 import './Home.scss'
 import { NewsList } from '../../components/NewsList/NewsList'
 import { Preloader } from '../../components/Preloader/Preloader'
+import { RequestSection } from '../../components/RequestSection/RequestSection'
 
 
 export const Home: React.FC = (props) => {
@@ -167,17 +167,7 @@ export const Home: React.FC = (props) => {
                 </div>
             </div>
 
-            <div className="request">
-                <div className="container">
-                    <h2 className="education__title">Оставьте заявку</h2>
-                    
-                    <div className="request__inner">
-                        <RequestForm />
-                    </div>
-                </div>
-
-                <img src={requestImage} className="request__image" alt="" />
-            </div>
+            <RequestSection />
         </main>
     )
 }

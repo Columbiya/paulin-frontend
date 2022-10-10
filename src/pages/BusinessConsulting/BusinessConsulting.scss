@@ -114,6 +114,13 @@
 
         padding: 500px 0;
     }
+
+    &__bg {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
 }
 
 .tool {
@@ -151,6 +158,8 @@
 }
 
 .helps-you {
+    position: relative;
+
     &__inner {
         max-width: 600px;
     }
@@ -181,6 +190,185 @@
         top: 20%;
 
         animation: float 3s ease infinite;
+    }
+
+    &__bg {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        max-width: 750px;
+        z-index: -1;
+    }
+}
+
+.our-clients {
+    position: relative;
+
+    padding-bottom: 140px;
+
+    &__title {
+        font-size: 3.6rem;
+        font-weight: 600;
+
+        max-width: 1100px;
+
+        margin-bottom: 80px;
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &__item {
+        width: 40%;
+        border-radius: 80px;
+        box-shadow: 1px 1px 30px #c5c4c4;
+        background: #fff;
+        padding: 80px 40px 140px;
+    }
+
+    &__list {
+        li {
+            position: relative;
+            padding-left: 60px;
+
+            font-size: 2.7rem;
+
+            &::before {
+                content: "";
+                display: block;
+                width: 20px;
+                height: 3px;
+                background: #000;
+                
+                position: absolute;
+                left: 30px;
+                top: 15px;
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                width: 20px;
+                height: 3px;
+                background: #000;
+                
+                position: absolute;
+                left: 30px;
+                top: 15px;
+                transform: rotate(135deg);
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 40px;
+            }
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+    }
+
+    &__type {
+        font-size: 3.1rem;
+        font-weight: 600;
+
+        margin: 60px;
+    }
+
+    &__image {
+        display: block;
+
+        height: 275px;
+        margin: 0 auto;
+    }
+
+}
+
+.responsibility {
+    position: relative;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__bg {
+        position: absolute;
+        top: 110%;
+        left: 0;
+        transform: translateY(-50%);
+        z-index: -1;
+        max-width: 650px;
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 4.8rem;
+        margin-bottom: 120px;
+        max-width: 500px;
+    }
+
+    &__item {
+        position: relative;
+        width: 45%;
+        border-radius: 90px;
+        border-bottom-left-radius: 0;
+        background: #fff;
+        box-shadow: 1px 1px 30px #c5c4c4;
+
+        padding: 450px 60px 60px;
+
+        &:last-child {
+            padding-top: 120px;
+
+            .responsibility__image {
+                top: 70%;
+                animation: float 3s ease infinite;
+                left: 10%;
+            }
+        }
+    }
+
+    &__image {
+        position: absolute;
+        top: -150px;
+        left: 62%;
+        width: 80%;
+        transform: translateX(-50%);
+    }
+
+    &__subtitle {
+        font-weight: 600;
+        font-size: 6rem;
+        margin-bottom: 50px;
+    }
+}
+
+.you-can {
+    &__inner {
+        display: flex;
+        align-items: center;
+
+        max-width: 1100px;
+        margin: 300px auto;
+
+        img {
+            max-width: 220px;
+        }
+    }
+
+    &__text {
+        max-width: 850px;
+        font-weight: 600;
+        font-size: 3.6rem;
+        margin-left: 70px;
     }
 }
 

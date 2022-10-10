@@ -47,7 +47,7 @@ export const NewsDetailPage: React.FC = (props) => {
             <div className="container">
                 <div className="news-detail">
                     <div className="news-detail__left">
-                        <img src={`${env.BACKEND_URL}/${news?.image}`} alt="" />
+                        <img src={`${env.BACKEND_URL}:5000/${news?.image}`} alt="" />
                     </div>
 
                     <div className="news-detail__text">

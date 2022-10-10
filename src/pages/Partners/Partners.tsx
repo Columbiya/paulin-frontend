@@ -34,7 +34,10 @@ export const Partners: React.FC = (props) => {
             <div className="container">
                 <div className="partners-page">
                     {items?.map(partner => (
-                        <PartnerItem {...partner} key={partner.id} partnersPage />
+                        <>
+                            <PartnerItem {...partner} key={partner.id} partnersPage />
+                            <PartnerItem {...partner} key={partner.id} partnersPage />
+                        </>
                     ))}   
                 </div>
             </div>
