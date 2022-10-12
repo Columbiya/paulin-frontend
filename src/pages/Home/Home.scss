@@ -253,3 +253,46 @@
         margin-top: 70px;
     }
 }
+
+.gear-wheel {
+    position: absolute; 
+    top: 340px;
+    left: 360px;
+    width: 250px;
+
+    animation: rotate linear 3s infinite;
+
+    &.left {
+        left: -75px;
+    }
+
+    &.large {
+        width: 400px;
+        left: 1010px;
+        top: 390px;
+
+        animation-direction: reverse;
+    }
+}
+
+.home__bg-green {
+    position: absolute; 
+    top: 15%;
+    left: 0;
+    z-index: -2;
+    width: 100%;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0);
+    }
+}

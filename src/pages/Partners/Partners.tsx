@@ -36,7 +36,6 @@ export const Partners: React.FC = (props) => {
                     {items?.map(partner => (
                         <>
                             <PartnerItem {...partner} key={partner.id} partnersPage />
-                            <PartnerItem {...partner} key={partner.id} partnersPage />
                         </>
                     ))}   
                 </div>

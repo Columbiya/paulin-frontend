@@ -1,10 +1,11 @@
 .partners-page {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
 
     & > div {
         margin-top: 65px;
+
+        margin-right: 50px;
 
         &:nth-child(1) {
             margin-top: 0;

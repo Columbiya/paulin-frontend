@@ -22,6 +22,28 @@
 	.st16{fill:url(#SVGID_9_);}
 	.st17{fill:url(#SVGID_10_);}
 </style>
+
+<style>
+
+	@keyframes float {
+		from {
+			transform: translateY(0);
+		}
+
+		50% {
+			transform: translateY(25px);
+		}
+
+		to {
+			transform: translateY(0);
+		}
+	}
+
+	#hat {
+		animation: float 3s ease infinite; 
+	}
+
+</style>
 <g>
 	
 		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-1369.7695" y1="-667.5185" x2="-582.5676" y2="-667.5185" gradientTransform="matrix(0.8614 -0.0318 -0.0318 0.8029 1313.3605 1208.2183)">
@@ -210,7 +232,7 @@
 				C495.22,632.54,494.91,632.99,494.79,633.52L494.79,633.52z"/>
 		</g>
 	</g>
-	<g>
+	<g id="hat">
 		<g>
 			<path class="st11" d="M83.31,718.3l68.38-58.42l0.29-0.06l87.78-16.72l-65.73,61.04l-0.34,0.05L83.31,718.3z M152.71,661.98
 				l-61.88,52.86l82.18-12.82l59.48-55.24L152.71,661.98z"/>

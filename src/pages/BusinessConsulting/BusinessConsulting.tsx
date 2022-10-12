@@ -49,66 +49,66 @@ export const BusinessConsulting: React.FC = (props) => {
 
             <div className="business">
                 <div className="container">
-                    <p className='business__text'>
+                    <p className='business__text' data-aos="fade-right">
                         Успешный бизнес, который не требует беспрерывного участия владельца 
                         и при этом приносящий постоянный, прогнозированный доход – не мечта, 
                         а совокупность последовательных действий.
                     </p>
 
-                    <p className='business__text large'>
+                    <p className='business__text large' data-aos="fade-right">
                         Мы делаем это с помощью инструметов управления: 
                     </p>
 
                     <div className="business__tools">
-                        <div className="tool__item">
+                        <div className="tool__item" data-aos="fade-in">
                             <img alt="" className="tool__check" src={checkPurple} width={110} />
 
                             <p className="tool__name">Система координаций</p>
                             <p className="tool__text">Действия членов команды будут согласованы</p>
                         </div>
-                        <div className="tool__item">
+                        <div className="tool__item" data-aos="fade-in">
                             <img alt="" className="tool__check" src={checkOrange} width={110} />
 
                             <p className="tool__name">Система оперативной передачи функций</p>
                             <p className="tool__text">Новых сотрудников будет легче ввести в должность</p>
                         </div>
-                        <div className="tool__item">
+                        <div className="tool__item" data-aos="fade-in">
                             <img alt="" className="tool__check" src={checkGreen} width={110} />
 
                             <p className="tool__name">Система координаций</p>
                             <p className="tool__text">Действия членов команды будут согласованы</p>
                         </div>
-                        <div className="tool__item">
+                        <div className="tool__item" data-aos="fade-in">
                             <img alt="" className="tool__check" src={checkGreen} width={110} />
 
                             <p className="tool__name">Система координаций</p>
                             <p className="tool__text">Действия членов команды будут согласованы</p>
                         </div>
-                        <div className="tool__item">
+                        <div className="tool__item" data-aos="fade-in">
                             <img alt="" className="tool__check" src={checkBlue} width={110} />
 
                             <p className="tool__name">Система координаций</p>
                             <p className="tool__text">Действия членов команды будут согласованы</p>
                         </div>
-                        <div className="tool__item">
+                        <div className="tool__item" data-aos="fade-in">
                             <img alt="" className="tool__check" src={checkOrange} width={110} />
 
                             <p className="tool__name">Система координаций</p>
                             <p className="tool__text">Действия членов команды будут согласованы</p>
                         </div>
-                        <div className="tool__item">
+                        <div className="tool__item" data-aos="fade-in">
                             <img alt="" className="tool__check" src={checkOrange} width={110} />
 
                             <p className="tool__name">Система координаций</p>
                             <p className="tool__text">Действия членов команды будут согласованы</p>
                         </div>
-                        <div className="tool__item">
+                        <div className="tool__item" data-aos="fade-in">
                             <img alt="" className="tool__check" src={checkGreen} width={110} />
 
                             <p className="tool__name">Система координаций</p>
                             <p className="tool__text">Действия членов команды будут согласованы</p>
                         </div>
-                        <div className="tool__item">
+                        <div className="tool__item" data-aos="fade-in">
                             <img alt="" className="tool__check" src={checkPurple} width={110} />
 
                             <p className="tool__name">Система координаций</p>
@@ -126,8 +126,8 @@ export const BusinessConsulting: React.FC = (props) => {
             <div className="business__helps-you">
                 <div className="container">
                     <div className="helps-you__inner">
-                        <h4 className="helps-you__title">Эти инструменты помогут создать систему эффективного бизнеса.</h4>
-                        <p className="helps-you__text">У вас появится сильная команда, которая возьмет на себя исполнительные задачи, 
+                        <h4 className="helps-you__title" data-aos="fade-right">Эти инструменты помогут создать систему эффективного бизнеса.</h4>
+                        <p className="helps-you__text" data-aos="fade-right">У вас появится сильная команда, которая возьмет на себя исполнительные задачи, 
                             а у вас будет больше свободного времени, чтобы заниматься только своими прямыми обязанностями</p>
                     </div>
                 </div>
@@ -140,60 +140,60 @@ export const BusinessConsulting: React.FC = (props) => {
 
             <div className="business__our-clients our-clients">
                 <div className="container">
-                    <h4 className="our-clients__title">
+                    <h4 className="our-clients__title" data-aos="fade-right">
                         К нам обращаются владельцы бизнеса, которые хотят решить следующие проблемы:
                     </h4>
 
                     <div className="our-clients__inner">
-                        <div className="our-clients__item">
+                        <div className="our-clients__item" data-aos="zoom-in">
                             <img src={loop} className="our-clients__image" alt="" />
 
                             <h5 className="our-clients__type">Финансы</h5>
 
                             <ul className='our-clients__list list wrong'>
-                                <li>
+                                <li data-aos="fade-right">
                                     Кассовые разделы
                                 </li>
-                                <li>
+                                <li data-aos="fade-right">
                                     Отсутствие дивидендов у владельцев
                                 </li>
-                                <li>
+                                <li data-aos="fade-right">
                                     Доход как "американские горки" - то есть, то нет
                                 </li>
-                                <li>
+                                <li data-aos="fade-right">
                                     Высокий уровень оборотов, но на счетах денег не остается
                                 </li>
-                                <li>
+                                <li data-aos="fade-right">
                                     Большой ФОТ
                                 </li>
-                                <li>
+                                <li data-aos="fade-right">
                                     Отсутствие понимания "на чем компания теряет деньги?"
                                 </li>
                             </ul>
                         </div>
 
-                        <div className="our-clients__item">
+                        <div className="our-clients__item" data-aos="zoom-in">
                             <img src={personQuestionMark} className="our-clients__image" alt="" />
 
                             <h5 className="our-clients__type">Персонал</h5>
 
                             <ul className='our-clients__list list wrong'>
-                                <li>
+                                <li data-aos="fade-left">
                                     Руководителю приходится решать вопросы за сотрудников
                                 </li>
-                                <li>
+                                <li data-aos="fade-left">
                                     Постоянное "тушение пожаров" из за недоделок сотрудников
                                 </li>
-                                <li>
+                                <li data-aos="fade-left">
                                     Незнание "как нанимать?" и "кого нанимать?"
                                 </li>
-                                <li>
+                                <li data-aos="fade-left">
                                     Нет понимания "когда пора увольнять"
                                 </li>
-                                <li>
+                                <li data-aos="fade-left">
                                     Нет понимания "кто за что отвечает" - ни у владельца, ни у сотрудника
                                 </li>
-                                <li>
+                                <li data-aos="fade-left">
                                     Как измерить результат работы сотрудника
                                 </li>
                             </ul>
@@ -206,55 +206,53 @@ export const BusinessConsulting: React.FC = (props) => {
 
             <div className="responsibility">
                 <div className="container">
-                    <h4 className="responsibility__title">Обязанности владельца бизнеса</h4>
+                    <h4 className="responsibility__title" data-aos="fade-right">Обязанности владельца бизнеса</h4>
 
                     <div className="responsibility__inner">
-                        <div className="responsibility__item">
+                        <div className="responsibility__item" data-aos="fade-up">
                             <object data={personWithCart} className="responsibility__image"></object>
 
                             <h5 className="responsibility__subtitle">ДО систематизации</h5>
                             <ul className="our-clients__list list wrong">
-                                <li>
-                                    Руководителю приходится решать вопросы за сотрудников
+                                <li data-aos="fade-right">
+                                    Обслуживание клиентов: заключение договоров, презентация товаров и услуг
                                 </li>
-                                <li>
-                                    Постоянное "тушение пожаров" из за недоделок сотрудников
+                                <li data-aos="fade-right">
+                                    Найм сотрудников: поиск кандидатов, проведение собеседований, введение в должность
                                 </li>
-                                <li>
-                                    Незнание "как нанимать?" и "кого нанимать?"
+                                <li data-aos="fade-right">
+                                    Производство продукта: от составления технического задания до упаковки
                                 </li>
-                                <li>
-                                    Нет понимания "когда пора увольнять"
+                                <li data-aos="fade-right">
+                                    Разработка рекламных кампаний: генерация идей для привлечения клиентов, создание рекламных материалов, анализ показателей
                                 </li>
-                                <li>
-                                    Нет понимания "кто за что отвечает" - ни у владельца, ни у сотрудника
-                                </li>
-                                <li>
-                                    Как измерить результат работы сотрудника
+                                <li data-aos="fade-right">
+                                    Вести соцсети компании: писать посты, делать Stories, общаться с подписчиками
                                 </li>
                             </ul>
                         </div>
-                        <div className="responsibility__item">
+                        <div className="responsibility__item" data-aos="fade-up">
                             <object data={personWithRocket} className="responsibility__image"></object>
 
-                            <h5 className="responsibility__subtitle">ДО систематизации</h5>
-                            <ul className="our-clients__list list wrong">
-                                <li>
+                            <h5 className="responsibility__subtitle">ПОСЛЕ систематизации</h5>
+                            <p className="responsibility__item-text">Работа над стратегией компании:</p>
+                            <ul className="our-clients__list list right">
+                                <li data-aos="fade-left">
                                     Руководителю приходится решать вопросы за сотрудников
                                 </li>
-                                <li>
+                                <li data-aos="fade-left">
                                     Постоянное "тушение пожаров" из за недоделок сотрудников
                                 </li>
-                                <li>
+                                <li data-aos="fade-left">
                                     Незнание "как нанимать?" и "кого нанимать?"
                                 </li>
-                                <li>
+                                <li data-aos="fade-left">
                                     Нет понимания "когда пора увольнять"
                                 </li>
-                                <li>
+                                <li data-aos="fade-left">
                                     Нет понимания "кто за что отвечает" - ни у владельца, ни у сотрудника
                                 </li>
-                                <li>
+                                <li data-aos="fade-left">
                                     Как измерить результат работы сотрудника
                                 </li>
                             </ul>
@@ -268,8 +266,8 @@ export const BusinessConsulting: React.FC = (props) => {
             <section className="you-can">
                 <div className="container">
                     <div className="you-can__inner">
-                        <img src={checkPurple} alt="" />
-                        <div className="you-can__text">
+                        <img src={checkPurple} alt="" data-aos="fade-in" />
+                        <div className="you-can__text" data-aos="fade-up">
                             <p>
                                 Вы сможете автоматизировать бизнес во время прохождения 
                                 годовой программы по внедрению системы управления

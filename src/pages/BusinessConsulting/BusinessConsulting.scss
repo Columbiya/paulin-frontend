@@ -229,37 +229,58 @@
     }
 
     &__list {
+        &.wrong {
+            li {
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 20px;
+                    height: 3px;
+                    background: #000;
+                    
+                    position: absolute;
+                    left: 30px;
+                    top: 15px;
+                    transform: rotate(45deg);
+                }
+    
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 20px;
+                    height: 3px;
+                    background: #000;
+                    
+                    position: absolute;
+                    left: 30px;
+                    top: 15px;
+                    transform: rotate(135deg);
+                }
+            }
+        }
+
+        &.right {
+            li {
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 10px;
+                    height: 20px;
+                    border-bottom: 3px solid #000;
+                    border-right: 3px solid #000;
+                    
+                    position: absolute;
+                    left: 30px;
+                    top: 15px;
+                    transform: rotate(45deg);
+                }
+            }
+        }
         li {
             position: relative;
             padding-left: 60px;
 
             font-size: 2.7rem;
-
-            &::before {
-                content: "";
-                display: block;
-                width: 20px;
-                height: 3px;
-                background: #000;
-                
-                position: absolute;
-                left: 30px;
-                top: 15px;
-                transform: rotate(45deg);
-            }
-
-            &::after {
-                content: "";
-                display: block;
-                width: 20px;
-                height: 3px;
-                background: #000;
-                
-                position: absolute;
-                left: 30px;
-                top: 15px;
-                transform: rotate(135deg);
-            }
 
             &:not(:last-child) {
                 margin-bottom: 40px;
@@ -325,11 +346,17 @@
 
         padding: 450px 60px 60px;
 
+        &-text {
+            font-size: 2.7rem;
+
+            margin-bottom: 20px;
+        }
+
         &:last-child {
             padding-top: 120px;
 
             .responsibility__image {
-                top: 70%;
+                top: 80%;
                 animation: float 3s ease infinite;
                 left: 10%;
             }
@@ -342,6 +369,8 @@
         left: 62%;
         width: 80%;
         transform: translateX(-50%);
+
+        animation: move 5s ease-in-out infinite;
     }
 
     &__subtitle {
@@ -389,6 +418,20 @@
 
     to {
         transform: rotate(0);
+    }
+}
+
+@keyframes move {
+    from {
+        transform: translateX(-50%);
+    }
+
+    50% {
+        transform: translateX(calc(-50% - 25px))
+    }
+
+    from {
+        transform: translateX(-50%);
     }
 }
 

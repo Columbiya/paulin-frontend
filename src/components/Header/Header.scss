@@ -44,12 +44,17 @@
 }
 
 .nav {
+    display: flex;
+
     a {
+        display: block;
         color: #fff;
         font-weight: 500;
         font-size: 20px;
 
         position: relative;
+
+        cursor: pointer;
 
         &:not(:last-child) {
             margin-right: 66px;
@@ -73,6 +78,15 @@
             transform: scale(0);
 
             transition: transform .3s ease;
+        }
+    }
+
+    &__link-soon {
+        width: 230px;
+        text-align: center;
+
+        &:hover::after {
+            transform: scale(0) !important;
         }
     }
 }

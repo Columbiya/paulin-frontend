@@ -1,31 +1,39 @@
 import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { PagesRoutes } from '../../routes'
 import instagramBlue from '../../assets/footer/instagram-blue.svg'
 import instagramPurple from '../../assets/footer/instagram-purple.svg'
 import telegram from '../../assets/footer/telegram.svg'
 import './Footer.scss'
+import { scrollToTopAndNavigate } from '../../helpers/scrollToTopAndNavigate'
 
 export const Footer: React.FC = (props) => {
+    const navigate = useNavigate()
+    const navigateTo = (path: PagesRoutes) => {
+        scrollToTopAndNavigate(() => navigate(path))
+    }
     const { pathname } = useLocation()
     
 
     return (
-        <footer className={`footer ${pathname != PagesRoutes.MAIN && pathname != PagesRoutes.BUSINESS_CONSULTING ? 'footer--gradient': undefined}`}>
+        <footer 
+            className={`footer ${pathname != PagesRoutes.MAIN && pathname != PagesRoutes.BUSINESS_CONSULTING ? 'footer--gradient': undefined}`}
+            style={pathname == PagesRoutes.AUTH || pathname == PagesRoutes.ADMIN_PANEL ? {display: 'none'}: undefined}
+        >
             <div className="container">
                 <div className="footer__inner">
                     <nav className="footer__left">
                         <div className="footer__col col">
-                            <Link to={PagesRoutes.MAIN}>Главная страница</Link>
-                            <Link to={PagesRoutes.BUSINESS_CONSULTING}>Бизнес-консалтинг</Link>
-                            <Link to={PagesRoutes.EDUCATION}>Обучение экспертов</Link>
+                            <a onClick={() => navigateTo(PagesRoutes.MAIN)}>Главная страница</a>
+                            <a onClick={() => navigateTo(PagesRoutes.BUSINESS_CONSULTING)}>Бизнес-консалтинг</a>
+                            <a onClick={() => navigateTo(PagesRoutes.EDUCATION)}>Обучение экспертов</a>
                             <div className="col__bottom">
-                                <a href="mailto:info@paulin.commnsulting">info@paulin.commnsulting</a>
+                                <a href="mailto:info@paulin.consulting">info@paulin.commnsulting</a>
                             </div>
                         </div>
                         <div className="footer__col col">
-                            <Link to={PagesRoutes.PARTNERS_AND_FEEDBACK}>Партнеры и отзывы</Link>
-                            <Link to={PagesRoutes.BLOG}>Блог</Link>
+                            <a onClick={() => navigateTo(PagesRoutes.PARTNERS_AND_FEEDBACK)}>Партнеры и отзывы</a>
+                            <a onClick={() => navigateTo(PagesRoutes.BLOG)}>Блог</a>
                             <div className="col__bottom">
                                 <p>ИП Линяева И.В.</p>
                             </div>

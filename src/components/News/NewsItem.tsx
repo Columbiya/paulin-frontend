@@ -17,7 +17,7 @@ export const NewsItem: React.FC<NewsProps> = ({ id, image, text, title }) => {
 
     return (
         <div className="news-item" onClick={navigateToItem}>
-            <h2>{title}</h2>
+            <h2 className="news-item__title">{title}</h2>
             <img src={`${env.BACKEND_URL}:5000/${image}`} alt="" className="news-item__image" />
         </div>
     )

@@ -14,7 +14,7 @@ interface FormValues {
 }
 
 export const RequestForm: React.FC = (props) => {
-    const { register, handleSubmit, formState: { errors } } = useForm<FormValues>()
+    const { register, handleSubmit, formState: { errors }, setValue } = useForm<FormValues>()
 
     const onSubmit: SubmitHandler<FormValues> = (data) => {
         console.log(data)
@@ -51,7 +51,9 @@ export const RequestForm: React.FC = (props) => {
             <Input 
                 register={register}
                 fieldName="serviceType"
+                setValue={setValue}
                 name="Тип услуги"
+                isDropdown
                 isRequired  
                 error={errors.serviceType}
             />
@@ -67,11 +69,11 @@ export const RequestForm: React.FC = (props) => {
                 fieldName="email"
                 name="Email"
                 isRequired
-                validate={validateEmail}
+                validate={{email: validateEmail}}
                 error={errors.email}
             />
 
-            <Button isWhite>Send request</Button>
+            <Button isWhite>Отправить заявку</Button>
         </form>
     )
 } 

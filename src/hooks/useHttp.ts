@@ -1,13 +1,16 @@
+import { AxiosRequestHeaders } from "axios"
 import { storeAnnotation } from "mobx/dist/internal"
 import { useEffect, useState } from "react"
+import { authAxios } from "../http/authAxios"
 import { myAxios } from "../http/axios"
 import { News } from "../schemas/News"
 import { Partner } from "../schemas/Partner"
+import { authStore } from "../store/authStore"
 import { newsStore } from "../store/newsStore"
 import { partnersStore } from "../store/partnersStore"
 
-type schemas = News[] | Partner[] | News | Partner
-type stores = typeof newsStore | typeof partnersStore
+type schemas = News[] | Partner[] | News | Partner | boolean
+type stores = typeof newsStore | typeof partnersStore | typeof authStore
 
 export enum Methods {
     GET = 'GET',
@@ -20,24 +23,47 @@ interface IUseHttp {
     link: string
     method: Methods,
     useAuth: boolean
-    store: stores
+    store: stores | null
+    body?: object
+    headers?: AxiosRequestHeaders
+    isLazy?: boolean
+    periodic?: boolean
+    delay?: number
 }
 
+type HttpReturnType<T> = [T | null, boolean, Error | undefined, ((body: any, id?: number) => Promise<void>) | undefined]
 
-export function useHttp<T extends schemas>({ link, method, useAuth, store }: IUseHttp): [T | null, boolean, Error | undefined] {
+
+export function useHttp<T extends schemas>({ link, method, store, body, headers, isLazy, delay, periodic }: IUseHttp): HttpReturnType<T> {
     const [items, setItems] = useState<T | null>(null)
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
     const [error, setError] = useState<Error>()
 
+    const create = async (body: any, id?: number) => {
+        try {
+            setLoading(true)
+            const data = await authAxios({method, url: link + `/${id ? id: ""}`, headers, data: body}).then(response => response.data)
+            setItems(data)
+        } catch(e: any) {
+            setError(e.message)
+        } finally {
+            setLoading(false)
+        }
+    }
+
     useEffect(() => {
-        if (store.items.length) {
+        if (isLazy || !store) {
+            return
+        }
+
+        if (Array.isArray(store.items) && store.items.length) {
             setItems(store.items as T)
         }
 
         const makeHttp = async () => {
             try {
                 setLoading(true)
-                const data = await myAxios({method, url: link}).then(response => response.data)
+                const data = await myAxios({method, url: link, headers}).then(response => response.data)
                 if (Array.isArray(data)) {
                     store.items = data
                 }
@@ -56,8 +82,14 @@ export function useHttp<T extends schemas>({ link, method, useAuth, store }: IUs
         }
 
         makeHttp()
+
+        if (periodic) {
+            setTimeout(makeHttp, delay)
+        }
     }, [])
 
-    return [items, loading, error]
+    const lazyLoadFunction = isLazy ? create: undefined
+
+    return [items, loading, error, lazyLoadFunction]
 
 }

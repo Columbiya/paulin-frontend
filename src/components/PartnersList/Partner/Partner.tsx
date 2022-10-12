@@ -16,7 +16,7 @@ export const PartnerItem: React.FC<PartnerProps> = ({ id, logo, link, name, part
     return (
         <>
             <div 
-                className={`partner-item ${partnersPage ? 'partners-page': undefined} ${isOver ? "over": undefined} ${!partnersFeedback ? 'no-feedback': undefined}`}
+                className={`partner-item ${partnersPage ? 'partners-page': undefined} ${isOver ? "over": undefined} ${!partnersFeedback || !partnersPage ? 'no-feedback': undefined}`}
                 onMouseEnter={() => setOver(true)}
                 onMouseLeave={() => setOver(false)}
             >
@@ -30,7 +30,7 @@ export const PartnerItem: React.FC<PartnerProps> = ({ id, logo, link, name, part
                     
                 {/* не показывать если нет фидбака */}
 
-                {partnersFeedback && <div className={`fade-in ${isOver ? 'visible': undefined}`}>
+                {partnersFeedback && partnersPage && <div className={`fade-in ${isOver ? 'visible': undefined}`}>
                     <header className="partner-item__header">
                         <img src={`${env.BACKEND_URL}:5000/${logo}`} alt={name} />
 
@@ -44,11 +44,11 @@ export const PartnerItem: React.FC<PartnerProps> = ({ id, logo, link, name, part
                     <div className="feedbacks">
                         <h4>Отзыв клиента</h4>
                         <p>
-                            {partnersFeedback?.text}
+                            {partnersFeedback?.text.split('\n').map(p => <p>{p}</p>)}
                         </p>
                         <h4>Отзыв эксперта</h4>
                         <p>
-                            {partnersFeedback?.expert}
+                            {partnersFeedback?.expert.split('\n').map(p => <p>{p}</p>)}
                         </p>
                     </div>  
                 </div>}

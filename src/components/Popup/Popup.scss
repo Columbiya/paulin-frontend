@@ -1,0 +1,27 @@
+.popup {
+    max-width: 50%;
+    width: 100%;
+    padding: 75px;
+    border-radius: 120px;
+    background: #fff;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5250000;
+}
+
+.black-background {
+    background-color: rgba(#000, .5);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1500;
+}
+
+.popup-title {
+    font-size: 3.5rem;
+}
