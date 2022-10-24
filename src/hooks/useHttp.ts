@@ -45,7 +45,7 @@ export function useHttp<T extends schemas>({ link, method, store, body, headers,
             const data = await authAxios({method, url: link + `/${id ? id: ""}`, headers, data: body}).then(response => response.data)
             setItems(data)
         } catch(e: any) {
-            setError(e.message)
+            setError(e)
         } finally {
             setLoading(false)
         }
@@ -53,6 +53,7 @@ export function useHttp<T extends schemas>({ link, method, store, body, headers,
 
     useEffect(() => {
         if (isLazy || !store) {
+            setLoading(false)
             return
         }
 
@@ -73,7 +74,6 @@ export function useHttp<T extends schemas>({ link, method, store, body, headers,
                 setItems(data)
             } catch(e) {
                 if (e instanceof Error) {
-                    console.log(e)
                     setError(e)
                 }
             } finally {

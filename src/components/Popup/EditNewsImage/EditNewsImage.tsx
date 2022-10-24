@@ -13,25 +13,28 @@ export interface CreateChapterProps {
 }
 
 interface CreateChapterValues {
-    partnerId: number
+    image: FileList
+    newsId: number
 }
 
-export const DeletePartner: React.FC<CreateChapterProps> = ({ onHide, setSuccess }) => {
+export const EditNewsImage: React.FC<CreateChapterProps> = ({ onHide, setSuccess, setError }) => {
     const { register, handleSubmit, formState: { errors }, reset, setValue } = useForm<CreateChapterValues>()
     const [isSafeToReset, setSafeToReset] = useState(false)
     const [item, loading, error, lazyLoadFunc] = useHttp(
-        {link: '/partners', method: Methods.DELETE, useAuth: true, isLazy: true, store: null}
+        {link: '/news', method: Methods.PUT, useAuth: true, isLazy: true, store: null}
     )
     const [news, newsLoading, newsError] = useHttp<News[]>(
-        {link: '/partners', method: Methods.GET, store: newsStore, useAuth: false}
+        {link: '/news', method: Methods.GET, store: newsStore, useAuth: false}
     )
 
     const onSubmit: SubmitHandler<CreateChapterValues> = async (data) => {
+        const body = data
+        const formData = new FormData()
+        formData.append('image', data.image[0])
+        formData.append('id', data.newsId.toString())
+
         if (lazyLoadFunc) {
-            await lazyLoadFunc(null, data.partnerId)
-            setSafeToReset(true)
-            onHide()
-            setSuccess("News удален успешно")
+            await lazyLoadFunc(formData, data.newsId)
         }
     }
 
@@ -42,21 +45,43 @@ export const DeletePartner: React.FC<CreateChapterProps> = ({ onHide, setSuccess
         setSafeToReset(false)
     }, [isSafeToReset])
 
+    useEffect(() => {
+        if (error) {
+            setError(error.message)  
+            setSafeToReset(true)
+            onHide()      
+        }
+        else if (!error && item) {
+            setSuccess("News Image успешно изменен")  
+            setSafeToReset(true)
+            onHide()   
+        }
+    }, [error, item])
+
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-            <h3 className="popup-title">Delete Partner</h3>
+            <h3 className="popup-title">Edit News' image</h3>
 
             <Input 
-                fieldName='partnerId'
+                fieldName='image'
+                name="Image"
+                register={register}
+                isRequired
+                error={errors.image}
+                type="file"
+            />
+
+            <Input 
+                fieldName='newsId'
                 name="Partners available"
                 register={register}
-                placeholder="Выберите Partner, который будет удален"
+                placeholder="Выберите News, который будет изменен"
                 isDropdown
                 setValue={setValue}
                 options={news ? news: undefined}
             />
 
-            <Button style={{marginTop: 50, width: "100%"}}>Delete Partner</Button>
+            <Button style={{marginTop: 50, width: "100%"}}>Edit News Image</Button>
         </form>
     )
 } 

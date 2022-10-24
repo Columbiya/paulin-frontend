@@ -37,7 +37,7 @@ export const Button: React.FC<ButtonProps> = ({ children, isFilled, isWhite,
             onClick={onClick}
             style={style}
         >
-            {soon && isOver ? "soon": children}
+            {soon && isOver ? "СКОРО!": children}
         </button>
     )
 } 

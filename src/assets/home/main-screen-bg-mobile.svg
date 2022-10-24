@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 320 860.3" style="enable-background:new 0 0 320 860.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{clip-path:url(#SVGID_2_);}
+	.st1{fill:url(#подложка_1_1_);}
+	.st2{fill:url(#подложка_2_1_);}
+	.st3{fill:url(#подложка_3_1_);}
+</style>
+<g>
+	<defs>
+		<rect id="SVGID_1_" y="0" width="320" height="860.3"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	<g class="st0">
+		
+			<linearGradient id="подложка_1_1_" gradientUnits="userSpaceOnUse" x1="-355.9999" y1="967.3812" x2="-355.9999" y2="77.8454" gradientTransform="matrix(1 0 0 1 0 2)">
+			<stop  offset="0" style="stop-color:#0F9EA8"/>
+			<stop  offset="0.4412" style="stop-color:#16A7A1"/>
+			<stop  offset="1" style="stop-color:#1AAD9D"/>
+		</linearGradient>
+		<path id="подложка_1" class="st1" d="M-1248.3,0v491.7c0,339.9,520.5,500.1,1120.3,328.2c98.9-28.3,197.7-39,296.3-3.8
+			c39,13.9,72.5,28.8,72.5,28.8s20.1-41.2,50.4-66c35-28.8,81.3-66.7,117.9-95.7c72.5-57.5,127.3-173.9,127.3-256.5V0H-1248.3
+			L-1248.3,0z"/>
+		
+			<linearGradient id="подложка_2_1_" gradientUnits="userSpaceOnUse" x1="-846.773" y1="395.375" x2="520.44" y2="395.375" gradientTransform="matrix(1 0 0 1 0 2)">
+			<stop  offset="0" style="stop-color:#FFAD39"/>
+			<stop  offset="0.2885" style="stop-color:#F69E54"/>
+			<stop  offset="0.7557" style="stop-color:#E8887B"/>
+			<stop  offset="1" style="stop-color:#E3808A"/>
+		</linearGradient>
+		<path id="подложка_2" class="st2" d="M520.4,0H-839.6c-51.1,264.8,187.3,231.9,199.3,351.8c18,178.7,232,340.8,475.9,272
+			c105.9-29.9,270.8,32.7,381,141.2c3.7,3.6,17.6,21.1,27,29.7l-0.1-25.3c0,0-5.4-178.9,99.8-228.2
+			c62.9-29.4,101.5-67.3,125.1-104.8c37-58.9,37-131.3,1.8-191.1C444.3,201.5,462.7,105.8,520.4,0z"/>
+		
+			<linearGradient id="подложка_3_1_" gradientUnits="userSpaceOnUse" x1="-571.8075" y1="361.4709" x2="430.3781" y2="361.4709" gradientTransform="matrix(1 0 0 1 0 2)">
+			<stop  offset="0" style="stop-color:#F06C99"/>
+			<stop  offset="0.2233" style="stop-color:#E260AE"/>
+			<stop  offset="0.7376" style="stop-color:#C648D8"/>
+			<stop  offset="1" style="stop-color:#BB3FE9"/>
+		</linearGradient>
+		<path id="подложка_3" class="st3" d="M328.9,206.8c-1-0.2-1.9-0.5-2.9-0.7c-8-1.8-14.3-4.6-17.4-5.7
+			c-36.7-13.8-57.4-57.4-46.7-98.2l3.9-14.7c7.9-37.9,4.4-66.3-5.1-87.6h-700.3c-32.6,3.9-66.7,41.5-90.9,72
+			c-28.3,35.7-43.3,82.3-41.2,130.4c0,0.3,0,0.6,0,0.9c8.2,178.3,208.4,116.4,226.2,206.8c27.8,141.5,169,183.1,338.6,182.4
+			c94.1-0.4,75.5,104,180.4,132.7c21.4,5.9,67-4.8,67-4.8s-27.6-114.2,91.5-216.6c23.4-20.1,43.4-38.6,59.9-56.1
+			C464.7,370.5,428.8,231.4,328.9,206.8z"/>
+	</g>
+</g>
+</svg>

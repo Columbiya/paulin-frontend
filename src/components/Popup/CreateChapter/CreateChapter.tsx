@@ -9,9 +9,11 @@ import { Input } from '../../Input/Input'
 export interface CreateChapterProps {
     onHide: () => void
     setSuccess: (value: string) => void
+    setError: (val: string) => void
 }
 
 interface CreateChapterValues {
+    name: string
     text: string
     newId: number
 }
@@ -30,7 +32,7 @@ export const CreateChapter: React.FC<CreateChapterProps> = ({ onHide, setSuccess
         const body = data
 
         if (lazyLoadFunc) {
-            await lazyLoadFunc({text: data.text}, data.newId)
+            await lazyLoadFunc({text: data.text, name: data.name}, data.newId)
             setSafeToReset(true)
             onHide()
             setSuccess("Chapter создана успешно")
@@ -55,6 +57,14 @@ export const CreateChapter: React.FC<CreateChapterProps> = ({ onHide, setSuccess
                 isRequired
                 error={errors.text}
                 type="textarea"
+            />
+
+            <Input 
+                fieldName='name'
+                name="Name"
+                register={register}
+                isRequired
+                error={errors.name}
             />
 
             <Input 

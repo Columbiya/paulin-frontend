@@ -3,10 +3,14 @@ import './Popup.scss'
 
 interface PopupProps {
     children: React.ReactNode
+    isWhite?: boolean
+    isWide?: boolean
     onHide: () => void
 }
 
-export const Popup: React.FC<PopupProps> = ({children, onHide}) => {
+export const Popup: React.FC<PopupProps> = ({ children, onHide, isWhite, isWide }) => {
+    const wideClasses = isWide ? "popup--wide": undefined
+    const whiteClasses = isWhite ? "black-background--white": undefined
     
     useEffect(() => {
         const hidePopup = (e: MouseEvent) => {
@@ -25,8 +29,8 @@ export const Popup: React.FC<PopupProps> = ({children, onHide}) => {
     }, [onHide])
 
     return (
-        <div className="black-background">
-            <div className="popup">
+        <div className={`black-background ${whiteClasses}`}>
+            <div className={`popup ${wideClasses}`}>
                 {children}
             </div>
         </div>

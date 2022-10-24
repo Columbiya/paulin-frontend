@@ -17,5 +17,48 @@
             
             margin: 0 auto;
         }
+
+        &-popup {
+            max-width: 60%;
+            margin-top: 0;
+
+            button.button.hollow.white {
+                margin-top: 25px !important;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1600px) {
+    .request {
+        &__form {
+            button.button.hollow.white {
+                margin-top: 50px !important;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .request__form {
+        max-width: 100%;
+        width: 100%;
+
+        button.button.hollow.white {
+            max-width: 100%;
+            min-width: 100%;
+            width: 100%;
+        }
+
+        .input {
+            width: 100%;
+        }
+
+        &-popup {
+            max-width: 100%;
+
+            margin-top: 600px;
+        }
     }
 }

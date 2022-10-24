@@ -7,6 +7,7 @@ import { Input } from '../../Input/Input'
 export interface CreatePartnerProps {
     onHide: () => void
     setSuccess: (value: string) => void
+    setError: (val: string) => void
 }
 
 interface CreatePartnerValues {

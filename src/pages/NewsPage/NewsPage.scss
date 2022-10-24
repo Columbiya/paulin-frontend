@@ -1,17 +1,21 @@
 .news-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 
     & > div {
         width: 420px;
         height: 420px;
 
-        margin-top: 75px;
+        margin-top: 45px;
+        margin-left: 10px;
+    }
+}
 
-        &:nth-child(1), &:nth-child(2),
-        &:nth-child(3) {
-            margin-top: 0;
+@media screen and (max-width: 576px) {
+    .news-list {
+        & > div {
+            width: 100%;
+            height: 300px;
         }
     }
 }

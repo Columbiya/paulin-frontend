@@ -9,6 +9,7 @@ import { Input } from '../../Input/Input'
 export interface CreateChapterProps {
     onHide: () => void
     setSuccess: (value: string) => void
+    setError: (val: string) => void
 }
 
 interface CreateChapterValues {
@@ -90,7 +91,9 @@ export const EditPartner: React.FC<CreateChapterProps> = ({ onHide, setSuccess }
                 options={news ? news: undefined}
             />
 
-            <Button style={{marginTop: 50, width: "100%"}}>Add Chapter</Button>
+            <Button style={{marginTop: 50, width: "100%"}} 
+                disabled={loading}
+            >Edit Partner</Button>
         </form>
     )
 } 

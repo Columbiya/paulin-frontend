@@ -2,22 +2,12 @@
     display: flex;
     flex-wrap: wrap;
 
+    margin-top: -65px;
+
     & > div {
         margin-top: 65px;
 
         margin-right: 50px;
-
-        &:nth-child(1) {
-            margin-top: 0;
-        }
-
-        &:nth-child(2) {
-            margin-top: 0;
-        }
-
-        &:nth-child(3) {
-            margin-top: 0;
-        }
     }
 }
 

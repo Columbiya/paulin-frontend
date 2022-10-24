@@ -1,22 +1,32 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { Methods, useHttp } from '../../../hooks/useHttp'
 import { Button } from '../../Button/Button'
 import { Input } from '../../Input/Input'
 
+
 export interface CreateNewsProps {
     onHide: () => void
     setSuccess: (value: string) => void
+    setError: (value: string) => void
 }
 
 interface CreateNewsValues {
     title: string
     author: string
+    hider: Hiders
     image: FileList
 }
 
-export const CreateNews: React.FC<CreateNewsProps> = ({ onHide, setSuccess }) => {
-    const { register, handleSubmit, formState: { errors }, reset } = useForm<CreateNewsValues>()
+export enum Hiders {
+    LIGHT_GREEN = 'LIGHT_GREEN',
+    ORANGE_LIGHT = 'ORANGE_LIGHT',
+    PURPLE_ORANGE = 'PURPLE_ORANGE',
+    RED_PURPLE = 'RED_PURPLE'
+}
+
+export const CreateNews: React.FC<CreateNewsProps> = ({ onHide, setSuccess, setError }) => {
+    const { register, handleSubmit, formState: { errors }, reset, getValues } = useForm<CreateNewsValues>()
     const [isSafeToReset, setSafeToReset] = useState(false)
     const [item, loading, error, lazyLoadFunc] = useHttp(
         {link: '/news', method: Methods.POST, useAuth: true, isLazy: true, store: null}
@@ -26,13 +36,11 @@ export const CreateNews: React.FC<CreateNewsProps> = ({ onHide, setSuccess }) =>
         const formData = new FormData()
         formData.append('title', data.title)
         formData.append('author', data.author)
+        formData.append('hider', data.hider)
         formData.append('image', data.image[0])
 
         if (lazyLoadFunc) {
             await lazyLoadFunc(formData)
-            setSafeToReset(true)
-            onHide()
-            setSuccess("News успешно создан")
         }
     }
 
@@ -42,6 +50,21 @@ export const CreateNews: React.FC<CreateNewsProps> = ({ onHide, setSuccess }) =>
         reset() 
         setSafeToReset(false)
     }, [isSafeToReset])
+
+
+    useEffect(() => {
+        if (error) {
+            console.log('hello')
+            setError(error.message)  
+            setSafeToReset(true)
+            onHide()      
+        }
+        else if (!error && item) {
+            setSuccess("News успешно создан")  
+            setSafeToReset(true)
+            onHide()   
+        }
+    }, [error, item])
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -64,6 +87,16 @@ export const CreateNews: React.FC<CreateNewsProps> = ({ onHide, setSuccess }) =>
             />
 
             <Input 
+                fieldName='hider'
+                name="Hider"
+                register={register}
+                isDropdown
+                options={[Hiders.LIGHT_GREEN, Hiders.ORANGE_LIGHT, Hiders.PURPLE_ORANGE, Hiders.RED_PURPLE]}
+                isRequired
+                error={errors.author}
+            />
+
+            <Input 
                 fieldName='image'
                 name="Image"
                 register={register}
@@ -72,7 +105,10 @@ export const CreateNews: React.FC<CreateNewsProps> = ({ onHide, setSuccess }) =>
                 type="file"
             />
 
-            <Button style={{marginTop: 50, width: "100%"}}>Add News</Button>
+            <Button 
+                style={{marginTop: 50, width: "100%"}}
+                disabled={loading}
+            >Add News</Button>
         </form>
     )
 } 

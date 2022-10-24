@@ -8,7 +8,7 @@
     }
 
     span {
-        display: block;
+        display: inline-block;
 
         a {
             cursor: pointer;
@@ -18,5 +18,26 @@
 
     &__separator {
         margin: 0 30px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .breadcrumbs {
+        .container {
+            display: block;
+        }
+
+        span {
+            display: inline;
+            line-height: 25px;
+        }
+
+        &__separator {
+            margin: 0 5px;
+        }
+
+        a {
+            font-weight: 500;
+        }
     }
 }

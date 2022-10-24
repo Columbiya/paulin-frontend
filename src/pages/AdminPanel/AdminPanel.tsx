@@ -8,6 +8,7 @@ import { CreateNews, CreateNewsProps } from '../../components/Popup/CreateNews/C
 import { CreatePartner } from '../../components/Popup/CreatePartner/CreatePartner'
 import { DeleteNews } from '../../components/Popup/DeleteNews/DeleteNews'
 import { DeletePartner } from '../../components/Popup/DeletePartner/DeletePartner'
+import { EditNewsImage } from '../../components/Popup/EditNewsImage/EditNewsImage'
 import { EditPartner } from '../../components/Popup/EditPartner/EditPartner'
 import { Popup } from '../../components/Popup/Popup'
 import { PagesRoutes } from '../../routes'
@@ -21,7 +22,8 @@ enum ActivePopup {
     FEEDBACK_POPUP = 'FEEDBACK_POPUP',
     DELETE_NEWS = 'DELETE_NEWS',
     DELETE_PARTNER = 'DELETE_PARTNER',
-    EDIT_PARTNER = 'EDIT_PARTNER'
+    EDIT_PARTNER = 'EDIT_PARTNER',
+    EDIT_NEWS_IMAGE = 'EDIT_NEWS_IMAGE'
 }
 
 type popupProps = CreateNewsProps | CreateChapterProps
@@ -30,6 +32,7 @@ export const AdminPanel: React.FC = observer((props) => {
     const navigate = useNavigate()
     const [active, setActive] = useState<ActivePopup | undefined>()
     const [success, setSuccess] = useState<string>()
+    const [error, setError] = useState<string>()
     const Element = useMemo<React.FC<popupProps>>(() => {
         switch(active) {
             case ActivePopup.NEWS_POPUP:
@@ -46,6 +49,8 @@ export const AdminPanel: React.FC = observer((props) => {
                 return DeletePartner
             case ActivePopup.EDIT_PARTNER:
                 return EditPartner
+            case ActivePopup.EDIT_NEWS_IMAGE:
+                return EditNewsImage
             default:
                 return () => <></>
         }
@@ -59,6 +64,14 @@ export const AdminPanel: React.FC = observer((props) => {
         }, 7000)
 
     }, [success])
+
+    useEffect(() => {
+        if (!error) return
+
+        setTimeout(() => {
+            setError("")
+        }, 7000)
+    })
 
     if (!authStore.item) {
         navigate(PagesRoutes.AUTH)
@@ -74,16 +87,27 @@ export const AdminPanel: React.FC = observer((props) => {
                 <Button onClick={() => setActive(ActivePopup.DELETE_NEWS)}>Delete News</Button>
                 <Button onClick={() => setActive(ActivePopup.DELETE_PARTNER)}>Delete Partner</Button>
                 <Button onClick={() => setActive(ActivePopup.EDIT_PARTNER)}>Edit Partner</Button>
+                <Button onClick={() => setActive(ActivePopup.EDIT_NEWS_IMAGE)}>Edit news' image</Button>
 
                 {active &&
                     <Popup onHide={() => setActive(undefined)}>
-                        <Element onHide={() => setActive(undefined)} setSuccess={(val: string) => setSuccess(val)} />
+                        <Element 
+                            onHide={() => setActive(undefined)} 
+                            setSuccess={(val: string) => setSuccess(val)}
+                            setError={(val: string) => setError(val)}
+                         />
                     </Popup>
                 }
 
                 {success && 
                     <div className="success">
                         <p style={{fontSize: "20px"}}>{success}</p>
+                    </div>
+                }
+
+                {error && 
+                    <div className="success">
+                        <p style={{fontSize: "20px", color: "red"}}>{error}</p>
                     </div>
                 }
                 

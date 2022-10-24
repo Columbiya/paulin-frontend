@@ -18,7 +18,10 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
+
+        &-mobile {
+            display: none;
+        }
     }
 
     &__ball {
@@ -26,7 +29,7 @@
         left: 57%;
         top: 772px;
         width: 265px;
-        z-index: 5;
+        z-index: 50;
 
         animation: float 2s ease infinite;
     }
@@ -36,6 +39,7 @@
         top: 210px;
         left: 47%;
         width: 730px;
+        z-index: 5;
     }
 
     &__person-check {
@@ -43,7 +47,7 @@
         top: 220px;
         left: 52%;
         width: 320px;
-        z-index: 5;
+        z-index: 50;
 
         animation: float 2s ease infinite;
     }
@@ -134,7 +138,7 @@
         border-radius: 120px;
         border-bottom-left-radius: 0;
 
-        padding: 120px 60px 120px 50px; 
+        padding: 150px 60px 40px 50px; 
         margin-top: 60px;
     }
 
@@ -148,6 +152,7 @@
         font-weight: 600;
         font-size: 3.1rem;
         min-height: 120px;
+        max-width: 90%;
 
         margin-bottom: 10px;
     }
@@ -446,5 +451,449 @@
 
     to {
         transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .business {
+        &__text {
+            position: relative;
+            padding-top: 140px;
+
+            &.large {
+                text-align: center;
+            }
+        }
+    }
+
+    .helps-you {
+        &__man-puzzle {
+            width: 500px;
+        }
+
+        &__woman-puzzle {
+            top: 30%;
+            right: 150px;
+            width: 400px;
+        }
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .helps-you {
+        padding-bottom: 750px;
+
+        &__bg {
+            display: none;
+        }
+
+        &__woman-puzzle {
+            top: 50%;
+            right: 15%;
+            transform: translateX(50%);
+        }
+
+        &__man-puzzle {
+            top: 50%;
+            right: 50%;
+            transform: translateX(50%);
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .consulting {
+        &__list-checks {
+            width: 500px;
+        }
+
+        &__title {
+            font-size: 6rem;
+        }
+
+        &__layers {
+            display: none;
+
+            &-mobile {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                display: block;
+            }
+        }
+    }
+
+    .business {
+        &__tools {
+            margin-top: 150px;
+            margin-left: 0;
+
+            .tool__item {
+                width: 45%;
+            }
+        }
+    }
+
+    .our-clients {
+        &__inner {
+            flex-wrap: wrap;
+        }
+
+        &__item {
+            width: 90%;
+
+
+            &:not(:last-child) {
+                margin-bottom: 40px;
+            }
+        }
+    }
+
+    .responsibility {
+        &__inner {
+            flex-wrap: wrap;
+        }
+
+        &__item {
+            margin: 0 auto;
+
+            width: 90%;
+
+            &:not(:last-child) {
+                margin-bottom: 40px;
+            }
+        }
+
+        &__item {
+            &:last-child {
+                .responsibility__image {
+                    top: 90%;
+                    width: 500px;
+                }
+            }
+        }
+    }
+
+    .business {
+        &__helps-you {
+            padding-top: 250px;
+            margin-bottom: 200px;
+        }
+    }
+
+    .helps-you {
+        &__inner {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .consulting {
+        &__ball {
+            width: 30%;
+            top: 900px;
+            left: 230px;
+        }
+
+        &__person-check {
+            width: 200px;
+            top: 550px;
+            left: 190px;
+        }
+
+        &__list-checks {
+            left: 50%;
+            top: 60%;
+            transform: translateX(-50%);
+        }
+
+        &-main-screen__content {
+            margin-top: 180px;
+            height: auto;
+
+            padding-bottom: 1900px;
+            align-items: center;
+            width: auto;
+            * {
+                max-width: 100% !important;
+            }
+        }
+    }
+
+    .business {
+        &__text {
+            padding-top: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .business {
+        &__tools {
+            .tool__item {
+                width: 90%;
+                margin: 30px auto;
+            }
+        }
+    }
+
+    .our-clients {
+        &__image {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .you-can {
+        &__inner {
+            flex-wrap: wrap;
+            align-items: center;
+
+            img {
+                margin: 0 auto;
+            }
+        }
+
+        &__text {
+            margin-left: 0;
+        }
+    }
+
+    .consulting {
+        &-main-screen__content {
+            padding-bottom: 1000px;
+        }
+    }
+
+    .helps-you {
+        padding-bottom: 500px;
+
+        &__bg {
+            display: none;
+        }
+
+        &__woman-puzzle {
+            width: 50%;
+
+            top: 60%;
+            right: 15%;
+            transform: translateX(50%);
+        }
+
+        &__man-puzzle {
+            width: 50%;
+
+            top: 60%;
+            right: 50%;
+            transform: translateX(50%);
+        }
+    }
+
+    .tool {
+        &__item {
+            border-radius: 90px;
+            border-bottom-left-radius: 0;
+        }
+        &__name {
+            min-height: 70px;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .consulting {
+        &-main-screen__content {
+            button {
+                width: 80%;
+                min-width: 100%;
+                max-width: 80% !important;
+            }
+        }
+
+        &__list-checks {
+            width: 80%;
+            left: 50%;
+            top: 60%;
+            transform: translateX(-50%);
+        }
+
+        &__person-check {
+            left: 90px;
+        }
+
+        &__ball {
+            left: 130px;
+        }
+    }
+
+    .business {
+        &__text {
+            &.large {
+                margin-top: 30px;
+            }
+        }
+
+        &__gear {
+            width: 200px;
+
+            &.large {
+                width: 250px;
+            }
+        }
+
+        &__helps-you {
+            padding-top: 100px;
+        }
+    }
+
+    .tool {
+        &__item {
+            padding: 120px 35px 35px;
+        }
+
+        &__check {
+            width: 75px;
+        }
+
+        &__name {
+            margin-right: 0;
+        }
+    }
+
+    .our-clients {
+        &__item {
+            padding: 50px 40px;
+        }
+
+        &__list {
+
+            &.right {
+                li {
+                    &:not(:last-child) {
+                        margin-bottom: 25px;
+                    }
+    
+                    &::before, &::after {
+                        left: -15px;
+                    }
+                }
+            }
+
+            &.wrong {
+                li {
+                    &:not(:last-child) {
+                        margin-bottom: 25px;
+                    }
+    
+                    &::before, &::after {
+                        left: -15px;
+                    }
+                }
+            }
+
+            li {
+                padding-left: 10px;
+            }
+        }
+
+        &__type {
+            margin: 25px 0;
+        }
+    }
+
+    .responsibility {
+        padding-bottom: 300px;
+
+        &__item {
+            padding: 30px;
+
+            &:first-child {
+                padding-top: 150px;
+            }
+
+            &:last-child {
+                padding-top: 70px;
+            }
+        }
+
+        &__subtitle {
+            font-size: 3rem;
+        }
+
+        &__image {
+            width: 70%;
+            top: -75px;
+        }
+    }
+
+    .consulting {
+        &-main-screen__content {
+            padding-bottom: 700px;
+        }
+    }
+
+    .responsibility {
+        &__item {
+            &:last-child {
+                .responsibility__image {
+                    top: 95%;
+                    left: 0;
+                    width: 300px;
+                }
+            }
+        }
+    }
+
+    .you-can {
+        img {
+            width: 50%;
+
+            margin-bottom: 30px;
+        }
+
+        &__inner {
+            margin: 0 auto 350px;
+        }
+    }
+
+    .helps-you {
+        &__woman-puzzle {
+            width: 330px;
+
+            top: 60%;
+            right: 15px;
+            transform: translateX(50%);
+        }
+
+        &__man-puzzle {
+            width: 380px;
+
+            top: 60%;
+            right: 90%;
+            transform: translateX(50%);
+        }
+    }
+    
+}
+
+@media screen and (max-width: 400px) {
+    .consulting {
+        &-main-screen__content {
+            padding-bottom: 500px;
+        }
+    }
+    
+
+    .responsibility {
+        &__item {
+            &:last-child {
+                .responsibility__image {
+                    width: 100%;
+                }
+            }
+        }
     }
 }

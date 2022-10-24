@@ -4,8 +4,16 @@
     margin-top: 50px;
 
     &__left {
-        max-width: 600px;
-        height: 600px;
+        max-width: 512px;
+        max-height: 512px;
+
+        position: relative;
+
+        img {
+            border-radius: 65px;
+            width: 512px;
+            display: block;
+        }
     }
 
     &__text {
@@ -18,6 +26,14 @@
             font-size: 2.7rem;
             text-align: justify;
         }
+    }
+
+    &__hider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
 
     &__chapter-number {
@@ -47,13 +63,13 @@
         margin-bottom: 80px;
     }
 
-    &__header-left {
-        max-width: 580px;
-    }
-
     &__title {
         font-weight: 600;
         font-size: 4.8rem;
+
+        &--mobile {
+            display: none;
+        }
     }
 
     &__author {
@@ -77,5 +93,53 @@
 
     &.active {
         font-weight: 600;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .news-detail {
+        flex-direction: column;
+        align-items: center;
+
+        &__text {
+            margin-left: 0;
+            margin: 25px 0;
+            padding: 0 30px;
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .news-detail {
+        &__left {
+            width: 100%;
+            img {
+                width: 100%;
+            }
+        }
+
+        &__text {
+            padding: 0 0;
+        }
+
+        &__title {
+            font-size: 3.5rem;
+        }
+
+        &__chapters {
+            p {
+                margin-bottom: 25px;
+            }
+        }
+
+        &__chapter-number {
+            margin-bottom: 25px;
+        }
+
+        &__header {
+            margin-bottom: 40px;
+        }
     }
 }

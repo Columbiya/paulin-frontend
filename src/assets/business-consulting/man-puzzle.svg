@@ -21,6 +21,15 @@
 	.st15{fill:url(#SVGID_9_);}
 	.st16{fill:#1B81D5;}
 </style>
+<style>
+
+	@media screen and (max-width: 576px) {
+		#ноутбук_1_ {
+			display: none;
+		}
+	}
+
+</style>
 <g id="паззл_1_">
 	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="533.8411" y1="887.5406" x2="533.8411" y2="605.5406">
 		<stop  offset="0" style="stop-color:#F06C99"/>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useMemo } from 'react'
 import env from 'react-dotenv'
 import { useNavigate, useParams } from 'react-router'
 import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs'
@@ -8,13 +8,31 @@ import { PagesRoutes } from '../../routes'
 import { News } from '../../schemas/News'
 import { newsStore } from '../../store/newsStore'
 import { animateScroll as scroll, Link, Element, scrollSpy } from 'react-scroll'
+import redPurple from '../../assets/news-hiders/red-purple.png'
+import lightGreenHider from '../../assets/news-hiders/light-green-green.png'
+import orangeLight from '../../assets/news-hiders/orange-light-orange.png'
+import purpleOrange from '../../assets/news-hiders/purple-orange.png'
 import './NewsDetailPage.scss'
+import { Hiders } from '../../components/Popup/CreateNews/CreateNews'
+import { NewsList } from '../../components/NewsList/NewsList'
 
 export const NewsDetailPage: React.FC = (props) => {
     const { id } = useParams()
     const navigate = useNavigate()
     const [news, loading, error] = useHttp<News>({link: `/news/${id}`, method: Methods.GET, store: newsStore, useAuth: false})
-
+    const [items, newsLoading, newsError] = useHttp<News>({link: `/news`, method: Methods.GET, store: newsStore, useAuth: false})
+    const imageSrc = useMemo(() => {
+        switch(news?.hider) {
+            case Hiders.LIGHT_GREEN:
+                return lightGreenHider
+            case Hiders.ORANGE_LIGHT:
+                return orangeLight
+            case Hiders.PURPLE_ORANGE:
+                return purpleOrange
+            case Hiders.RED_PURPLE:
+                return redPurple
+        }
+    }, [news?.hider]) 
     useEffect(() => {
         scrollSpy.update()
     }, [])
@@ -25,14 +43,6 @@ export const NewsDetailPage: React.FC = (props) => {
 
     if (error) {
         console.log(error)
-    }
-
-    let chapterCount: number[] = []
-
-    if (news?.chapter) {
-        for (let i = 0; i < news?.chapter.length; i++) {
-            chapterCount.push(i)
-        }
     }
 
     return (
@@ -46,8 +56,10 @@ export const NewsDetailPage: React.FC = (props) => {
 
             <div className="container">
                 <div className="news-detail">
+                    <h2 className="news-detail__title news-detail__title--mobile">{news?.title}</h2>
                     <div className="news-detail__left">
                         <img src={`${env.BACKEND_URL}:5000/${news?.image}`} alt="" />
+                        <img src={imageSrc} className="news-detail__hider" alt="" />
                     </div>
 
                     <div className="news-detail__text">
@@ -57,26 +69,13 @@ export const NewsDetailPage: React.FC = (props) => {
                                 <p className="news-detail__author">{news?.author}</p>
                                 <p className="news-detail__date">{news && new Date(news?.createdAt).toLocaleDateString('ru')}</p>
                             </div>
-                            <div className="news-detail__chapters-preview">
-                                {chapterCount.map(ch => (
-                                    <Link 
-                                        className="chapter-number" 
-                                        activeClass='active'
-                                        smooth={true}
-                                        duration={500}
-                                        to={`chapter-${ch}`}
-                                        spy={true}
-                                    >
-                                        Глава {ch + 1}
-                                    </Link>
-                                ))}
-                            </div>
-
                         </header>
                         <div className="news-detail__chapters">
                             {news?.chapter.map((ch, index) => (
                                 <Element name={`chapter-${index}`}>
-                                    <h3 className="news-detail__chapter-number">Глава {index + 1}</h3>
+                                    {ch.name && 
+                                        <h3 className="news-detail__chapter-number">{ch.name}</h3>
+                                    }
                                     <div className='news-detail__chapter-text'>
                                         {
                                             ch.text.split('\n').map(p => <p>{p}</p>)
@@ -87,6 +86,10 @@ export const NewsDetailPage: React.FC = (props) => {
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div className="container">
+                <NewsList />
             </div>
         </main>
     )

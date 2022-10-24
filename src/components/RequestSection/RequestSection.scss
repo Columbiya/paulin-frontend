@@ -1,6 +1,7 @@
 
 .request {
     position: relative;
+    z-index: 500000000;
 
     margin-top: 300px;
 
@@ -10,5 +11,97 @@
         right: 0;
         width: 100%;
         z-index: -1;
+    }
+
+    &--popup {
+        margin-top: 0;
+
+        .education__title {
+            margin-bottom: 30px !important;
+        }
+    }
+}
+
+.mobile {
+    display: none;
+}
+
+@media screen and (max-width: 1600px) {
+    .request {
+        &__inner {
+            margin-top: -50px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .request {
+        margin-top: 100px;
+
+        &--popup {
+            margin-top: 15px;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .mobile {
+        display: block;
+    }
+
+    .request {
+        max-width: 100%;
+
+        &__image {
+            display: none;
+        }
+
+        &--popup {
+            .education__title {
+                position: static !important;
+            }
+
+            .request__bg.mobile {
+                max-height: 1500px;
+                overflow-y: hidden;
+            }
+
+            .request__person.mobile {
+                top: 45px;
+            }
+        }
+    }
+
+    .request {
+        padding-top: 600px;
+    }
+
+    .request__bg {
+        width: 100%;
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .request__person {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .request {
+        .education__title {
+            position: absolute;
+            top: -50px;
+            left: 15px;
+        }
+
+        &__inner {
+            width: 100%;
+            max-width: 100%;
+            position: relative;
+            z-index: 50;
+        }
     }
 }

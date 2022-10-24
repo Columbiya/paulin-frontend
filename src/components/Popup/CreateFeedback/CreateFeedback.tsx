@@ -9,6 +9,7 @@ import { Input } from '../../Input/Input'
 export interface CreateFeedbackProps {
     onHide: () => void
     setSuccess: (value: string) => void
+    setError: (val: string) => void
 }
 
 interface CreateFeedbackValues {

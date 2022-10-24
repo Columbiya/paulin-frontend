@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { MouseEvent, useState } from 'react'
 import { Button } from '../../components/Button/Button'
 import { ReactComponent as Image } from '../../assets/home/main-screen.svg'
 import { Methods, useHttp } from '../../hooks/useHttp'
@@ -9,7 +9,6 @@ import { News } from '../../schemas/News'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Partner } from '../../schemas/Partner'
 import { PartnersList } from '../../components/PartnersList/PartnersList'
-import { RequestForm } from '../../components/RequestForm/RequestForm'
 import BikeImage from '../../assets/home/bike.svg'
 import computerImage from '../../assets/home/computer.png'
 import barsImage from '../../assets/home/bars.png'
@@ -22,6 +21,7 @@ import wheelGear from '../../assets/home/gear.svg'
 import wheelGear2 from '../../assets/home/gear-2.svg'
 import largePurpleGear from '../../assets/home/large-purple-gear.svg'
 import bgGreen from '../../assets/home/bg-green.svg'
+import bgMainScreenMobile from '../../assets/home/main-screen-bg-mobile.svg'
 import './Home.scss'
 import { NewsList } from '../../components/NewsList/NewsList'
 import { Preloader } from '../../components/Preloader/Preloader'
@@ -29,9 +29,13 @@ import { RequestSection } from '../../components/RequestSection/RequestSection'
 import { PagesRoutes } from '../../routes'
 import { useNavigate } from 'react-router'
 import { scrollToTopAndNavigate } from '../../helpers/scrollToTopAndNavigate'
+import clock from '../../assets/clock.svg'
 
+interface HomeProps {
+    setActive: (val: boolean) => void
+}
 
-export const Home: React.FC = (props) => {
+export const Home: React.FC<HomeProps> = ({ setActive }) => {
     const [items, loading, error] = useHttp<News[]>({link: '/news', method: Methods.GET, store: newsStore, useAuth: false})
     const [itemsPartners, loadingPartners, errorPartners] = useHttp<Partner[]>({link: '/partners', method: Methods.GET, store: partnersStore, useAuth: false})
     const navigate = useNavigate()
@@ -49,15 +53,20 @@ export const Home: React.FC = (props) => {
     }
 
     return (
+        <>
         <main>
-            <object data={mainScreenImage} className="main-screen__image" type="image/svg+xml"></object>
+            <object data={mainScreenImage} className="main-screen__image desktop" type="image/svg+xml"></object>
+            <object data={bgMainScreenMobile} className="main-screen__image mobile"></object>
             <div className="main-screen">
                 <div className="container">
                     <div className="main-screen__inner">
                         <h1 className="main-screen__title">paulin</h1>
                         <h2 className="main-screen__subtitle">Управление бизнесом</h2>
                         <h3 className="main-screen__subsubtitle">Внедрение инструментов управления в бизнес</h3>
-                        <Button isFilled>Запись на консультацию</Button>
+                        <Button 
+                            isFilled
+                            onClick={() => setActive(true)}
+                        >Запись на консультацию</Button>
                     </div>
                 </div>
             </div>
@@ -88,7 +97,7 @@ export const Home: React.FC = (props) => {
                     </div>
                 </div>
 
-                <object data={BikeImage} style={{position: 'absolute', top: '0', left: '-80px', width: '100vw', zIndex: -1}}></object>
+                <object data={BikeImage} style={{position: 'absolute', top: '0', left: '-80px', width: '1920px', zIndex: -1}}></object>
                 <object data={wheelGear} className="gear-wheel"></object>
                 <object data={wheelGear2} className="gear-wheel left"></object>
                 <object data={largePurpleGear} className="gear-wheel large"></object>
@@ -99,12 +108,18 @@ export const Home: React.FC = (props) => {
                 <div className="container">
                     <header className="business-consulting__header">
                         <div data-aos="fade-right">
-                            <h2 className="business-consulting__title">Бизнес консалтинг</h2>
+                            <h2 className="business-consulting__title">Smart Business</h2>
                             <h3 className="business-consulting__subtitle">Мы делаем из бизнеса систему</h3>
                         </div>
                         <div data-aos="fade-left">
-                            <Button isWhite>Подробнее</Button>
-                            <Button isFilled>Узнать стоимость</Button>
+                            <Button 
+                                isWhite
+                                onClick={() => navigateTo(PagesRoutes.BUSINESS_CONSULTING)}
+                            >Подробнее</Button>
+                            <Button 
+                                isFilled
+                                onClick={() => setActive(true)}
+                            >Узнать стоимость</Button>
                         </div>
                     </header>
                     <p className="business-consulting__text" data-aos="fade-in">
@@ -161,8 +176,14 @@ export const Home: React.FC = (props) => {
                         <p className="education__text" data-aos="fade-right">Онлайн школа по обучению экспертов инструментам управления бизнесом, которые внедряются в компаниях клиентов Paulin</p>
 
                         <div className="education__buttons" data-aos="fade-right">
-                            <Button isGradientBordersWithWhiteBack>Подробнее</Button>
-                            <Button isFilled>Записаться на консультацию</Button>
+                            <Button 
+                                isGradientBordersWithWhiteBack
+                                soon
+                            >Подробнее</Button>
+                            <Button 
+                                isFilled
+                                onClick={() => setActive(true)}
+                            >Записаться на консультацию</Button>
                         </div>
                     </div>
                 </div>
@@ -172,7 +193,7 @@ export const Home: React.FC = (props) => {
             <div className="partners">
                 <div className="container">
                     <div className="partner__inner">
-                        <header className="partners__header" data-aos="fade-right">
+                        <header className="partners__header" data-aos="fade-up">
                             <h2 className="partners__title">Наши партнеры</h2>
                             <Button 
                                 isGradientBordersWithWhiteBack
@@ -188,5 +209,7 @@ export const Home: React.FC = (props) => {
 
             <RequestSection />
         </main>
+        </>
+        
     )
 }

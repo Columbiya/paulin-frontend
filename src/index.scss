@@ -38,7 +38,7 @@ a {
 }
 
 .container {
-  max-width: 1752px;
+  max-width: 1682px;
   width: 100%;
   margin: 0 auto;
   padding: 0 15px;
@@ -58,6 +58,8 @@ button {
 
 .main {
   margin-top: 120px;
+  overflow-x: hidden;
+  overflow-y: scroll;
 
   animation: 1s 1 forwards fadeIn ease-in-out;
 }
@@ -83,6 +85,28 @@ main {
 
   100% {
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1660px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 7px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .pages-title {
+    margin: 30px 0 45px;
+  }
+
+  html {
+    font-size: 6px;
   }
 }
 

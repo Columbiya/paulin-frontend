@@ -1,5 +1,7 @@
 .popup {
     max-width: 50%;
+    max-height: 95vh;
+    overflow: hidden;
     width: 100%;
     padding: 75px;
     border-radius: 120px;
@@ -9,7 +11,18 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 5250000;
+    z-index: 5000;
+
+    animation: jumpIn .5s ease forwards;
+
+    &--wide {
+        max-width: 80%;
+        padding: 0;
+
+        & > * {
+            padding: 75px;
+        }
+    }
 }
 
 .black-background {
@@ -19,9 +32,36 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1500;
+    z-index: 15000;
+
+    &--white {
+        background-color: rgba(#fff, .5);
+    }
 }
 
 .popup-title {
     font-size: 3.5rem;
+}
+
+@keyframes jumpIn {
+    from {
+        transform: translate(-50%, -25%);
+    }
+
+    to {
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .popup {
+        border-radius: 10px;
+        overflow-y: scroll;
+
+        &--wide {
+            & > * {
+                padding: 15px;
+            }
+        }
+    }
 }

@@ -22,12 +22,17 @@ import bgPurple from '../../assets/business-consulting/bg-purple.svg'
 import personWithCart from '../../assets/business-consulting/person-with-cart.svg'
 import personWithRocket from '../../assets/business-consulting/person-with-a-rocket.svg'
 import responsibilityImage from '../../assets/business-consulting/responsibility-image.svg'
+import layersMobile from '../../assets/business-consulting/bg-mobile.svg'
 import './BusinessConsulting.scss'
 import { Button } from '../../components/Button/Button'
 import { NewsList } from '../../components/NewsList/NewsList'
 import { RequestSection } from '../../components/RequestSection/RequestSection'
 
-export const BusinessConsulting: React.FC = (props) => {
+interface BusinessConsultingProps {
+    setActive: (val: boolean) => void
+}
+
+export const BusinessConsulting: React.FC<BusinessConsultingProps> = ({ setActive }) => {
     const [items, loading, error] = useHttp<News[]>({link: '/news', method: Methods.GET, store: newsStore, useAuth: false})
     
     return (
@@ -37,12 +42,16 @@ export const BusinessConsulting: React.FC = (props) => {
                 <object data={purpleBall} className="consulting__ball"></object>
                 <object data={listChecks} className="consulting__list-checks"></object>
                 <object data={personCheck} className="consulting__person-check"></object>
+                <object data={layersMobile} className="consulting__layers-mobile"></object>
 
                 <div className="consulting-main-screen__content">
                     <div className="container">
-                        <h1 className="consulting__title">Бизнес- консалтинг</h1>
+                        <h1 className="consulting__title">Smart Business</h1>
                         <h2 className="consulting__subtitle">Свобода начинается за барьерами</h2>
-                        <Button isFilled>Отправить заявку</Button>
+                        <Button 
+                            isFilled
+                            onClick={() => setActive(true)}
+                        >Отправить заявку</Button>
                     </div>
                 </div>
             </div>
@@ -75,44 +84,44 @@ export const BusinessConsulting: React.FC = (props) => {
                         <div className="tool__item" data-aos="fade-in">
                             <img alt="" className="tool__check" src={checkGreen} width={110} />
 
-                            <p className="tool__name">Система координаций</p>
-                            <p className="tool__text">Действия членов команды будут согласованы</p>
+                            <p className="tool__name">Организующая схема</p>
+                            <p className="tool__text">Сотрудники будут четко знать свои функции</p>
                         </div>
                         <div className="tool__item" data-aos="fade-in">
                             <img alt="" className="tool__check" src={checkGreen} width={110} />
 
-                            <p className="tool__name">Система координаций</p>
-                            <p className="tool__text">Действия членов команды будут согласованы</p>
+                            <p className="tool__name">Статистика сотрудников</p>
+                            <p className="tool__text">Вы сможете отследить насколько продуктивны ваши сотрудники</p>
                         </div>
                         <div className="tool__item" data-aos="fade-in">
                             <img alt="" className="tool__check" src={checkBlue} width={110} />
 
-                            <p className="tool__name">Система координаций</p>
-                            <p className="tool__text">Действия членов команды будут согласованы</p>
+                            <p className="tool__name">Система планирования</p>
+                            <p className="tool__text">Вы будете знать, чем занимаются сотрудники каждый день и прогнозировать, когда придете к цели</p>
                         </div>
                         <div className="tool__item" data-aos="fade-in">
                             <img alt="" className="tool__check" src={checkOrange} width={110} />
 
-                            <p className="tool__name">Система координаций</p>
-                            <p className="tool__text">Действия членов команды будут согласованы</p>
+                            <p className="tool__name">Система письменных коммуникаций</p>
+                            <p className="tool__text">Эффективное взаимодействие членов команды: задачи не потеряются и будут выполнены</p>
                         </div>
                         <div className="tool__item" data-aos="fade-in">
                             <img alt="" className="tool__check" src={checkOrange} width={110} />
 
-                            <p className="tool__name">Система координаций</p>
-                            <p className="tool__text">Действия членов команды будут согласованы</p>
+                            <p className="tool__name">Цели и замыслы компании</p>
+                            <p className="tool__text">Сотрудники будут знать, ради чего они работают и куда движется компания</p>
                         </div>
                         <div className="tool__item" data-aos="fade-in">
                             <img alt="" className="tool__check" src={checkGreen} width={110} />
 
-                            <p className="tool__name">Система координаций</p>
-                            <p className="tool__text">Действия членов команды будут согласованы</p>
+                            <p className="tool__name">Система финансового планирования</p>
+                            <p className="tool__text">Руководители будут сами распоряжаться финансами и распределять их более осмысленно</p>
                         </div>
                         <div className="tool__item" data-aos="fade-in">
                             <img alt="" className="tool__check" src={checkPurple} width={110} />
 
-                            <p className="tool__name">Система координаций</p>
-                            <p className="tool__text">Действия членов команды будут согласованы</p>
+                            <p className="tool__name">Стратегическое управление</p>
+                            <p className="tool__text">Вы сможете составить план дальнейшего развития компании</p>
                         </div>
                     </div>
                 </div>
@@ -151,22 +160,22 @@ export const BusinessConsulting: React.FC = (props) => {
                             <h5 className="our-clients__type">Финансы</h5>
 
                             <ul className='our-clients__list list wrong'>
-                                <li data-aos="fade-right">
+                                <li data-aos="fade-up">
                                     Кассовые разделы
                                 </li>
-                                <li data-aos="fade-right">
+                                <li data-aos="fade-up">
                                     Отсутствие дивидендов у владельцев
                                 </li>
-                                <li data-aos="fade-right">
+                                <li data-aos="fade-up">
                                     Доход как "американские горки" - то есть, то нет
                                 </li>
-                                <li data-aos="fade-right">
+                                <li data-aos="fade-up">
                                     Высокий уровень оборотов, но на счетах денег не остается
                                 </li>
-                                <li data-aos="fade-right">
+                                <li data-aos="fade-up">
                                     Большой ФОТ
                                 </li>
-                                <li data-aos="fade-right">
+                                <li data-aos="fade-up">
                                     Отсутствие понимания "на чем компания теряет деньги?"
                                 </li>
                             </ul>
@@ -178,22 +187,22 @@ export const BusinessConsulting: React.FC = (props) => {
                             <h5 className="our-clients__type">Персонал</h5>
 
                             <ul className='our-clients__list list wrong'>
-                                <li data-aos="fade-left">
+                                <li data-aos="fade-up">
                                     Руководителю приходится решать вопросы за сотрудников
                                 </li>
-                                <li data-aos="fade-left">
+                                <li data-aos="fade-up">
                                     Постоянное "тушение пожаров" из за недоделок сотрудников
                                 </li>
-                                <li data-aos="fade-left">
+                                <li data-aos="fade-up">
                                     Незнание "как нанимать?" и "кого нанимать?"
                                 </li>
-                                <li data-aos="fade-left">
+                                <li data-aos="fade-up">
                                     Нет понимания "когда пора увольнять"
                                 </li>
-                                <li data-aos="fade-left">
+                                <li data-aos="fade-up">
                                     Нет понимания "кто за что отвечает" - ни у владельца, ни у сотрудника
                                 </li>
-                                <li data-aos="fade-left">
+                                <li data-aos="fade-up">
                                     Как измерить результат работы сотрудника
                                 </li>
                             </ul>
@@ -214,19 +223,19 @@ export const BusinessConsulting: React.FC = (props) => {
 
                             <h5 className="responsibility__subtitle">ДО систематизации</h5>
                             <ul className="our-clients__list list wrong">
-                                <li data-aos="fade-right">
+                                <li data-aos="fade-up">
                                     Обслуживание клиентов: заключение договоров, презентация товаров и услуг
                                 </li>
-                                <li data-aos="fade-right">
+                                <li data-aos="fade-up">
                                     Найм сотрудников: поиск кандидатов, проведение собеседований, введение в должность
                                 </li>
-                                <li data-aos="fade-right">
+                                <li data-aos="fade-up">
                                     Производство продукта: от составления технического задания до упаковки
                                 </li>
-                                <li data-aos="fade-right">
+                                <li data-aos="fade-up">
                                     Разработка рекламных кампаний: генерация идей для привлечения клиентов, создание рекламных материалов, анализ показателей
                                 </li>
-                                <li data-aos="fade-right">
+                                <li data-aos="fade-up">
                                     Вести соцсети компании: писать посты, делать Stories, общаться с подписчиками
                                 </li>
                             </ul>
@@ -237,22 +246,22 @@ export const BusinessConsulting: React.FC = (props) => {
                             <h5 className="responsibility__subtitle">ПОСЛЕ систематизации</h5>
                             <p className="responsibility__item-text">Работа над стратегией компании:</p>
                             <ul className="our-clients__list list right">
-                                <li data-aos="fade-left">
+                                <li data-aos="fade-up">
                                     Руководителю приходится решать вопросы за сотрудников
                                 </li>
-                                <li data-aos="fade-left">
+                                <li data-aos="fade-up">
                                     Постоянное "тушение пожаров" из за недоделок сотрудников
                                 </li>
-                                <li data-aos="fade-left">
+                                <li data-aos="fade-up">
                                     Незнание "как нанимать?" и "кого нанимать?"
                                 </li>
-                                <li data-aos="fade-left">
+                                <li data-aos="fade-up">
                                     Нет понимания "когда пора увольнять"
                                 </li>
-                                <li data-aos="fade-left">
+                                <li data-aos="fade-up">
                                     Нет понимания "кто за что отвечает" - ни у владельца, ни у сотрудника
                                 </li>
-                                <li data-aos="fade-left">
+                                <li data-aos="fade-up">
                                     Как измерить результат работы сотрудника
                                 </li>
                             </ul>
@@ -281,7 +290,9 @@ export const BusinessConsulting: React.FC = (props) => {
                 <NewsList />
             </div>
 
-            <RequestSection />
+            <div className="business__request-inner">
+                <RequestSection />
+            </div>
         </main>
     )
 }

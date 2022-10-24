@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Header } from './components/Header/Header';
 import { Route, Routes } from 'react-router';
 import { Home } from './pages/Home/Home';
@@ -16,6 +16,9 @@ import { getAuthToken } from './helpers/getAuthToken';
 import { Preloader } from './components/Preloader/Preloader';
 import AOS from 'aos'
 import 'aos/dist/aos.css';
+import './App.scss'
+import { Popup } from './components/Popup/Popup';
+import { RequestSection } from './components/RequestSection/RequestSection';
 
 const access_token = getAuthToken()
 
@@ -23,6 +26,8 @@ function App() {
   const [isAuthorized, authLoading, error] = useHttp<boolean>(
     {link: '/auth', periodic: true, method: Methods.PUT, useAuth: false, store: authStore, headers: {Authorization: `Bearer ${access_token}`}}
   )
+  const [isPopupActive, setActive] = useState(false)
+
 
   useEffect(() => {
     if (!authLoading && isAuthorized) {
@@ -53,16 +58,28 @@ function App() {
     <div className="App">
       <Header />
 
-      <Routes>
-        <Route path={PagesRoutes.MAIN} element={<Home />} />
-        <Route path={PagesRoutes.PARTNERS_AND_FEEDBACK} element={<Partners />} />
-        <Route path={PagesRoutes.BLOG} element={<NewsPage />} />
-        <Route path={PagesRoutes.BLOG + "/:id"} element={<NewsDetailPage />} />
-        <Route path={PagesRoutes.BUSINESS_CONSULTING} element={<BusinessConsulting />} />
-        <Route path={PagesRoutes.AUTH} element={<AuthPage />} />
-        <Route path={PagesRoutes.ADMIN_PANEL} element={<AdminPanel />} />
-      </Routes>
+      {isPopupActive &&
+            <Popup 
+                isWhite
+                isWide
+                onHide={() => setActive(false)}
+            >
+                <RequestSection isPopup />
+            </Popup>
+        }
 
+      <div id="app">
+        <Routes>
+          <Route path={PagesRoutes.MAIN} element={<Home setActive={setActive} />} />
+          <Route path={PagesRoutes.PARTNERS_AND_FEEDBACK} element={<Partners />} />
+          <Route path={PagesRoutes.BLOG} element={<NewsPage />} />
+          <Route path={PagesRoutes.BLOG + "/:id"} element={<NewsDetailPage />} />
+          <Route path={PagesRoutes.BUSINESS_CONSULTING} element={<BusinessConsulting setActive={setActive} />} />
+          <Route path={PagesRoutes.AUTH} element={<AuthPage />} />
+          <Route path={PagesRoutes.ADMIN_PANEL} element={<AdminPanel />} />
+        </Routes>
+      </div>
+     
       <Footer />
     </div>
   );

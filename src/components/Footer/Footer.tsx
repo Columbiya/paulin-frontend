@@ -25,10 +25,10 @@ export const Footer: React.FC = (props) => {
                     <nav className="footer__left">
                         <div className="footer__col col">
                             <a onClick={() => navigateTo(PagesRoutes.MAIN)}>Главная страница</a>
-                            <a onClick={() => navigateTo(PagesRoutes.BUSINESS_CONSULTING)}>Бизнес-консалтинг</a>
+                            <a onClick={() => navigateTo(PagesRoutes.BUSINESS_CONSULTING)}>Smart Business</a>
                             <a onClick={() => navigateTo(PagesRoutes.EDUCATION)}>Обучение экспертов</a>
                             <div className="col__bottom">
-                                <a href="mailto:info@paulin.consulting">info@paulin.commnsulting</a>
+                                <a href="mailto:info@paulin.consulting">info@paulin.consulting</a>
                             </div>
                         </div>
                         <div className="footer__col col">

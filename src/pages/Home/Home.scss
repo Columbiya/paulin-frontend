@@ -11,6 +11,13 @@
         align-items: center;
     }
 
+    &__clock {
+        position: absolute;
+        top: 81%;
+        right: 189px;
+        width: 100px;
+    }
+
     &__title {
         font-size: 17.6rem;
         text-transform: uppercase;
@@ -38,7 +45,11 @@
         position: absolute;
         top: 0;
         left: 0;
+        width: 100%;
         z-index: -1;
+    }
+    &__inner {
+        padding-left: 50px;
     }
 }
 
@@ -142,6 +153,10 @@
             padding-top: 300px;
 
             animation-delay: 1.5s;
+
+            &:hover {
+
+            }
         }
     }
 
@@ -159,7 +174,7 @@
 
         padding-top: 280px;
 
-        animation: verticalMovement 4s ease-in-out infinite;
+        transition: transform .5s ease;
 
         p {
             max-width: 78%;
@@ -184,6 +199,11 @@
                 margin-right: 0;
                 margin-left: 25px;
             }
+        }
+
+        &:hover {
+            transform: scale(1.2);
+            z-index: 5000;
         }
 
         &:nth-child(1) {
@@ -296,3 +316,4 @@
         transform: rotate(0);
     }
 }
+

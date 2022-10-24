@@ -1,8 +1,14 @@
 import React from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
+import { myAxios } from '../../http/axios'
+import { Request } from '../../schemas/Request'
 import { Button } from '../Button/Button'
 import { Input } from '../Input/Input'
 import './RequestForm.scss'
+
+interface RequestFormProps {
+    isPopup?: boolean
+}
 
 interface FormValues {
     nameSurname: string
@@ -13,11 +19,22 @@ interface FormValues {
     email: string
 }
 
-export const RequestForm: React.FC = (props) => {
+export const RequestForm: React.FC<RequestFormProps> = ({ isPopup }) => {
     const { register, handleSubmit, formState: { errors }, setValue } = useForm<FormValues>()
 
-    const onSubmit: SubmitHandler<FormValues> = (data) => {
-        console.log(data)
+    const popupClasses = isPopup ? "request__form-popup": undefined
+
+    const onSubmit: SubmitHandler<FormValues> = async ({ companyName, email, nameSurname, phoneNumber, serviceType, whatWeDo }) => {
+        let string = `Название компании: ${companyName}\nemail: ${email};\nФИО: ${nameSurname};\nТелефон: ${phoneNumber};\nТип услуги: ${serviceType};\nСфера деятельности: ${whatWeDo}`
+        console.log(serviceType)
+        const request = await myAxios.post<Request>('/requests', {
+            name: nameSurname,
+            whatYouDo: whatWeDo,
+            phone: phoneNumber,
+            companyName,
+            typeService: serviceType,
+            email
+        })
     }
 
     const validateEmail = (s: string) => {
@@ -25,7 +42,7 @@ export const RequestForm: React.FC = (props) => {
     }
     
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="request__form">
+        <form onSubmit={handleSubmit(onSubmit)} className={`request__form ${popupClasses}`}>
             <Input 
                 register={register}
                 fieldName="companyName"
@@ -53,6 +70,7 @@ export const RequestForm: React.FC = (props) => {
                 fieldName="serviceType"
                 setValue={setValue}
                 name="Тип услуги"
+                placeholder='Выберите услугу'
                 isDropdown
                 isRequired  
                 error={errors.serviceType}

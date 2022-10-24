@@ -1,7 +1,13 @@
-import React, { FormEvent, useEffect, useState } from 'react'
+import React, { FormEvent, useEffect, useMemo, useState } from 'react'
 import { FieldError } from 'react-hook-form'
+import { isEnumMember } from 'typescript'
 import { News } from '../../schemas/News'
 import { Partner } from '../../schemas/Partner'
+import { Hiders } from '../Popup/CreateNews/CreateNews'
+import lightGreenHider from '../../assets/news-hiders/light-green-green.png'
+import orangeLight from '../../assets/news-hiders/orange-light-orange.png'
+import purpleOrange from '../../assets/news-hiders/purple-orange.png'
+import redPurple from '../../assets/news-hiders/red-purple.png'
 import './Input.scss'
 
 interface IValidate {
@@ -28,11 +34,11 @@ interface InputProps {
     validate?: IValidate
     setValue?: (s: any, value: any, {}: setValueOptions) => void
     error?: FieldError
-    options?: News[] | Partner[]
+    options?: News[] | Partner[] | Hiders[]
 }
 
-enum servicesTypes {
-    BUSINESS_CONSULTING = 'Бизнес консалтинг',
+export enum servicesTypes {
+    BUSINESS_CONSULTING = 'Smart Business',
     EXPERTS_EDUCATION = 'Обучение экспертов'
 }
 
@@ -42,6 +48,22 @@ export const Input: React.FC<InputProps> = (props) => {
     const [isShown, setShown] = useState(false)
     const [selected, setSelected] = useState<servicesTypes | number>()
     const [selectedText, setSelectedText] = useState<string>()
+
+    const image = useMemo(() => {
+        switch(selectedText) { 
+            case Hiders.LIGHT_GREEN:
+                return lightGreenHider
+            case Hiders.ORANGE_LIGHT:
+                return orangeLight
+            case Hiders.PURPLE_ORANGE:
+                return purpleOrange
+            case Hiders.RED_PURPLE:
+                return redPurple
+            default:
+                return ""
+        }
+    }, [selectedText])
+
 
     const handleChangeDropdown = (e: FormEvent<HTMLSpanElement>, id?: number, textToShow?: string) => {
         e.stopPropagation()
@@ -135,15 +157,20 @@ export const Input: React.FC<InputProps> = (props) => {
                         )} 
                         placeholder={placeholder} 
                         autoComplete={'off'}
-                        value={options ? selectedText :selected}
+                        value={options ? selectedText: selected}
                         style={{cursor: 'pointer'}}
                     />
                     <div className="input__dropdown" style={isShown ? {display: 'flex'}: {display: 'none'}}>
                         {options ?
                             options.map((op: any) => 
-                                <span onClick={(e) => handleChangeDropdown(e, op.id, op.title || op.name)} style={{cursor: 'pointer'}} key={op.id}>
-                                    {'title' in op && op.title}
-                                    {'name' in op && op.name}
+                                <span onClick={(e) => handleChangeDropdown(e, op.id, op.title || op.name || op)} style={{cursor: 'pointer'}} key={op.id || op}>
+                                    {typeof op === "string" ? op: 
+                                        <>
+                                            {'title' in op && op.title}
+                                            {'name' in op && op.name}
+                                        </>
+                                    }
+                                    
                                 </span>
                             )
                             :
@@ -153,6 +180,10 @@ export const Input: React.FC<InputProps> = (props) => {
                             </>
                         }
                     </div>
+
+                    {options && Hiders.LIGHT_GREEN == options[0] &&
+                        <img src={image} alt="" className="hider-preview" />
+                    }
                 </div>
             }
 

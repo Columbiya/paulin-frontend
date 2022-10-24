@@ -11,8 +11,12 @@ import { partnersStore } from '../../store/partnersStore'
 import './Partners.scss'
 
 export const Partners: React.FC = (props) => {
-    const [items, loadingPartners, errorPartners] = useHttp<Partner[]>({link: '/partners', method: Methods.GET, useAuth: false, store: partnersStore})
-    const [news, loadingNews, errorNews] = useHttp<News[]>({link: '/news', method: Methods.GET, useAuth: false, store: newsStore})
+    const [items, loadingPartners, errorPartners] = useHttp<Partner[]>(
+        {link: '/partners', method: Methods.GET, useAuth: false, store: partnersStore}
+    )
+    const [news, loadingNews, errorNews] = useHttp<News[]>(
+        {link: '/news', method: Methods.GET, useAuth: false, store: newsStore}
+    )
     
 
     if (loadingPartners || loadingNews) {
