@@ -4,6 +4,12 @@ import { ReactComponent as Logo } from '../../assets/header/logo.svg'
 import { PagesRoutes } from '../../routes'
 import burgerMenu from '../../assets/header/burger-menu.svg'
 import './Header.scss'
+import { Dropdown, PathOption } from '../Dropdown/Dropdown'
+
+const options: PathOption[] = [
+    {name: "Smart Business", path: PagesRoutes.BUSINESS_CONSULTING},
+    {name: "Финансовая модель", path: PagesRoutes.AUDIT}
+]
 
 export const Header: React.FC = (props) => {
     const [isOver, setOver] = useState(false)
@@ -27,7 +33,8 @@ export const Header: React.FC = (props) => {
     }
 
     return (
-        <header className={`header ${pathname != PagesRoutes.MAIN && pathname != PagesRoutes.BUSINESS_CONSULTING ? "header--green": undefined}`}>
+        <header className={`header ${pathname != PagesRoutes.MAIN && pathname != PagesRoutes.BUSINESS_CONSULTING 
+                                    && pathname != PagesRoutes.AUDIT ? "header--green": undefined}`}>
             <div className="container">
                 <div className="header-inner">
                     <NavLink to={PagesRoutes.MAIN} className="header__logo"><Logo width={165} /></NavLink>
@@ -36,7 +43,7 @@ export const Header: React.FC = (props) => {
 
                     <nav className={`nav ${menuActive ? 'active': undefined}`}>
                         <NavLink to={PagesRoutes.MAIN} onClick={clickHandler}>Главная страница</NavLink>
-                        <NavLink to={PagesRoutes.BUSINESS_CONSULTING} onClick={clickHandler}>Smart Business</NavLink>
+                        <Dropdown text='Услуги' options={options} clickHandler={clickHandler} />
                         <a
                             onMouseEnter={e => setOver(true)}
                             onMouseLeave={e => setOver(false)}

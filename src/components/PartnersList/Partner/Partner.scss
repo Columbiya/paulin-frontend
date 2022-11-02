@@ -280,6 +280,14 @@
         &.partners-page {
             width: 100%;
         }
+
+        &:not(.partners-page) {
+            height: 250px;
+        }
+
+        img {
+            width: 150px;
+        }
     }
 }
 

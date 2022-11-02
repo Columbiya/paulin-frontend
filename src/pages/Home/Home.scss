@@ -51,6 +51,13 @@
     &__inner {
         padding-left: 50px;
     }
+
+    &__person-laptop {
+        position: absolute;
+        width: 20%;
+        right: 8%;
+        top: 57%;
+    }
 }
 
 .about-us {
@@ -89,7 +96,9 @@
 }
 
 .business-consulting {
-    margin-top: 500px;
+    margin-top: -400px;
+    position: relative;
+    z-index: 5000000;
 
     &__header {
         display: flex;
@@ -114,7 +123,7 @@
         font-weight: 600;
         color: #fff;
         
-        margin-top: 60px;
+        margin-top: 30px;
         max-width: 700px;
     }
 
@@ -303,6 +312,18 @@
     width: 100%;
 }
 
+.bike-image-mobile {
+    display: none;
+}
+
+.clock {
+    position: absolute;
+    top: 96%;
+    left: 85%;
+    width: 79px;
+    z-index: 400;
+}
+
 @keyframes rotate {
     from {
         transform: rotate(0);
@@ -317,3 +338,399 @@
     }
 }
 
+@media screen and (max-width: 1500px) {
+    .main-screen {
+        &__inner {
+            padding-left: 250px;
+        }
+        
+        &__image {
+            &.mobile {
+            }
+        }
+    }
+    
+}
+
+@media screen and (max-width: 1300px) {
+    .main-screen {
+        height: 90vh;
+
+        .container {
+            align-items: flex-start;
+            justify-content: center;
+            text-align: center;
+            padding-top: 120px;
+        }
+        &__inner {
+            padding-left: 0;
+        }
+
+        &__subsubtitle {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .education {
+        &__buttons {
+            display: flex;
+            flex-direction: column;
+
+            button {
+                max-width: 300px;
+
+                &:not(:last-child) {
+                    margin-right: 0;
+                    margin-bottom: 25px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .main-screen {
+        &__title {
+            transform: scale(.8);
+        }
+
+        &__subtitle {
+            transform: scale(.8);
+            margin: 10px;
+        }
+
+        &__subsubtitle {
+            transform: scale(.8);
+        }
+    }
+
+    .features {
+        &__inner {
+            flex-wrap: wrap;
+        }
+        &__item {
+            width: 45%;
+
+            &:hover {
+                transform: none;
+            }
+        }
+
+        &__left {
+            width: 100%;
+        }
+
+        &__right {
+            width: 100%;
+            position: static;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-screen {
+        height: 100%;
+        min-height: 900px;
+        &__title {
+            transform: scale(.8);
+        }
+
+        &__subtitle {
+            transform: scale(.8);
+        }
+
+        &__subsubtitle {
+            transform: scale(.8);
+        }
+
+        &__person-laptop {
+            display: none;
+        }
+    }
+
+
+    .clock {
+        display: none;
+    }
+
+    .features {
+        &__left {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        &__item {
+            width: 60%;
+
+            &.small {
+                &:last-child {
+                    align-self: flex-end;
+                    margin-left: auto;
+                }
+            }
+
+            &:nth-child(2n) {
+                margin-left: auto;
+            }
+        }
+    }
+
+    .education {
+        &__inner {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+
+    .about-us {
+        overflow: visible !important;
+        
+        .bike-image {
+            display: none;
+
+            &-mobile {
+                display: block;
+                position: absolute;
+                top: 450px;
+                left: 0;
+
+                &.abous-us__bg {
+                    z-index: -1;
+                }
+            }
+        }
+
+        &__bike {
+            &.mobile {
+                left: -100px;
+            }
+        }
+
+        .gear-wheel {
+            display: none;
+            top: 260px;
+            width: 180px;
+            left: 213px;
+
+            &.left {
+                left: -90px;
+            }
+
+            &.large {
+                top: 750px;
+                width: 320px;
+                left: 300px;
+            }
+        }
+
+        &__info {
+            flex-direction: column;
+
+            .text-gradient {
+                font-size: 20rem;
+            }
+        }
+    }
+
+    .home__bg-green {
+        display: none;
+    }
+
+    .about-us {
+        overflow-x: visible !important;
+        &__info {
+            max-width: 100%;
+            margin-top: 75px;
+        }
+    }
+
+    .business-consulting {
+        margin-top: -400px;
+        &__header {
+            flex-direction: column;
+            align-items: flex-start;
+
+            button {
+                margin-top: 25px;
+            }
+        }
+
+        &__header {
+            & > div:last-child {
+                button {
+                    width: 100%;
+                    max-width: 100%;
+                }
+            }
+        }
+
+        &__btns {
+            width: 100%;
+
+            button {
+                width: 100%;
+                max-width: 100%;
+                min-width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .main-screen {
+        height: 120vh;
+        position: relative;
+
+        margin-bottom: 150px;
+
+        .container {
+            text-align: left;
+            padding-top: 0;
+
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+
+            button {
+                width: 100% !important;
+                min-width: 70% !important;
+                max-width: 70% !important;
+            }
+        }
+
+        &__title {
+            transform: scale(1);
+            font-size: 10rem;
+        }
+
+        &__subtitle {
+            transform: scale(1);
+            margin-left: 0;
+            margin-right: 0 ;
+            font-size: 5rem;
+        }
+
+        &__subsubtitle {
+            transform: scale(1);
+            font-size: 3rem;
+        }
+
+        &__image {
+            &.mobile {
+            }
+        }
+
+        &__person-with-screens {
+            position: absolute;
+            top: 80%;
+            left: 15%;
+            transform: translateX(-50%);
+            width: 300px;
+            animation: verticalMovement 3s ease infinite;
+        }
+
+        &__person-on-circle {
+            position: absolute;
+            top: 100%;
+            left: 35%;
+            width: 170px;
+            animation: verticalMovement 3s ease infinite;
+        }
+    }
+    .partners {
+        &__header {
+            flex-direction: column;
+            align-items: flex-start;
+
+            button {
+                width: 100%;
+                min-width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        &__title {
+            margin-bottom: 25px;
+        }
+    }
+
+    .education {
+        padding-top: 75px;
+        &__buttons {
+            button {
+                max-width: 100%;
+                min-width: 100%;
+                width: 100%;
+            }
+        }
+    }
+
+    .partners {
+        margin-top: 75px;
+    }
+
+    .features {
+        &__right {
+            .features__item {
+                padding-top: 200px;
+                height: auto;
+            }
+        }
+        &__item {
+            padding: 35px;
+            padding-top: 200px;
+            width: 90%;
+
+            &.small {
+                width: 90%;
+            }
+
+            img {
+                width: 120px;
+            }
+        }
+    }
+
+    .about-us {
+        &__title {
+            margin-top: 75px;
+        }
+    }
+
+    .main-screen {
+        &__person-with-screens {
+            left: 5%;
+        }
+    }
+
+    .education {
+        &__text {
+            margin: 25px 0;
+        }
+
+        img {
+            width: 100% !important;
+            position: static;
+        }
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .gear-wheel {
+        top: 260px;
+        width: 180px;
+        left: 213px;
+
+        &.left {
+            left: -90px;
+        }
+
+        &.large {
+            top: 750px;
+            width: 320px;
+            left: 300px;
+        }
+    }
+}

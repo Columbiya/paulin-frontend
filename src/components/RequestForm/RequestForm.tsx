@@ -8,6 +8,7 @@ import './RequestForm.scss'
 
 interface RequestFormProps {
     isPopup?: boolean
+    onHide?: () => void
 }
 
 interface FormValues {
@@ -19,7 +20,7 @@ interface FormValues {
     email: string
 }
 
-export const RequestForm: React.FC<RequestFormProps> = ({ isPopup }) => {
+export const RequestForm: React.FC<RequestFormProps> = ({ isPopup, onHide }) => {
     const { register, handleSubmit, formState: { errors }, setValue } = useForm<FormValues>()
 
     const popupClasses = isPopup ? "request__form-popup": undefined
@@ -35,6 +36,10 @@ export const RequestForm: React.FC<RequestFormProps> = ({ isPopup }) => {
             typeService: serviceType,
             email
         })
+
+        if (onHide) {
+            onHide()
+        }
     }
 
     const validateEmail = (s: string) => {

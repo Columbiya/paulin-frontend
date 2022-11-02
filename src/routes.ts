@@ -5,5 +5,6 @@ export enum PagesRoutes {
     PARTNERS_AND_FEEDBACK = '/partners-feedback',
     BLOG = '/blog',
     AUTH = '/auth',
-    ADMIN_PANEL = '/admin'
+    ADMIN_PANEL = '/admin',
+    AUDIT = '/audit'
 }

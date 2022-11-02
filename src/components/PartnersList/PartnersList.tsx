@@ -14,6 +14,20 @@ export const PartnersList: React.FC = observer((props) => {
                 modules={[Autoplay]}
                 spaceBetween={50}
                 slidesPerView={4}
+                breakpoints={{
+                    300: {
+                        slidesPerView: 1
+                    },
+                    500: {
+                        slidesPerView: 2
+                    },
+                    1100: {
+                        slidesPerView: 3,
+                    },
+                    1600: {
+                        slidesPerView: 4,
+                    }
+                }}
                 autoplay={{
                     delay: 2500,
                     disableOnInteraction: false
@@ -21,9 +35,12 @@ export const PartnersList: React.FC = observer((props) => {
             >
                 {
                     partnersStore?.items.map(item => (
-                        <SwiperSlide>
-                            <PartnerItem {...item} key={item.id} />
-                        </SwiperSlide>
+                        <>
+                            <SwiperSlide>
+                                <PartnerItem {...item} key={item.id} />
+                            </SwiperSlide>
+                        </>
+
                     ))
                 }
             </Swiper>

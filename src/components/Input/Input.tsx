@@ -39,7 +39,8 @@ interface InputProps {
 
 export enum servicesTypes {
     BUSINESS_CONSULTING = 'Smart Business',
-    EXPERTS_EDUCATION = 'Обучение экспертов'
+    EXPERTS_EDUCATION = 'Обучение экспертов',
+    FINANCIAL_MODEL = 'Финансовая модель'
 }
 
 
@@ -177,6 +178,7 @@ export const Input: React.FC<InputProps> = (props) => {
                             <>
                                 <span onClick={handleChangeDropdown} style={{cursor: 'pointer'}}>{servicesTypes.BUSINESS_CONSULTING}</span>
                                 <span onClick={handleChangeDropdown} style={{cursor: 'pointer'}}>{servicesTypes.EXPERTS_EDUCATION}</span>
+                                <span onClick={handleChangeDropdown} style={{cursor: 'pointer'}}>{servicesTypes.FINANCIAL_MODEL}</span>
                             </>
                         }
                     </div>

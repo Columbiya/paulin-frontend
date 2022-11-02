@@ -1,15 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 23.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 268 268" style="enable-background:new 0 0 268 268;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:url(#круг_1_);}
+<svg width="268" height="268" viewBox="0 0 268 268" fill="none" xmlns="http://www.w3.org/2000/svg">
+<style>
+	@keyframes rotate {
+		from {
+			transform: rotate(0);
+		}
+
+		to {
+			transform: rotate(360deg)
+		}
+	}
+
+	#minuteClock {
+		transform-origin: 51% 48%;
+		animation: rotate 3s linear infinite;
+	}
+
+	#hoursClock {
+		transform-origin: 51% 48%;
+		animation: rotate 15s linear infinite;
+	}
 </style>
-<linearGradient id="круг_1_" gradientUnits="userSpaceOnUse" x1="-490.6523" y1="-210.6967" x2="-223.5476" y2="-210.6967" gradientTransform="matrix(0.9558 0.294 -0.294 0.9558 413.3853 440.3614)">
-	<stop  offset="0" style="stop-color:#F06C99"/>
-	<stop  offset="0.2233" style="stop-color:#E260AE"/>
-	<stop  offset="0.7376" style="stop-color:#C648D8"/>
-	<stop  offset="1" style="stop-color:#BB3FE9"/>
+<g clip-path="url(#clip0_2_139)">
+<path d="M134 267.55C207.758 267.55 267.55 207.758 267.55 134C267.55 60.2424 207.758 0.449997 134 0.449997C60.2424 0.449997 0.449997 60.2424 0.449997 134C0.449997 207.758 60.2424 267.55 134 267.55Z" fill="url(#paint0_linear_2_139)"/>
+<path d="M132.102 134.237C128.47 132.594 126.841 128.283 128.482 124.66L168.304 36.2913C169.945 32.6563 174.252 31.0252 177.872 32.668C181.504 34.3107 183.134 38.6214 181.492 42.2447L141.67 130.614C140.041 134.237 135.734 135.868 132.102 134.237Z" stroke="white" id="minuteClock" stroke-width="1.3044" stroke-miterlimit="10"/>
+<path d="M128.54 130.264C127.132 126.536 129.029 122.342 132.754 120.932L198.36 96.0932C202.084 94.6835 206.275 96.5825 207.684 100.311C209.092 104.039 207.195 108.233 203.47 109.643L137.876 134.47C134.151 135.88 129.949 133.981 128.54 130.264Z" stroke="white" id="hoursClock" stroke-width="1.3044" stroke-miterlimit="10"/>
+<path d="M143.265 109.456C153.404 114.035 157.909 125.965 153.334 136.101C148.76 146.249 136.84 150.757 126.712 146.179C116.585 141.612 112.069 129.67 116.643 119.534C121.218 109.386 133.138 104.878 143.265 109.456Z" stroke="white" stroke-width="1.3044" stroke-miterlimit="10"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_2_139" x1="6.36466" y1="94.7257" x2="261.663" y2="173.254" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F06C99"/>
+<stop offset="0.2233" stop-color="#E260AE"/>
+<stop offset="0.7376" stop-color="#C648D8"/>
+<stop offset="1" stop-color="#BB3FE9"/>
 </linearGradient>
-<circle id="круг_22_" class="st0" cx="134" cy="134" r="133.55"/>
+<clipPath id="clip0_2_139">
+<rect width="268" height="268" fill="white"/>
+</clipPath>
+</defs>
 </svg>

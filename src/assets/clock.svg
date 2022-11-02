@@ -4,11 +4,6 @@
 	 viewBox="0 0 83.33 103" style="enable-background:new 0 0 83.33 103;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:none;stroke:#FFFFFF;stroke-width:1.3044;stroke-miterlimit:10;}
-</style>
-<style>
-	#стрелка_2 {
-		transform-origin: left bottom;
-	}
 
 	@keyframes rotate {
 		from {
@@ -18,6 +13,12 @@
 		to {
 			transform: rotate(360deg)
 		}
+	}
+
+
+	#стрелка_2 {
+		transform-origin: left bottom;
+		animation: rotate 3s linear infinite;
 	}
 </style>
 <g>

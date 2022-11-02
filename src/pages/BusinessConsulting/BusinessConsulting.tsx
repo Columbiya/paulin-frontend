@@ -27,6 +27,7 @@ import './BusinessConsulting.scss'
 import { Button } from '../../components/Button/Button'
 import { NewsList } from '../../components/NewsList/NewsList'
 import { RequestSection } from '../../components/RequestSection/RequestSection'
+import { YouCan } from '../../components/YouCan/YouCan'
 
 interface BusinessConsultingProps {
     setActive: (val: boolean) => void
@@ -272,19 +273,9 @@ export const BusinessConsulting: React.FC<BusinessConsultingProps> = ({ setActiv
                 </div>
             </div>
 
-            <section className="you-can">
-                <div className="container">
-                    <div className="you-can__inner">
-                        <img src={checkPurple} alt="" data-aos="fade-in" />
-                        <div className="you-can__text" data-aos="fade-up">
-                            <p>
-                                Вы сможете автоматизировать бизнес во время прохождения 
-                                годовой программы по внедрению системы управления
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <YouCan 
+                text="Вы сможете автоматизировать бизнес во время прохождения годовой программы по внедрению системы управления" 
+            />
 
             <div className="container">
                 <NewsList />

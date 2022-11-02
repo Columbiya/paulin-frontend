@@ -19,6 +19,7 @@ import 'aos/dist/aos.css';
 import './App.scss'
 import { Popup } from './components/Popup/Popup';
 import { RequestSection } from './components/RequestSection/RequestSection';
+import { AuditPage } from './pages/AuditPage/AuditPage';
 
 const access_token = getAuthToken()
 
@@ -64,7 +65,10 @@ function App() {
                 isWide
                 onHide={() => setActive(false)}
             >
-                <RequestSection isPopup />
+                <RequestSection 
+                  isPopup
+                  onHide={() => setActive(false)}
+                />
             </Popup>
         }
 
@@ -76,6 +80,7 @@ function App() {
           <Route path={PagesRoutes.BLOG + "/:id"} element={<NewsDetailPage />} />
           <Route path={PagesRoutes.BUSINESS_CONSULTING} element={<BusinessConsulting setActive={setActive} />} />
           <Route path={PagesRoutes.AUTH} element={<AuthPage />} />
+          <Route path={PagesRoutes.AUDIT} element={<AuditPage setActive={setActive} />} />
           <Route path={PagesRoutes.ADMIN_PANEL} element={<AdminPanel />} />
         </Routes>
       </div>

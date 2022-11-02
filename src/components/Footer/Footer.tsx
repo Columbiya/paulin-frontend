@@ -17,7 +17,9 @@ export const Footer: React.FC = (props) => {
 
     return (
         <footer 
-            className={`footer ${pathname != PagesRoutes.MAIN && pathname != PagesRoutes.BUSINESS_CONSULTING ? 'footer--gradient': undefined}`}
+            className={`footer ${pathname != PagesRoutes.MAIN &&
+                 pathname != PagesRoutes.BUSINESS_CONSULTING &&
+                 pathname != PagesRoutes.AUDIT ? 'footer--gradient': undefined}`}
             style={pathname == PagesRoutes.AUTH || pathname == PagesRoutes.ADMIN_PANEL ? {display: 'none'}: undefined}
         >
             <div className="container">

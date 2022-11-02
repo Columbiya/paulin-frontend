@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="персонаж" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 746 882" style="enable-background:new 0 0 746 882;" xml:space="preserve">
+<style type="text/css">
+	.st1{fill:#E6E6E6;}
+	.st2{fill:#1B82D8;}
+	.st3{fill:#135E91;}
+	.st4{fill:url(#круг_1_);}
+	.st5{fill:url(#SVGID_1_);}
+	.st6{fill:#F2C557;}
+	.st7{fill:#E8E8E8;}
+	.st8{fill:#4D80D3;}
+	.st9{fill:url(#SVGID_2_);}
+	.st10{fill:#E5C35F;}
+	.st11{fill:#7D2B7F;}
+	.st12{fill:#DDDDDD;}
+	.st13{fill:url(#SVGID_3_);}
+	.st14{fill:url(#SVGID_4_);}
+	.st15{fill:#F2F2F2;}
+
+	@keyframes dash {
+		to {
+			stroke-dashoffset: 0;
+		}
+	}
+
+	@keyframes float {
+		from {
+			transform: translateY(0)
+		}
+		50% {
+			transform: translateY(15px)
+		}
+		to {
+			transform: translateY(0)
+		}
+	}
+
+	.st0 {
+		stroke-dasharray: 1000;
+  		stroke-dashoffset: 1000;
+		animation: dash 1.5s ease forwards;
+	}
+
+	#first {
+		animation: float 2s ease infinite;
+	}
+
+	#second {
+		animation: float 2s ease infinite;
+		animation-delay: 1s;
+	}
+
+	#third {
+		animation: float 2s ease infinite;
+		animation-delay: 1.5s;
+	}
+</style>
+<g id="диаграммы">
+	<g id="first">
+		<g>
+			<g>
+				<path class="st0" stroke="#ffffff" stroke-width="2" fill="transparent" d="M114.9,453.8H36.3V275.7h78.6C114.9,275.7,114.9,453.8,114.9,453.8z M38.3,451.8h74.6V277.7H38.3V451.8z"/>
+			</g>
+			<g>
+				<path class="st0" stroke="#ffffff" stroke-width="2" fill="transparent" d="M216,453.8h-78.6V326.2H216V453.8z M139.4,451.8H214V328.2h-74.6V451.8z"/>
+			</g>
+			<g>
+				<path class="st0" stroke="#ffffff" stroke-width="2" fill="transparent" d="M316.3,453.8h-78.6v-78.6h78.6V453.8z M239.6,451.8h74.6v-74.6h-74.6V451.8z"/>
+			</g>
+		</g>
+		<g>
+			<path class="st0" d="M328.6,509.7H23.9c-12.9,0-23.4-10.5-23.4-23.4V243.2c0-12.9,10.5-23.4,23.4-23.4H95
+				c12.9,0,23.4,10.5,23.4,23.4V259h210.3c12.9,0,23.4,10.5,23.4,23.4v203.8C352.1,499.2,341.6,509.7,328.6,509.7z M23.9,221.7
+				c-11.8,0-21.4,9.6-21.4,21.4v243.1c0,11.8,9.6,21.4,21.4,21.4h304.8c11.8,0,21.4-9.6,21.4-21.4V282.4c0-11.8-9.6-21.4-21.4-21.4
+				H116.4v-17.8c0-11.8-9.6-21.4-21.4-21.4H23.9V221.7z" stroke="#ffffff" fill="transparent" stroke-width="2"/>
+		</g>
+	</g>
+	<g id="second">
+		<g>
+			<rect x="227.9" y="91.6" class="st0" width="200.5" height="2" stroke="#ffffff" fill="transparent" stroke-width="2"/>
+		</g>
+		<g>
+			<rect x="227.9" y="160.9" class="st0" width="200.5" height="2" stroke="#ffffff" fill="transparent" stroke-width="2"/>
+		</g>
+		<g>
+			<path class="st0" d="M441.9,217.2H214.4c-9.8,0-17.7-8-17.7-17.7V18c0-9.8,8-17.7,17.7-17.7h53c9.8,0,17.7,8,17.7,17.7v11.6
+				h156.7c9.8,0,17.7,8,17.7,17.7v152.1C459.6,209.2,451.7,217.2,441.9,217.2z M214.4,2.3c-8.7,0-15.7,7.1-15.7,15.7v181.4
+				c0,8.7,7.1,15.7,15.7,15.7h227.5c8.7,0,15.7-7.1,15.7-15.7V47.3c0-8.7-7.1-15.7-15.7-15.7H283.1V18c0-8.7-7.1-15.7-15.7-15.7
+				C267.4,2.3,214.4,2.3,214.4,2.3z" stroke="#ffffff" fill="transparent" stroke-width="2"/>
+		</g>
+	</g>
+	<g id="third">
+		<g>
+			<path class="st0" d="M605.6,481.4c-77.2,0-140-62.8-140-140s62.8-140,140-140s140,62.8,140,140S682.8,481.4,605.6,481.4z
+				 M605.6,203.4c-76.1,0-138,61.9-138,138s61.9,138,138,138s138-61.9,138-138S681.7,203.4,605.6,203.4z" stroke="#ffffff" fill="transparent" stroke-width="2"/>
+		</g>
+		<g>
+			<path class="st0" d="M605.6,407.8c-36.6,0-66.4-29.8-66.4-66.4S569,275,605.6,275c36.6,0,66.4,29.8,66.4,66.4
+				S642.2,407.8,605.6,407.8z M605.6,277c-35.5,0-64.4,28.9-64.4,64.4s28.9,64.4,64.4,64.4s64.4-28.9,64.4-64.4S641.1,277,605.6,277
+				z" stroke="#ffffff" fill="transparent" stroke-width="2"/>
+		</g>
+		<g>
+			<rect x="604.6" y="202.4" class="st0" width="2" height="73.6" stroke="#ffffff" fill="transparent" stroke-width="2"/>
+		</g>
+		<g>
+			<rect x="671" y="340.4" class="st0" width="73.6" height="2" stroke="#ffffff" fill="transparent" stroke-width="2"/>
+		</g>
+	</g>
+</g>
+</svg>

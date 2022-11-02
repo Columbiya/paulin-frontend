@@ -1,12 +1,9 @@
 import React, { MouseEvent, useState } from 'react'
 import { Button } from '../../components/Button/Button'
-import { ReactComponent as Image } from '../../assets/home/main-screen.svg'
 import { Methods, useHttp } from '../../hooks/useHttp'
 import { newsStore } from '../../store/newsStore'
 import { partnersStore } from '../../store/partnersStore'
-import { NewsItem } from '../../components/News/NewsItem'
 import { News } from '../../schemas/News'
-import { Swiper, SwiperSlide } from 'swiper/react'
 import { Partner } from '../../schemas/Partner'
 import { PartnersList } from '../../components/PartnersList/PartnersList'
 import BikeImage from '../../assets/home/bike.svg'
@@ -22,6 +19,11 @@ import wheelGear2 from '../../assets/home/gear-2.svg'
 import largePurpleGear from '../../assets/home/large-purple-gear.svg'
 import bgGreen from '../../assets/home/bg-green.svg'
 import bgMainScreenMobile from '../../assets/home/main-screen-bg-mobile.svg'
+import personOnCircleMobile from '../../assets/home/person-on-circle-mobile.svg'
+import personWithScreensMobile from '../../assets/home/person-with-screens-mobile.svg'
+import bgGreenMobile from '../../assets/home/bg-green-mobile.svg'
+import bikeMobile from '../../assets/home/bike-mobile.svg'
+import personWithLaptopClock from '../../assets/home/person-with-laptop-clock.svg'
 import './Home.scss'
 import { NewsList } from '../../components/NewsList/NewsList'
 import { Preloader } from '../../components/Preloader/Preloader'
@@ -29,7 +31,6 @@ import { RequestSection } from '../../components/RequestSection/RequestSection'
 import { PagesRoutes } from '../../routes'
 import { useNavigate } from 'react-router'
 import { scrollToTopAndNavigate } from '../../helpers/scrollToTopAndNavigate'
-import clock from '../../assets/clock.svg'
 
 interface HomeProps {
     setActive: (val: boolean) => void
@@ -57,6 +58,9 @@ export const Home: React.FC<HomeProps> = ({ setActive }) => {
         <main>
             <object data={mainScreenImage} className="main-screen__image desktop" type="image/svg+xml"></object>
             <object data={bgMainScreenMobile} className="main-screen__image mobile"></object>
+            <object data={personOnCircleMobile} className="main-screen__person-on-circle mobile"></object>
+            <object data={personWithScreensMobile} className="main-screen__person-with-screens mobile"></object>
+            <object data={personWithLaptopClock} className="main-screen__person-laptop"></object>
             <div className="main-screen">
                 <div className="container">
                     <div className="main-screen__inner">
@@ -83,7 +87,7 @@ export const Home: React.FC<HomeProps> = ({ setActive }) => {
                     чтобы он приносил больше денег и им было легче управлять.</h2>
             </div>
 
-            <div className="about-us" style={{position: 'relative'}}>
+            <div className="about-us" style={{position: 'relative', overflow: 'hidden', paddingBottom: '900px'}}>
                 <div className="container">
                     <div className="about-us__info" data-aos="fade-right">
                         <div className="about-us__item">
@@ -97,7 +101,9 @@ export const Home: React.FC<HomeProps> = ({ setActive }) => {
                     </div>
                 </div>
 
-                <object data={BikeImage} style={{position: 'absolute', top: '0', left: '-80px', width: '1920px', zIndex: -1}}></object>
+                <object data={BikeImage} style={{position: 'absolute', top: '0', left: '-80px', width: '1920px', zIndex: -1}} className="bike-image"></object>
+                <object data={bgGreenMobile} className="bike-image-mobile abous-us__bg mobile"></object>
+                <object data={bikeMobile} className="bike-image-mobile about-us__bike mobile"></object>
                 <object data={wheelGear} className="gear-wheel"></object>
                 <object data={wheelGear2} className="gear-wheel left"></object>
                 <object data={largePurpleGear} className="gear-wheel large"></object>
@@ -111,7 +117,7 @@ export const Home: React.FC<HomeProps> = ({ setActive }) => {
                             <h2 className="business-consulting__title">Smart Business</h2>
                             <h3 className="business-consulting__subtitle">Мы делаем из бизнеса систему</h3>
                         </div>
-                        <div data-aos="fade-left">
+                        <div data-aos="fade-left" className="business-consulting__btns">
                             <Button 
                                 isWhite
                                 onClick={() => navigateTo(PagesRoutes.BUSINESS_CONSULTING)}

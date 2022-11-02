@@ -13,6 +13,25 @@
         z-index: -1;
     }
 
+    .education__title {
+        max-width: 600px;
+        min-height: 116px;
+
+        position: relative;
+    }
+
+    .education__subtitle {
+        font-size: 3.2rem;
+        font-weight: 600;
+
+        max-width: 600px;
+
+        position: absolute;
+        top: 110%;
+        width: 100%;
+        left: 0;
+    }
+
     &--popup {
         margin-top: 0;
 
@@ -31,6 +50,10 @@
         &__inner {
             margin-top: -50px;
         }
+    }
+
+    .education__title {
+        min-height: auto;
     }
 }
 
@@ -95,6 +118,10 @@
             position: absolute;
             top: -50px;
             left: 15px;
+        }
+
+        .education__subtitle {
+            top: 90%;
         }
 
         &__inner {

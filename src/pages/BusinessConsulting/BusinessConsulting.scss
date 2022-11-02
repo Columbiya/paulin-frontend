@@ -385,27 +385,6 @@
     }
 }
 
-.you-can {
-    &__inner {
-        display: flex;
-        align-items: center;
-
-        max-width: 1100px;
-        margin: 300px auto;
-
-        img {
-            max-width: 220px;
-        }
-    }
-
-    &__text {
-        max-width: 850px;
-        font-weight: 600;
-        font-size: 3.6rem;
-        margin-left: 70px;
-    }
-}
-
 @keyframes rotate {
     from {
         transform: rotate(0);
@@ -647,21 +626,6 @@
         }
     }
 
-    .you-can {
-        &__inner {
-            flex-wrap: wrap;
-            align-items: center;
-
-            img {
-                margin: 0 auto;
-            }
-        }
-
-        &__text {
-            margin-left: 0;
-        }
-    }
-
     .consulting {
         &-main-screen__content {
             padding-bottom: 1000px;
@@ -844,18 +808,6 @@
                     width: 300px;
                 }
             }
-        }
-    }
-
-    .you-can {
-        img {
-            width: 50%;
-
-            margin-bottom: 30px;
-        }
-
-        &__inner {
-            margin: 0 auto 350px;
         }
     }
 

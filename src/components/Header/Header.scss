@@ -9,6 +9,10 @@
 
     padding: 10px 0;
 
+    .mobile {
+        display: none;
+    }
+
     svg:not(#Слой_1) {
         animation: verticalMovement 5s ease-in-out infinite;
     }
@@ -61,8 +65,68 @@
 .nav {
     display: flex;
 
+    &__dropdown {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 500000;
+        transform: translate(-50%, -50%);
+        
+        width: 270px;
+        height: 130px;
+        background: #fff;
+
+        padding: 30px;
+        border-radius: 35px;
+
+        transition: opacity .5s ease;
+        animation: jumpIn .3s ease forwards;
+
+        a {
+            justify-content: flex-start !important;
+            color: #000 !important;
+            font-size: 1.7rem !important;
+
+            &:not(:last-child) {
+                margin-bottom: 25px;
+            }
+        }
+
+        &-inner {
+            display: flex;
+            align-items: center;
+
+            transition: opacity .5s ease;
+
+            &:hover {
+                opacity: .8;
+            }
+        }
+    }
+
+    .desktop {
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 40px;
+            margin-left: 15px;
+        }
+
+        .image-mobile {
+            display: none;
+        }
+        
+
+        &:hover::after {
+            display: none;
+        }
+    }
+
     a {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         color: #fff;
         font-weight: 500;
         font-size: 2rem;
@@ -129,12 +193,49 @@
         }
 
         a {
+            display: block;
             color: #000;
             margin: 0;
 
             &:not(:last-child) {
                 margin-bottom: 40px;
                 margin-right: 0;
+            }
+        }
+
+        .desktop {
+            height: 20%;
+            flex-wrap: wrap;
+            text-align: center;
+
+            transition: height .5s ease;
+
+            &-image-mobile {
+                display: none;
+            }
+
+            .image-mobile {
+                display: block;
+            }
+        }
+
+        &__dropdown {
+            display: block;
+            width: 100%;
+            position: static;
+            transform: none;
+            animation: none;
+
+            a {
+                font-size: inherit !important;
+            }
+
+            &-inner {
+                width: 100%;
+                
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
         }
     }
@@ -176,6 +277,22 @@
                 width: 100px;
             }
         }
+    }
+
+    .nav {
+        a {
+            font-size: 3rem;
+        }
+    }
+}
+
+@keyframes jumpIn {
+    from {
+        transform: translate(-50%, -60%);
+    }
+
+    to {
+        transform: translate(-50%, -50%);
     }
 }
 
