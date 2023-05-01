@@ -1,9 +1,9 @@
 import React from 'react'
-import oneStar from '../../assets/partners/1-stars.svg'
-import twoStars from '../../assets/partners/2-stars.svg'
-import threeStars from '../../assets/partners/3-stars.svg'
-import fourStars from '../../assets/partners/4-stars.svg'
-import fiveStars from '../../assets/partners/5-stars.svg'
+import oneStar from 'assets/partners/1-stars.svg'
+import twoStars from 'assets/partners/2-stars.svg'
+import threeStars from 'assets/partners/3-stars.svg'
+import fourStars from 'assets/partners/4-stars.svg'
+import fiveStars from 'assets/partners/5-stars.svg'
 
 interface StarProps {
     rating: number

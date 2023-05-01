@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react'
-import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs'
-import { NewsItem } from '../../components/News/NewsItem'
-import { Preloader } from '../../components/Preloader/Preloader'
-import { Methods, useHttp } from '../../hooks/useHttp'
-import { News } from '../../schemas/News'
-import { newsStore } from '../../store/newsStore'
+import { Breadcrumbs } from 'components/Breadcrumbs/Breadcrumbs'
+import { NewsItem } from 'components/News/NewsItem'
+import { Preloader } from 'components/Preloader/Preloader'
+import { Methods, useHttp } from 'hooks/useHttp'
+import { News } from 'schemas/News'
+import { newsStore } from 'store/newsStore'
 import './NewsPage.scss'
 
 export const NewsPage: React.FC = (props) => {

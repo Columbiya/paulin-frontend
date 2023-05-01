@@ -1,4 +1,4 @@
-import { Hiders } from "../components/Popup/CreateNews/CreateNews"
+import { Hiders } from "components/Popup/CreateNews/CreateNews"
 import { Chapter } from "./Chapter"
 
 export interface News {

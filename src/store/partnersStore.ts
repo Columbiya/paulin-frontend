@@ -1,5 +1,5 @@
 import { makeAutoObservable } from "mobx";
-import { Partner } from "../schemas/Partner";
+import { Partner } from "schemas/Partner";
 
 class PartnersStore { 
     private _partners: Partner[] = []

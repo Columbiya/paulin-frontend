@@ -1,13 +1,17 @@
 import React from 'react'
-import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs'
-import { NewsList } from '../../components/NewsList/NewsList'
-import { PartnerItem } from '../../components/PartnersList/Partner/Partner'
-import { Preloader } from '../../components/Preloader/Preloader'
-import { Methods, useHttp } from '../../hooks/useHttp'
-import { News } from '../../schemas/News'
-import { Partner } from '../../schemas/Partner'
-import { newsStore } from '../../store/newsStore'
-import { partnersStore } from '../../store/partnersStore'
+import { Breadcrumbs } from 'components/Breadcrumbs/Breadcrumbs'
+import { NewsList } from 'components/NewsList/NewsList'
+import { PartnerItem } from 'components/PartnersList/Partner/Partner'
+import { Preloader } from 'components/Preloader/Preloader'
+
+import { Methods, useHttp } from 'hooks/useHttp'
+
+import { News } from 'schemas/News'
+import { Partner } from 'schemas/Partner'
+
+import { newsStore } from 'store/newsStore'
+import { partnersStore } from 'store/partnersStore'
+
 import './Partners.scss'
 
 export const Partners: React.FC = (props) => {

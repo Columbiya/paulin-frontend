@@ -1,6 +1,5 @@
 import { makeAutoObservable } from "mobx";
-import { myAxios } from "../http/axios";
-import { News } from "../schemas/News";
+import { News } from "schemas/News";
 
 class NewsStore { 
     private _news: News[] = []

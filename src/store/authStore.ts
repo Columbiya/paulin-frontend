@@ -1,6 +1,6 @@
 import { makeAutoObservable } from "mobx";
-import { setAuthToken } from "../helpers/setAuthToken";
-import { myAxios } from "../http/axios";
+import { setAuthToken } from "helpers/setAuthToken";
+import { myAxios } from "http/axios";
 
 class AuthStore { 
     private _isAuth = true

@@ -1,25 +1,31 @@
 import React, { useEffect, useState } from 'react';
-import { Header } from './components/Header/Header';
-import { Route, Routes } from 'react-router';
-import { Home } from './pages/Home/Home';
-import { PagesRoutes } from './routes';
-import { Partners } from './pages/Partners/Partners';
-import { Footer } from './components/Footer/Footer';
-import { NewsPage } from './pages/NewsPage/NewsPage';
-import { NewsDetailPage } from './pages/NewsDetailPage/NewsDetailPage';
-import { BusinessConsulting } from './pages/BusinessConsulting/BusinessConsulting';
-import { AuthPage } from './pages/AuthPage/AuthPage';
-import { AdminPanel } from './pages/AdminPanel/AdminPanel';
-import { Methods, useHttp } from './hooks/useHttp';
-import { authStore } from './store/authStore';
-import { getAuthToken } from './helpers/getAuthToken';
-import { Preloader } from './components/Preloader/Preloader';
 import AOS from 'aos'
+
+import { Route, Routes } from 'react-router';
+import { PagesRoutes } from 'routes';
+
+import { Methods, useHttp } from 'hooks/useHttp';
+import { authStore } from 'store/authStore';
+import { getAuthToken } from 'helpers/getAuthToken';
+
+import { Home } from 'pages/Home/Home';
+import { Partners } from 'pages/Partners/Partners';
+import { NewsPage } from 'pages/NewsPage/NewsPage';
+import { NewsDetailPage } from 'pages/NewsDetailPage/NewsDetailPage';
+import { BusinessConsulting } from 'pages/BusinessConsulting/BusinessConsulting';
+import { AuthPage } from 'pages/AuthPage/AuthPage';
+import { AdminPanel } from 'pages/AdminPanel/AdminPanel';
+import { AuditPage } from 'pages/AuditPage/AuditPage';
+
+import { Header } from 'components/Header/Header';
+import { Footer } from 'components/Footer/Footer';
+import { Preloader } from 'components/Preloader/Preloader';
+import { Popup } from 'components/Popup/Popup';
+import { RequestSection } from 'components/RequestSection/RequestSection';
+
 import 'aos/dist/aos.css';
 import './App.scss'
-import { Popup } from './components/Popup/Popup';
-import { RequestSection } from './components/RequestSection/RequestSection';
-import { AuditPage } from './pages/AuditPage/AuditPage';
+
 
 const access_token = getAuthToken()
 

@@ -1,25 +1,30 @@
 import React, { useEffect, useMemo } from 'react'
 import env from 'react-dotenv'
 import { useNavigate, useParams } from 'react-router'
-import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs'
-import { Preloader } from '../../components/Preloader/Preloader'
-import { Methods, useHttp } from '../../hooks/useHttp'
-import { PagesRoutes } from '../../routes'
-import { News } from '../../schemas/News'
-import { newsStore } from '../../store/newsStore'
-import { animateScroll as scroll, Link, Element, scrollSpy } from 'react-scroll'
-import redPurple from '../../assets/news-hiders/red-purple.png'
-import lightGreenHider from '../../assets/news-hiders/light-green-green.png'
-import orangeLight from '../../assets/news-hiders/orange-light-orange.png'
-import purpleOrange from '../../assets/news-hiders/purple-orange.png'
+import { PagesRoutes } from 'routes'
+import { Element, scrollSpy } from 'react-scroll'
+
+import { News } from 'schemas/News'
+import { newsStore } from 'store/newsStore'
+
+import { Methods, useHttp } from 'hooks/useHttp'
+
+import redPurple from 'assets/news-hiders/red-purple.png'
+import lightGreenHider from 'assets/news-hiders/light-green-green.png'
+import orangeLight from 'assets/news-hiders/orange-light-orange.png'
+import purpleOrange from 'assets/news-hiders/purple-orange.png'
+
+import { Breadcrumbs } from 'components/Breadcrumbs/Breadcrumbs'
+import { Preloader } from 'components/Preloader/Preloader'
+import { Hiders } from 'components/Popup/CreateNews/CreateNews'
+import { NewsList } from 'components/NewsList/NewsList'
+
 import './NewsDetailPage.scss'
-import { Hiders } from '../../components/Popup/CreateNews/CreateNews'
-import { NewsList } from '../../components/NewsList/NewsList'
 
 export const NewsDetailPage: React.FC = (props) => {
     const { id } = useParams()
     const navigate = useNavigate()
-    const [news, loading, error] = useHttp<News>({link: `/news/${id}`, method: Methods.GET, store: newsStore, useAuth: false})
+    const [news, loading, error] = useHttp<News>({link: `/news/${id}`, method: Methods.GET, store: newsStore, useAuth: false, dependsOn: id})
     const [items, newsLoading, newsError] = useHttp<News>({link: `/news`, method: Methods.GET, store: newsStore, useAuth: false})
     const imageSrc = useMemo(() => {
         switch(news?.hider) {

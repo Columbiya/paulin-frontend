@@ -1,11 +1,11 @@
 import React from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { PagesRoutes } from '../../routes'
-import instagramBlue from '../../assets/footer/instagram-blue.svg'
-import instagramPurple from '../../assets/footer/instagram-purple.svg'
-import telegram from '../../assets/footer/telegram.svg'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { PagesRoutes } from 'routes'
+import instagramBlue from 'assets/footer/instagram-blue.svg'
+import instagramPurple from 'assets/footer/instagram-purple.svg'
+import telegram from 'assets/footer/telegram.svg'
 import './Footer.scss'
-import { scrollToTopAndNavigate } from '../../helpers/scrollToTopAndNavigate'
+import { scrollToTopAndNavigate } from 'helpers/scrollToTopAndNavigate'
 
 export const Footer: React.FC = (props) => {
     const navigate = useNavigate()
