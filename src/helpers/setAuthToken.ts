@@ -1,3 +1,3 @@
 export const setAuthToken = (token: string) => {
-    localStorage.setItem('token', token)
+  localStorage.setItem('token', token)
 }

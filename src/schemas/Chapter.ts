@@ -1,4 +1,4 @@
 export interface Chapter {
-    name: string
-    text: string
+  name: string
+  text: string
 }

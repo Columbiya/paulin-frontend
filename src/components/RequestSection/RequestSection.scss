@@ -1,134 +1,133 @@
-
 .request {
+  position: relative;
+  z-index: 500000000;
+
+  margin-top: 300px;
+
+  &__image {
+    position: absolute;
+    top: -10px;
+    right: 0;
+    width: 100%;
+    z-index: -1;
+  }
+
+  .education__title {
+    max-width: 600px;
+    min-height: 116px;
+
     position: relative;
-    z-index: 500000000;
+  }
 
-    margin-top: 300px;
+  .education__subtitle {
+    font-size: 3.2rem;
+    font-weight: 600;
 
-    &__image {
-        position: absolute;
-        top: -10px;
-        right: 0;
-        width: 100%;
-        z-index: -1;
-    }
+    max-width: 600px;
+
+    position: absolute;
+    top: 110%;
+    width: 100%;
+    left: 0;
+  }
+
+  &--popup {
+    margin-top: 0;
 
     .education__title {
-        max-width: 600px;
-        min-height: 116px;
-
-        position: relative;
+      margin-bottom: 30px !important;
     }
-
-    .education__subtitle {
-        font-size: 3.2rem;
-        font-weight: 600;
-
-        max-width: 600px;
-
-        position: absolute;
-        top: 110%;
-        width: 100%;
-        left: 0;
-    }
-
-    &--popup {
-        margin-top: 0;
-
-        .education__title {
-            margin-bottom: 30px !important;
-        }
-    }
+  }
 }
 
 .mobile {
-    display: none;
+  display: none;
 }
 
 @media screen and (max-width: 1600px) {
-    .request {
-        &__inner {
-            margin-top: -50px;
-        }
+  .request {
+    &__inner {
+      margin-top: -50px;
     }
+  }
 
-    .education__title {
-        min-height: auto;
-    }
+  .education__title {
+    min-height: auto;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .request {
-        margin-top: 100px;
+  .request {
+    margin-top: 100px;
 
-        &--popup {
-            margin-top: 15px;
-        }
+    &--popup {
+      margin-top: 15px;
     }
+  }
 }
 
 @media screen and (max-width: 576px) {
-    .mobile {
-        display: block;
+  .mobile {
+    display: block;
+  }
+
+  .request {
+    max-width: 100%;
+
+    &__image {
+      display: none;
     }
 
-    .request {
-        max-width: 100%;
+    &--popup {
+      .education__title {
+        position: static !important;
+      }
 
-        &__image {
-            display: none;
-        }
+      .request__bg.mobile {
+        max-height: 1500px;
+        overflow-y: hidden;
+      }
 
-        &--popup {
-            .education__title {
-                position: static !important;
-            }
+      .request__person.mobile {
+        top: 45px;
+      }
+    }
+  }
 
-            .request__bg.mobile {
-                max-height: 1500px;
-                overflow-y: hidden;
-            }
+  .request {
+    padding-top: 600px;
+  }
 
-            .request__person.mobile {
-                top: 45px;
-            }
-        }
+  .request__bg {
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .request__person {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .request {
+    .education__title {
+      position: absolute;
+      top: -50px;
+      left: 15px;
     }
 
-    .request {
-        padding-top: 600px;
+    .education__subtitle {
+      top: 90%;
     }
 
-    .request__bg {
-        width: 100%;
-        z-index: -1;
-        position: absolute;
-        top: 0;
-        left: 0;
+    &__inner {
+      width: 100%;
+      max-width: 100%;
+      position: relative;
+      z-index: 50;
     }
-
-    .request__person {
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-
-    .request {
-        .education__title {
-            position: absolute;
-            top: -50px;
-            left: 15px;
-        }
-
-        .education__subtitle {
-            top: 90%;
-        }
-
-        &__inner {
-            width: 100%;
-            max-width: 100%;
-            position: relative;
-            z-index: 50;
-        }
-    }
+  }
 }

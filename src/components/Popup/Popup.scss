@@ -1,67 +1,67 @@
 .popup {
-    max-width: 50%;
-    max-height: 95vh;
-    overflow: hidden;
-    width: 100%;
-    padding: 75px;
-    border-radius: 120px;
-    background: #fff;
+  max-width: 50%;
+  max-height: 95vh;
+  overflow: hidden;
+  width: 100%;
+  padding: 75px;
+  border-radius: 120px;
+  background: #fff;
 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 5000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5000;
 
-    animation: jumpIn .5s ease forwards;
+  animation: jumpIn 0.5s ease forwards;
 
-    &--wide {
-        max-width: 80%;
-        padding: 0;
+  &--wide {
+    max-width: 80%;
+    padding: 0;
 
-        & > * {
-            padding: 75px;
-        }
+    & > * {
+      padding: 75px;
     }
+  }
 }
 
 .black-background {
-    background-color: rgba(#000, .5);
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 15000;
+  background-color: rgba(#000, 0.5);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 15000;
 
-    &--white {
-        background-color: rgba(#fff, .5);
-    }
+  &--white {
+    background-color: rgba(#fff, 0.5);
+  }
 }
 
 .popup-title {
-    font-size: 3.5rem;
+  font-size: 3.5rem;
 }
 
 @keyframes jumpIn {
-    from {
-        transform: translate(-50%, -25%);
-    }
+  from {
+    transform: translate(-50%, -25%);
+  }
 
-    to {
-        transform: translate(-50%, -50%);
-    }
+  to {
+    transform: translate(-50%, -50%);
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .popup {
-        border-radius: 10px;
-        overflow-y: scroll;
+  .popup {
+    border-radius: 10px;
+    overflow-y: scroll;
 
-        &--wide {
-            & > * {
-                padding: 15px;
-            }
-        }
+    &--wide {
+      & > * {
+        padding: 15px;
+      }
     }
+  }
 }

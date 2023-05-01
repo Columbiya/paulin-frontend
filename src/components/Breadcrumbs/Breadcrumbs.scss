@@ -1,43 +1,43 @@
 .breadcrumbs {
-    font-size: 2.7rem;
+  font-size: 2.7rem;
 
-    padding-top: 50px;
+  padding-top: 50px;
 
-    .container {
-        display: flex;
+  .container {
+    display: flex;
+  }
+
+  span {
+    display: inline-block;
+
+    a {
+      cursor: pointer;
+      color: #000;
     }
+  }
 
-    span {
-        display: inline-block;
-
-        a {
-            cursor: pointer;
-            color: #000;
-        }
-    }
-
-    &__separator {
-        margin: 0 30px;
-    }
+  &__separator {
+    margin: 0 30px;
+  }
 }
 
 @media screen and (max-width: 576px) {
-    .breadcrumbs {
-        .container {
-            display: block;
-        }
-
-        span {
-            display: inline;
-            line-height: 25px;
-        }
-
-        &__separator {
-            margin: 0 5px;
-        }
-
-        a {
-            font-weight: 500;
-        }
+  .breadcrumbs {
+    .container {
+      display: block;
     }
+
+    span {
+      display: inline;
+      line-height: 25px;
+    }
+
+    &__separator {
+      margin: 0 5px;
+    }
+
+    a {
+      font-weight: 500;
+    }
+  }
 }

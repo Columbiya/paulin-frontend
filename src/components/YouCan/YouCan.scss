@@ -1,59 +1,59 @@
 .you-can {
-    &__inner {
-        display: flex;
-        align-items: center;
+  &__inner {
+    display: flex;
+    align-items: center;
 
+    max-width: 1100px;
+    margin: 300px auto;
+
+    img {
+      max-width: 220px;
+    }
+
+    &.large {
+      max-width: 1500px;
+
+      .you-can__text {
         max-width: 1100px;
-        margin: 300px auto;
-
-        img {
-            max-width: 220px;
-        }
-
-        &.large {
-            max-width: 1500px;
-            
-            .you-can__text {
-                max-width: 1100px;
-            }
-        }
+      }
     }
+  }
 
-    &__text {
-        max-width: 850px;
-        font-weight: 600;
-        font-size: 3.6rem;
-        margin-left: 70px;
-    }
+  &__text {
+    max-width: 850px;
+    font-weight: 600;
+    font-size: 3.6rem;
+    margin-left: 70px;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .you-can {
-        &__inner {
-            flex-wrap: wrap;
-            align-items: center;
+  .you-can {
+    &__inner {
+      flex-wrap: wrap;
+      align-items: center;
 
-            img {
-                margin: 0 auto;
-            }
-        }
-
-        &__text {
-            margin-left: 0;
-        }
+      img {
+        margin: 0 auto;
+      }
     }
+
+    &__text {
+      margin-left: 0;
+    }
+  }
 }
 
 @media screen and (max-width: 576px) {
-    .you-can {
-        img {
-            width: 50%;
+  .you-can {
+    img {
+      width: 50%;
 
-            margin-bottom: 30px;
-        }
-
-        &__inner {
-            margin: 0 auto 350px;
-        }
+      margin-bottom: 30px;
     }
+
+    &__inner {
+      margin: 0 auto 350px;
+    }
+  }
 }

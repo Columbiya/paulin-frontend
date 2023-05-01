@@ -1,9 +1,9 @@
-import { Feedback } from "./Feedback"
+import { Feedback } from './Feedback'
 
 export interface Partner {
-    id: number
-    link: string
-    name: string
-    logo: string
-    partnersFeedback: Feedback
+  id: number
+  link: string
+  name: string
+  logo: string
+  partnersFeedback: Feedback
 }
