@@ -31,7 +31,8 @@
     "start": "react-dotenv && react-scripts start",
     "build": "react-dotenv && react-scripts build",
     "test": "react-dotenv && react-scripts test",
-    "eject": "react-dotenv && react-scripts eject"
+    "eject": "react-dotenv && react-scripts eject",
+    "format": "prettier"
   },
   "eslintConfig": {
     "extends": [
@@ -54,6 +55,7 @@
   "devDependencies": {
     "@types/aos": "^3.0.4",
     "@types/react-router-dom": "^5.3.3",
-    "@types/react-scroll": "^1.8.4"
+    "@types/react-scroll": "^1.8.4",
+    "prettier": "^2.8.8"
   }
 }

@@ -1,18 +1,18 @@
 .partners-page {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 
-    margin-top: -65px;
+  margin-top: -65px;
 
-    & > div {
-        margin-top: 65px;
+  & > div {
+    margin-top: 65px;
 
-        margin-right: 50px;
-    }
+    margin-right: 50px;
+  }
 }
 
 .partners {
-    &__news-list {
-        margin-top: 150px;
-    }
+  &__news-list {
+    margin-top: 150px;
+  }
 }

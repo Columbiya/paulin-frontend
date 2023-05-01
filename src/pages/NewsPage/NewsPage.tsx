@@ -8,38 +8,39 @@ import { newsStore } from 'store/newsStore'
 import './NewsPage.scss'
 
 export const NewsPage: React.FC = (props) => {
-    const [news, loadingNews, errorNews] = useHttp<News[]>({link: '/news', method: Methods.GET, useAuth: false, store: newsStore})
-    const reversedNews = useMemo(() => {
-        if (!news) return []
+  const [news, loadingNews, errorNews] = useHttp<News[]>({
+    link: '/news',
+    method: Methods.GET,
+    useAuth: false,
+    store: newsStore,
+  })
+  const reversedNews = useMemo(() => {
+    if (!news) return []
 
-        return [...news].reverse()
-    }, [news])
-    
-    if (loadingNews) {
-        return <Preloader />
-    }
+    return [...news].reverse()
+  }, [news])
 
-    return (
-        <main className="main">
-            <Breadcrumbs crumb='Блог' />
+  if (loadingNews) {
+    return <Preloader />
+  }
 
-            <div className="container">
-                <h1 className="pages-title">Блог</h1>
-            </div>
+  return (
+    <main className="main">
+      <Breadcrumbs crumb="Блог" />
 
-            <div className="container">
-                <div className="news-list">
-                    {
-                        reversedNews.map(item => (
-                            <>
-                                <NewsItem {...item} key={item.id} />
-                            </>
-                            
-                        ))
-                    }
-                </div>
-            </div>
+      <div className="container">
+        <h1 className="pages-title">Блог</h1>
+      </div>
 
-        </main>
-    )
-} 
+      <div className="container">
+        <div className="news-list">
+          {reversedNews.map((item) => (
+            <>
+              <NewsItem {...item} key={item.id} />
+            </>
+          ))}
+        </div>
+      </div>
+    </main>
+  )
+}

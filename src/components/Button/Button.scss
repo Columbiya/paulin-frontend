@@ -1,82 +1,96 @@
 @import '../../variables.scss';
 
 .button {
-    min-width: 415px;
-    padding: 40px 0;
-    border-radius: 50px;
+  min-width: 415px;
+  padding: 40px 0;
+  border-radius: 50px;
 
-    font-size: 2.2rem;
-    font-weight: 600;
+  font-size: 2.2rem;
+  font-weight: 600;
 
-    &.filled {
-        color: #fff;
-        background: linear-gradient(to right, $gradientColorYellow, $gradientColorPink);
+  &.filled {
+    color: #fff;
+    background: linear-gradient(
+      to right,
+      $gradientColorYellow,
+      $gradientColorPink
+    );
 
-        transition: opacity .5s ease;
+    transition: opacity 0.5s ease;
 
-        &:hover {
-            opacity: .8;
-        }
+    &:hover {
+      opacity: 0.8;
     }
+  }
 
-    &.gradient-borders {
-        border: double 4px transparent;
-        border-radius: 80px;
-        background-image: linear-gradient(white, white), linear-gradient(to right, $gradientColorYellow, $gradientColorPink);
-        background-origin: border-box;
-        background-clip: padding-box, border-box;
+  &.gradient-borders {
+    border: double 4px transparent;
+    border-radius: 80px;
+    background-image: linear-gradient(white, white),
+      linear-gradient(to right, $gradientColorYellow, $gradientColorPink);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
 
-        &:hover {
-            background-image: linear-gradient(to right, $gradientColorYellow, $gradientColorPink);
-            color: #fff;
-        }
+    &:hover {
+      background-image: linear-gradient(
+        to right,
+        $gradientColorYellow,
+        $gradientColorPink
+      );
+      color: #fff;
     }
+  }
 
-    &.hollow {
-        border: double 3px transparent;
-        background-image: linear-gradient(white, white), radial-gradient(circle at top left, $gradientColorYellow,$gradientColorPink);
-        background-origin: border-box;
-        background-clip: padding-box, border-box;
+  &.hollow {
+    border: double 3px transparent;
+    background-image: linear-gradient(white, white),
+      radial-gradient(
+        circle at top left,
+        $gradientColorYellow,
+        $gradientColorPink
+      );
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
 
-        &.white {
-            background-image: none;
-            border: 2px solid #fff;
-            color: #fff;
+    &.white {
+      background-image: none;
+      border: 2px solid #fff;
+      color: #fff;
 
-            overflow: hidden;
+      overflow: hidden;
 
-            position: relative;
-            z-index: 50;
+      position: relative;
+      z-index: 50;
 
-            transition: border-color .5s ease;
+      transition: border-color 0.5s ease;
 
-            &:hover::after {
-                transform: translateX(0)
-            }
+      &:hover::after {
+        transform: translateX(0);
+      }
 
-            &:hover {
-                border-color: transparent;
-            }
+      &:hover {
+        border-color: transparent;
+      }
 
-            &::after {
-                content: "";
-                display: block;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient($gradientColorYellow, $gradientColorPink);
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: -1;
-                transform: translateX(-106%);
-                transition: transform .5s ease-in-out;
-            }
-        }
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient($gradientColorYellow, $gradientColorPink);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transform: translateX(-106%);
+        transition: transform 0.5s ease-in-out;
+      }
     }
+  }
 }
 
 @media screen and (max-width: 576px) {
-    .button {
-        padding: 20px 0;
-    }
+  .button {
+    padding: 20px 0;
+  }
 }

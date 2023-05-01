@@ -6,59 +6,70 @@ import { NavLink } from 'react-router-dom'
 import { PagesRoutes } from 'routes'
 
 export interface PathOption {
-    name: string
-    path: PagesRoutes
+  name: string
+  path: PagesRoutes
 }
 
 interface DropdownProps {
-    text: string
-    options: PathOption[]
-    clickHandler: MouseEventHandler<any>
+  text: string
+  options: PathOption[]
+  clickHandler: MouseEventHandler<any>
 }
 
-export const Dropdown: React.FC<DropdownProps> = ({ options, text, clickHandler }) => {
-    const [active, setActive] = useState(false)
+export const Dropdown: React.FC<DropdownProps> = ({
+  options,
+  text,
+  clickHandler,
+}) => {
+  const [active, setActive] = useState(false)
 
-    useEffect(() => {
-        if (!active) return
+  useEffect(() => {
+    if (!active) return
 
-        const hideDropdown: any = (e: MouseEvent) => {
-            const target = e.target as HTMLElement
-    
-            if (
-                !target.classList.contains('nav__dropdown-inner') &&
-                !target.classList.contains('nav__dropdown')
-            ) {
-                setActive(false)
-            }
-        }
+    const hideDropdown: any = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
 
-        document.body.addEventListener('click', hideDropdown)
-
-        return () => document.body.removeEventListener('click', hideDropdown)
-    }, [active])
-
-    const showDropdown: MouseEventHandler<HTMLSpanElement> = (e) => {
-        e.stopPropagation()
-
-        setActive(true)
+      if (
+        !target.classList.contains('nav__dropdown-inner') &&
+        !target.classList.contains('nav__dropdown')
+      ) {
+        setActive(false)
+      }
     }
 
-    return (
-        <a className="desktop" style={active ? {height: "100%"}: undefined}>
-            <span className="nav__dropdown-inner" onClick={active ? () => setActive(false): showDropdown}>
-                {text}
-                <img src={IconDropdown} className="desktop-image-mobile" alt="" />
-                <img src={active ? IconMinusMobile: IconPlusMobile} className="image-mobile" />
-            </span>
+    document.body.addEventListener('click', hideDropdown)
 
-            {active && 
-                <span className='nav__dropdown'>
-                    {options.map(op => 
-                        <NavLink to={op.path} key={op.name} onClick={clickHandler}>{op.name}</NavLink>
-                    )}
-                </span> 
-            }
-        </a>
-    )
+    return () => document.body.removeEventListener('click', hideDropdown)
+  }, [active])
+
+  const showDropdown: MouseEventHandler<HTMLSpanElement> = (e) => {
+    e.stopPropagation()
+
+    setActive(true)
+  }
+
+  return (
+    <a className="desktop" style={active ? { height: '100%' } : undefined}>
+      <span
+        className="nav__dropdown-inner"
+        onClick={active ? () => setActive(false) : showDropdown}>
+        {text}
+        <img src={IconDropdown} className="desktop-image-mobile" alt="" />
+        <img
+          src={active ? IconMinusMobile : IconPlusMobile}
+          className="image-mobile"
+        />
+      </span>
+
+      {active && (
+        <span className="nav__dropdown">
+          {options.map((op) => (
+            <NavLink to={op.path} key={op.name} onClick={clickHandler}>
+              {op.name}
+            </NavLink>
+          ))}
+        </span>
+      )}
+    </a>
+  )
 }

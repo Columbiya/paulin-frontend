@@ -1,64 +1,63 @@
 .request {
-    &__form {
-        margin-top: 100px;
+  &__form {
+    margin-top: 100px;
 
-        max-width: 50%;
+    max-width: 50%;
 
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 
-        .input {
-            width: 48%;
-        }
-
-        button.button.hollow.white {
-            margin-top: 100px !important;
-            
-            margin: 0 auto;
-        }
-
-        &-popup {
-            max-width: 60%;
-            margin-top: 0;
-
-            button.button.hollow.white {
-                margin-top: 25px !important;
-            }
-        }
+    .input {
+      width: 48%;
     }
+
+    button.button.hollow.white {
+      margin-top: 100px !important;
+
+      margin: 0 auto;
+    }
+
+    &-popup {
+      max-width: 60%;
+      margin-top: 0;
+
+      button.button.hollow.white {
+        margin-top: 25px !important;
+      }
+    }
+  }
 }
 
-
 @media screen and (max-width: 1600px) {
-    .request {
-        &__form {
-            button.button.hollow.white {
-                margin-top: 50px !important;
-            }
-        }
+  .request {
+    &__form {
+      button.button.hollow.white {
+        margin-top: 50px !important;
+      }
     }
+  }
 }
 
 @media screen and (max-width: 576px) {
-    .request__form {
-        max-width: 100%;
-        width: 100%;
+  .request__form {
+    max-width: 100%;
+    width: 100%;
 
-        button.button.hollow.white {
-            max-width: 100%;
-            min-width: 100%;
-            width: 100%;
-        }
-
-        .input {
-            width: 100%;
-        }
-
-        &-popup {
-            max-width: 100%;
-
-            margin-top: 600px;
-        }
+    button.button.hollow.white {
+      max-width: 100%;
+      min-width: 100%;
+      width: 100%;
     }
+
+    .input {
+      width: 100%;
+    }
+
+    &-popup {
+      max-width: 100%;
+
+      margin-top: 600px;
+    }
+  }
 }

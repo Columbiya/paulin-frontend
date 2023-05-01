@@ -6,31 +6,29 @@ import fourStars from 'assets/partners/4-stars.svg'
 import fiveStars from 'assets/partners/5-stars.svg'
 
 interface StarProps {
-    rating: number
+  rating: number
 }
 
 export const Star: React.FC<StarProps> = ({ rating }) => {
-    let stars = ""
+  let stars = ''
 
-    switch(rating) {
-        case 1:
-            stars = oneStar
-            break;
-        case 2:
-            stars = twoStars
-            break;
-        case 3:
-            stars = threeStars
-            break;
-        case 4:
-            stars = fourStars
-            break;
-        case 5:
-            stars = fiveStars
-            break;
-    }
+  switch (rating) {
+    case 1:
+      stars = oneStar
+      break
+    case 2:
+      stars = twoStars
+      break
+    case 3:
+      stars = threeStars
+      break
+    case 4:
+      stars = fourStars
+      break
+    case 5:
+      stars = fiveStars
+      break
+  }
 
-    return (
-        <img src={stars} alt="stars" />
-    )
-} 
+  return <img src={stars} alt="stars" />
+}

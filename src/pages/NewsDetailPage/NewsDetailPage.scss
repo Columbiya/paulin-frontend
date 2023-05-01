@@ -1,145 +1,145 @@
 .news-detail {
+  display: flex;
+
+  margin-top: 50px;
+
+  &__left {
+    max-width: 512px;
+    max-height: 512px;
+
+    position: relative;
+
+    img {
+      border-radius: 65px;
+      width: 512px;
+      display: block;
+    }
+  }
+
+  &__text {
+    margin-left: 150px;
+  }
+
+  &__chapters {
+    p {
+      margin-bottom: 50px;
+      font-size: 2.7rem;
+      text-align: justify;
+    }
+  }
+
+  &__hider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__chapter-number {
+    font-weight: 600;
+    font-size: 3.1rem;
+    margin-bottom: 50px;
+  }
+
+  &__chapters-preview {
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+
+    .chapter-number {
+      display: block;
+
+      &:not(:first-child) {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  &__header {
     display: flex;
+    justify-content: space-between;
 
-    margin-top: 50px;
+    margin-bottom: 80px;
+  }
 
-    &__left {
-        max-width: 512px;
-        max-height: 512px;
+  &__title {
+    font-weight: 600;
+    font-size: 4.8rem;
 
-        position: relative;
-
-        img {
-            border-radius: 65px;
-            width: 512px;
-            display: block;
-        }
+    &--mobile {
+      display: none;
     }
+  }
 
-    &__text {
-        margin-left: 150px;
-    }
+  &__author {
+    text-decoration: underline;
+    font-size: 1.8rem;
 
-    &__chapters {
-        p {
-            margin-bottom: 50px;
-            font-size: 2.7rem;
-            text-align: justify;
-        }
-    }
+    margin: 30px 0 10px;
+  }
 
-    &__hider {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-
-    &__chapter-number {
-        font-weight: 600;
-        font-size: 3.1rem;
-        margin-bottom: 50px;
-    }
-
-    &__chapters-preview {
-        max-width: 500px;
-        width: 100%;
-        text-align: center;
-
-        .chapter-number {
-            display: block;
-            
-            &:not(:first-child) {
-                margin-top: 15px;
-            }
-        }
-    }
-
-    &__header {
-        display: flex;
-        justify-content: space-between;
-
-        margin-bottom: 80px;
-    }
-
-    &__title {
-        font-weight: 600;
-        font-size: 4.8rem;
-
-        &--mobile {
-            display: none;
-        }
-    }
-
-    &__author {
-        text-decoration: underline;
-        font-size: 1.8rem;
-
-        margin: 30px 0 10px;
-    }
-
-    &__date {
-        font-size: 1.8rem;
-    }
+  &__date {
+    font-size: 1.8rem;
+  }
 }
 
 .chapter-number {
-    color: #000;
-    cursor: pointer;
-    font-weight: 400;
-    font-size: 3.1rem;
-    text-decoration: underline;
+  color: #000;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 3.1rem;
+  text-decoration: underline;
 
-    &.active {
-        font-weight: 600;
-    }
+  &.active {
+    font-weight: 600;
+  }
 }
 
 @media screen and (max-width: 1100px) {
-    .news-detail {
-        flex-direction: column;
-        align-items: center;
+  .news-detail {
+    flex-direction: column;
+    align-items: center;
 
-        &__text {
-            margin-left: 0;
-            margin: 25px 0;
-            padding: 0 30px;
-            width: 100%;
-            max-width: 100%;
-        }
+    &__text {
+      margin-left: 0;
+      margin: 25px 0;
+      padding: 0 30px;
+      width: 100%;
+      max-width: 100%;
     }
+  }
 }
 
 @media screen and (max-width: 576px) {
-    .news-detail {
-        &__left {
-            width: 100%;
-            img {
-                width: 100%;
-            }
-        }
-
-        &__text {
-            padding: 0 0;
-        }
-
-        &__title {
-            font-size: 3.5rem;
-        }
-
-        &__chapters {
-            p {
-                margin-bottom: 25px;
-            }
-        }
-
-        &__chapter-number {
-            margin-bottom: 25px;
-        }
-
-        &__header {
-            margin-bottom: 40px;
-        }
+  .news-detail {
+    &__left {
+      width: 100%;
+      img {
+        width: 100%;
+      }
     }
+
+    &__text {
+      padding: 0 0;
+    }
+
+    &__title {
+      font-size: 3.5rem;
+    }
+
+    &__chapters {
+      p {
+        margin-bottom: 25px;
+      }
+    }
+
+    &__chapter-number {
+      margin-bottom: 25px;
+    }
+
+    &__header {
+      margin-bottom: 40px;
+    }
+  }
 }
