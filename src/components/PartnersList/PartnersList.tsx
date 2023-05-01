@@ -1,8 +1,8 @@
 import { observer } from 'mobx-react-lite'
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { partnersStore } from '../../store/partnersStore'
-import { PartnerItem } from './Partner/Partner'
+import { partnersStore } from 'store/partnersStore'
+import { PartnerItem } from 'components/PartnersList/Partner/Partner'
 import 'swiper/css';
 import { Autoplay } from 'swiper'
 

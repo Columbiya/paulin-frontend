@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { Methods, useHttp } from '../../../hooks/useHttp'
-import { Button } from '../../Button/Button'
-import { Input } from '../../Input/Input'
+import { Methods, useHttp } from 'hooks/useHttp'
+import { Button } from 'components/Button/Button'
+import { Input } from 'components/Input/Input'
 
 
 export interface CreateNewsProps {

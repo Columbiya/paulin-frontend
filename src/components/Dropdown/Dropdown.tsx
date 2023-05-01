@@ -1,9 +1,9 @@
 import React, { MouseEventHandler, useEffect, useState } from 'react'
-import IconDropdown from '../../assets/header/icon-dropdown.svg'
-import IconPlusMobile from '../../assets/header/icon-header-plus-mobile.svg'
-import IconMinusMobile from '../../assets/header/icon-header-minus-mobile.svg'
+import IconDropdown from 'assets/header/icon-dropdown.svg'
+import IconPlusMobile from 'assets/header/icon-header-plus-mobile.svg'
+import IconMinusMobile from 'assets/header/icon-header-minus-mobile.svg'
 import { NavLink } from 'react-router-dom'
-import { PagesRoutes } from '../../routes'
+import { PagesRoutes } from 'routes'
 
 export interface PathOption {
     name: string

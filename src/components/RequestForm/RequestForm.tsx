@@ -1,9 +1,9 @@
 import React from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { myAxios } from '../../http/axios'
-import { Request } from '../../schemas/Request'
-import { Button } from '../Button/Button'
-import { Input } from '../Input/Input'
+import { myAxios } from 'http/axios'
+import { Request } from 'schemas/Request'
+import { Button } from 'components/Button/Button'
+import { Input } from 'components/Input/Input'
 import './RequestForm.scss'
 
 interface RequestFormProps {

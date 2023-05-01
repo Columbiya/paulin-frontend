@@ -1,5 +1,5 @@
 import React from 'react'
-import checkPurple from '../../assets/business-consulting/check-purple.svg'
+import checkPurple from 'assets/business-consulting/check-purple.svg'
 import './YouCan.scss'
 
 interface YouCanProps {

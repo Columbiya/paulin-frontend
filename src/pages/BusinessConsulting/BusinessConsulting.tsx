@@ -1,33 +1,36 @@
 import React from 'react'
-import { Methods, useHttp } from '../../hooks/useHttp'
-import { News } from '../../schemas/News'
-import { newsStore } from '../../store/newsStore'
-import layers from '../../assets/business-consulting/layers.svg'
-import purpleBall from '../../assets/business-consulting/purple-ball.svg'
-import listChecks from '../../assets/business-consulting/list-checks.svg'
-import personCheck from '../../assets/business-consulting/person-check.svg'
-import gearLarge from '../../assets/business-consulting/gear-large.svg'
-import gearSmall from '../../assets/business-consulting/gear-small.svg'
-import checkBlue from '../../assets/business-consulting/check-blue.svg'
-import checkOrange from '../../assets/business-consulting/check-orange.svg'
-import checkGreen from '../../assets/business-consulting/check-green.svg'
-import checkPurple from '../../assets/business-consulting/check-purple.svg'
-import manPuzzle from '../../assets/business-consulting/man-puzzle.svg'
-import womanPuzzle from '../../assets/business-consulting/woman-puzzle.svg'
-import loop from '../../assets/business-consulting/loop.svg'
-import personQuestionMark from '../../assets/business-consulting/person-question-mark.svg'
-import bgOrange from '../../assets/business-consulting/bg-orange.svg'
-import bgGreen from '../../assets/business-consulting/bg-green.svg'
-import bgPurple from '../../assets/business-consulting/bg-purple.svg'
-import personWithCart from '../../assets/business-consulting/person-with-cart.svg'
-import personWithRocket from '../../assets/business-consulting/person-with-a-rocket.svg'
-import responsibilityImage from '../../assets/business-consulting/responsibility-image.svg'
-import layersMobile from '../../assets/business-consulting/bg-mobile.svg'
+import { Methods, useHttp } from 'hooks/useHttp'
+import { News } from 'schemas/News'
+import { newsStore } from 'store/newsStore'
+
+import layers from 'assets/business-consulting/layers.svg'
+import purpleBall from 'assets/business-consulting/purple-ball.svg'
+import listChecks from 'assets/business-consulting/list-checks.svg'
+import personCheck from 'assets/business-consulting/person-check.svg'
+import gearLarge from 'assets/business-consulting/gear-large.svg'
+import gearSmall from 'assets/business-consulting/gear-small.svg'
+import checkBlue from 'assets/business-consulting/check-blue.svg'
+import checkOrange from 'assets/business-consulting/check-orange.svg'
+import checkGreen from 'assets/business-consulting/check-green.svg'
+import checkPurple from 'assets/business-consulting/check-purple.svg'
+import manPuzzle from 'assets/business-consulting/man-puzzle.svg'
+import womanPuzzle from 'assets/business-consulting/woman-puzzle.svg'
+import loop from 'assets/business-consulting/loop.svg'
+import personQuestionMark from 'assets/business-consulting/person-question-mark.svg'
+import bgOrange from 'assets/business-consulting/bg-orange.svg'
+import bgGreen from 'assets/business-consulting/bg-green.svg'
+import bgPurple from 'assets/business-consulting/bg-purple.svg'
+import personWithCart from 'assets/business-consulting/person-with-cart.svg'
+import personWithRocket from 'assets/business-consulting/person-with-a-rocket.svg'
+import responsibilityImage from 'assets/business-consulting/responsibility-image.svg'
+import layersMobile from 'assets/business-consulting/bg-mobile.svg'
+
+import { Button } from 'components/Button/Button'
+import { NewsList } from 'components/NewsList/NewsList'
+import { RequestSection } from 'components/RequestSection/RequestSection'
+import { YouCan } from 'components/YouCan/YouCan'
+
 import './BusinessConsulting.scss'
-import { Button } from '../../components/Button/Button'
-import { NewsList } from '../../components/NewsList/NewsList'
-import { RequestSection } from '../../components/RequestSection/RequestSection'
-import { YouCan } from '../../components/YouCan/YouCan'
 
 interface BusinessConsultingProps {
     setActive: (val: boolean) => void
@@ -225,29 +228,6 @@ export const BusinessConsulting: React.FC<BusinessConsultingProps> = ({ setActiv
                             <h5 className="responsibility__subtitle">ДО систематизации</h5>
                             <ul className="our-clients__list list wrong">
                                 <li data-aos="fade-up">
-                                    Обслуживание клиентов: заключение договоров, презентация товаров и услуг
-                                </li>
-                                <li data-aos="fade-up">
-                                    Найм сотрудников: поиск кандидатов, проведение собеседований, введение в должность
-                                </li>
-                                <li data-aos="fade-up">
-                                    Производство продукта: от составления технического задания до упаковки
-                                </li>
-                                <li data-aos="fade-up">
-                                    Разработка рекламных кампаний: генерация идей для привлечения клиентов, создание рекламных материалов, анализ показателей
-                                </li>
-                                <li data-aos="fade-up">
-                                    Вести соцсети компании: писать посты, делать Stories, общаться с подписчиками
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="responsibility__item" data-aos="fade-up">
-                            <object data={personWithRocket} className="responsibility__image"></object>
-
-                            <h5 className="responsibility__subtitle">ПОСЛЕ систематизации</h5>
-                            <p className="responsibility__item-text">Работа над стратегией компании:</p>
-                            <ul className="our-clients__list list right">
-                                <li data-aos="fade-up">
                                     Руководителю приходится решать вопросы за сотрудников
                                 </li>
                                 <li data-aos="fade-up">
@@ -264,6 +244,31 @@ export const BusinessConsulting: React.FC<BusinessConsultingProps> = ({ setActiv
                                 </li>
                                 <li data-aos="fade-up">
                                     Как измерить результат работы сотрудника
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="responsibility__item" data-aos="fade-up">
+                            <object data={personWithRocket} className="responsibility__image"></object>
+
+                            <h5 className="responsibility__subtitle">ПОСЛЕ систематизации</h5>
+                            <ul className="our-clients__list list right">
+                                <li data-aos="fade-up">
+                                    Работа над стратегией компании
+                                </li>
+                                <li data-aos="fade-up">
+                                    Обслуживание клиентов: заключение договоров, презентация товаров и услуг
+                                </li>
+                                <li data-aos="fade-up">
+                                    Найм сотрудников: поиск кандидатов, проведение собеседований, введение в должность
+                                </li>
+                                <li data-aos="fade-up">
+                                    Производство продукта: от составления технического задания до упаковки
+                                </li>
+                                <li data-aos="fade-up">
+                                    Разработка рекламных кампаний: генерация идей для привлечения клиентов, создание рекламных материалов, анализ показателей
+                                </li>
+                                <li data-aos="fade-up">
+                                    Вести соцсети компании: писать посты, делать Stories, общаться с подписчиками
                                 </li>
                             </ul>
                         </div>

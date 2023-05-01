@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { scrollToTopAndNavigate } from '../../helpers/scrollToTopAndNavigate'
-import { PagesRoutes } from '../../routes'
+import { useNavigate } from 'react-router-dom'
+import { scrollToTopAndNavigate } from 'helpers/scrollToTopAndNavigate'
+import { PagesRoutes } from 'routes'
 import './Breadcrumbs.scss'
 
 interface CrumbOptions {

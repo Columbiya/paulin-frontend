@@ -1,10 +1,10 @@
 import React, { MouseEventHandler, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
-import { ReactComponent as Logo } from '../../assets/header/logo.svg'
-import { PagesRoutes } from '../../routes'
-import burgerMenu from '../../assets/header/burger-menu.svg'
+import { ReactComponent as Logo } from 'assets/header/logo.svg'
+import { PagesRoutes } from 'routes'
+import burgerMenu from 'assets/header/burger-menu.svg'
 import './Header.scss'
-import { Dropdown, PathOption } from '../Dropdown/Dropdown'
+import { Dropdown, PathOption } from 'components/Dropdown/Dropdown'
 
 const options: PathOption[] = [
     {name: "Smart Business", path: PagesRoutes.BUSINESS_CONSULTING},

@@ -1,4 +1,4 @@
-import { servicesTypes } from "../components/Input/Input"
+import { servicesTypes } from "components/Input/Input"
 
 export interface Request {
     name: string

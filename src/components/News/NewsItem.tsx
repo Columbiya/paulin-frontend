@@ -1,15 +1,15 @@
 import React, { useMemo } from 'react'
 import env from 'react-dotenv'
 import { useNavigate } from 'react-router'
-import { scrollToTopAndNavigate } from '../../helpers/scrollToTopAndNavigate'
-import { PagesRoutes } from '../../routes'
-import { News } from '../../schemas/News'
-import redPurple from '../../assets/news-hiders/red-purple.png'
-import lightGreenHider from '../../assets/news-hiders/light-green-green.png'
-import orangeLight from '../../assets/news-hiders/orange-light-orange.png'
-import purpleOrange from '../../assets/news-hiders/purple-orange.png'
+import { scrollToTopAndNavigate } from 'helpers/scrollToTopAndNavigate'
+import { PagesRoutes } from 'routes'
+import { News } from 'schemas/News'
+import redPurple from 'assets/news-hiders/red-purple.png'
+import lightGreenHider from 'assets/news-hiders/light-green-green.png'
+import orangeLight from 'assets/news-hiders/orange-light-orange.png'
+import purpleOrange from 'assets/news-hiders/purple-orange.png'
 import './NewsItem.scss'
-import { Hiders } from '../Popup/CreateNews/CreateNews'
+import { Hiders } from 'components/Popup/CreateNews/CreateNews'
 
 type NewsProps = News
 

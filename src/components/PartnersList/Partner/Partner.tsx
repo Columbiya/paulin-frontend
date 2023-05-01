@@ -1,7 +1,7 @@
-import React, { MouseEvent, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import env from 'react-dotenv'
-import { Partner } from '../../../schemas/Partner'
-import { Star } from '../../Star/Star'
+import { Partner } from 'schemas/Partner'
+import { Star } from 'components/Star/Star'
 import './Partner.scss'
 
 interface PartnerItemProps {

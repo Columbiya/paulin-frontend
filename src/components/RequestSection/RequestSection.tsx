@@ -1,8 +1,8 @@
 import React from 'react'
-import requestImage from '../../assets/home/request-image.svg'
-import requestBgMobile from '../../assets/home/request-bg-mobile.svg'
-import requestPersonMobile from '../../assets/home/request-person-mobile.svg'
-import { RequestForm } from '../RequestForm/RequestForm'
+import requestImage from 'assets/home/request-image.svg'
+import requestBgMobile from 'assets/home/request-bg-mobile.svg'
+import requestPersonMobile from 'assets/home/request-person-mobile.svg'
+import { RequestForm } from 'components/RequestForm/RequestForm'
 import './RequestSection.scss'
 
 interface RequestSectionProps {
